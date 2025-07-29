@@ -1,0 +1,75 @@
+<template>
+  <section class="w-full pb-43">
+    <div class="flex flex-col gap-12 mb-22 md:items-center">
+      <Typography size="heading-2">Win more customers</Typography>
+      <Typography size="heading-5">
+        By letting them pay their way &ndash; wherever they are
+      </Typography>
+    </div>
+    <div class="flex flex-col gap-70">
+      <div
+        class="flex flex-col gap-12 md:flex-row-reverse md:gap-50 md:items-center"
+      >
+        <div class="w-full relative md:max-w-[488px]">
+          <NuxtImg
+            src="/img/home_features_1.png"
+            alt="Girl with phone"
+            class="w-full rounded-[20px]"
+            loading="lazy"
+            format="webp"
+          />
+          <div
+            class="bg-white absolute z-20 inset-x-0 bottom-0 mx-11 rounded-full px-11 py-6 flex justify-between items-center -translate-y-16"
+          >
+            <Typography size="heading-6">{{
+              formatBalance(400, 'EUR')
+            }}</Typography>
+            <div class="rounded-full px-6 py-2 bg-[#DFDEFF]">
+              <Typography size="body-normal">€EUR</Typography>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-12">
+          <Icon mode="svg" name="app-icon:money-icon" width="38" height="25" />
+          <Typography size="heading-4">
+            Local currencies,
+            <br />
+            local cards
+          </Typography>
+          <Typography size="body-large" class="text-text-gray">
+            Make it easy for customers to pay in their own currency, for
+            smoother checkouts and fewer drop-offs.
+          </Typography>
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:flex-row md:gap-50 md:items-center">
+        <div class="w-full relative md:max-w-[488px]">
+          <img
+            src="/img/home_features_2.gif"
+            alt="globe animation"
+            class="w-full rounded-[20px]"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex flex-col gap-12">
+          <Icon mode="svg" name="app-icon:globe-icon" width="29" height="29" />
+          <Typography size="heading-4">
+            Trusted local payment methods
+          </Typography>
+          <Typography size="body-large" class="text-text-gray">
+            Make it easy for customers to pay in their own currency, for
+            smoother checkouts and fewer drop-offs.
+          </Typography>
+          <AppButton to="#" variant="text">Learn more</AppButton>
+        </div>
+      </div>
+      <FeaturesAccordion :items="accordionItems" />
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import FeaturesAccordion from '~/components/Home/FeaturesSection/FeaturesAccordion.vue'
+import { formatBalance } from '~/utils/formatBalance'
+import { accordionItems } from '~/utils/featuresAccordionItems'
+</script>

@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --text-heading-1: 52px;
+  --text-heading-1--line-height: 56px;
+  --text-heading-2: 44px;
+  --text-heading-2--line-height: 48px;
+  --text-mobile-heading-2: 32px;
+  --text-mobile-heading-2--line-height: 35px;
+  --text-heading-3: 40px;
+  --text-heading-3--line-height: 43px;
+  --text-heading-4: 33px;
+  --text-heading-4--line-height: 36px;
+  --text-mobile-heading-4: 24px;
+  --text-mobile-heading-4--line-height: 26px;
+  --text-heading-5: 28px;
+  --text-heading-5--line-height: 30px;
+  --text-heading-6: 24px;
+  --text-heading-6--line-height: 26px;
+  --text-mobile-heading-6: 20px;
+  --text-mobile-heading-6--line-height: 22px;
+  --text-body-large: 19px;
+  --text-body-large--line-height: 28px;
+  --text-mobile-body-large: 16px;
+  --text-mobile-body-large--line-height: 24px;
+  --text-body-normal: 16px;
+  --text-body-normal--line-height: 24px;
+  --text-mobile-body-normal: 14px;
+  --text-mobile-body-normal--line-height: 21px;
+  --text-inline-small: 13px;
+  --text-inline-small--line-height: 20px;
+  --text-inline-label: 12px;
+  --text-inline-label--line-height: 13px;
+  --leading-body-normal: 16px;
+  --leading-body-large: 19px;
+  --leading-100: 100%;
+  --color-black: oklch(0.1776 0 0); /*#111111*/
+  --color-primary-500: oklch(0.2233 0.0498 294.41); /*#1d1630*/
+  --color-primary-400: oklch(0.4835 0.0227 298.6); /*#605c6a*/
+  --color-primary-300: oklch(0.6821 0.0149 299.67); /*#9a97a1*/
+  --color-primary-200: oklch(0.843 0.0112 297.59); /*#cccad2*/
+  --color-primary-100: oklch(0.964 0.0041 337.35); /*#f5f2f4*/
+  --color-secondary-500: oklch(0.6995 0.2215 353.83); /*#ff52a8*/
+  --color-secondary-400: oklch(0.8756 0.0808 347.42); /*#ffc1e0*/
+  --color-secondary-300: oklch(0.9466 0.033 346.03); /*#ffe5f2*/
+  --color-success-500: oklch(0.827 0.1949 154.97); /*#2cea8c*/
+  --color-success-400: oklch(0.8916 0.1853 157.14); /*#52ffa9*/
+  --color-gray-500: oklch(0.5208 0 0); /*#696969*/
+  --color-gray-400: oklch(0.822 0.0043 301.41); /*#c5c4c7*/
+  --color-gray-text: oklch(0.4628 0.0261 296.82); /*#5a5666*/
+  --color-gray-border: oklch(0.8825 0.0084 301.34); /*#d9d7dd*/
+  --color-border-gray: oklch(0.8825 0.0084 301.34); /*#d9d7dd*/
+  --color-text-gray: oklch(0.4628 0.0261 296.82); /*#5a5666*/
+  --color-text-primary-light: oklch(0.3822 0.0544 295.18); /*#453d5d*/
+  --color-map-primary-light: oklch(0.8747 0.0447 298.33); /*#d9d0f0*/
+  --color-beige: oklch(0.9599 0.0042 56.37); /*#f4f1ef*/
+  --color-simple-step-1: oklch(0.922 0.0565 332.47); /*#fdd8f6*/
+  --color-simple-step-2: oklch(0.8955 0.0505 287.81); /*#dad8fd*/
+  --color-simple-step-3: oklch(0.9143 0.0416 10.56); /*#fdd8dc*/
+  --color-gradient-purple: oklch(0.623 0.2187 293.73); /*#9261fb*/
+  --color-gradient-blue: oklch(0.5688 0.2389 275.68); /*#5959ff*/
+  --color-gradient-red: oklch(0.7011 0.1778 37.52); /*#f86f45*/
+  --color-gradient-orange: oklch(0.7733 0.1261 58.15); /*#f1a05f*/
+  --color-gradient-yellow: oklch(0.8823 0.1429 98.22); /*#f1d95f*/
+  --color-gradient-lightgreen: oklch(0.9094 0.1725 119.48); /*#d4f15f*/
+  --color-gradient-green: oklch(0.7972 0.1349 153.71); /*#70d694*/
+  --color-gradient-gray: oklch(0.8817 0.0077 345.37); /*#dcd6d9*/
+  --font-brand: "NeueMontreal";
+  --shadow-header: 0 4px 34px rgba(0, 0, 0, 0.07);
+  --shadow-dropdown: 0px 4px 34px rgba(0, 0, 0, 0.11);
+  --shadow-benefit: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  --shadow-plugin: 10px 11px 20px rgba(147, 189, 70, 0.12);
+  --shadow-marker: 8px 8px 16px rgba(69, 58, 58, 0.1);
+  --spacing: 2px;
+  --spacing-app-default: 74px;
+  --spacing-app-mobile: 63px;
+  --radius-app-big: 20px;
+  --tracking-app-default: 0.05em;
+}
+
+
+html, body, #__nuxt {
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  color: var(--color-primary-500);
+  font-family: var(--font-brand), sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+#__nuxt {
+  display: flex;
+  flex-direction: column;
+}
