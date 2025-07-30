@@ -1,0 +1,29 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+    build:
+      commands:
+        - env NODE_OPTIONS=--max-old-space-size=8192 npm run build
+        - mkdir -p .amplify-hosting/compute/default/node_modules/geoip-country/data/
+        - cp -r node_modules/geoip-country/data/* .amplify-hosting/compute/default/node_modules/geoip-country/data/
+  artifacts:
+    baseDirectory: .output
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**
+
+# optional if using SSR / custom backend
+backend:
+  phases:
+    build:
+      commands:
+        - echo "Backend build phase"
+  artifacts:
+    baseDirectory: backend
+    files:
+      - '**/*'
