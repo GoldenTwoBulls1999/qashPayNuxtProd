@@ -10,7 +10,7 @@
       >
         <span class="font-light">Start streamlining</span> your payments today
       </Typography>
-      <AppButton to="/quote-request">Continue application</AppButton>
+      <AppButton to="/quote-request" color="black">Continue application</AppButton>
     </div>
   </section>
 </template>

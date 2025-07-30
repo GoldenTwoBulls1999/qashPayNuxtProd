@@ -1,10 +1,9 @@
 <template>
   <div class="flex flex-col gap-5 cursor-pointer" @click="handleClick">
-    <div class="relative border-1 border-primary-200 rounded-app-big h-85 max-h-85 flex items-center justify-center">
-      <!-- <div
-        class="absolute top-0 right-0 mr-[28px] bg-pink-500 text-white text-sm rounded-br rounded-bl h-[28px] w-[87px] flex items-center justify-center text-[12px] font-medium">
-        On-Demand
-      </div> -->
+    <div
+        class="relative border-1 border-primary-200 rounded-app-big h-85 max-h-85 flex items-center justify-center"
+        :class="{'shadow-sm': !label || (label && label !== 'coming-soon')}"
+    >
       <template v-if="label">
         <div
           class="absolute top-0 right-0 mr-[28px] text-white text-sm rounded-br rounded-bl h-[28px] w-[87px] flex items-center justify-center text-[12px] font-medium"

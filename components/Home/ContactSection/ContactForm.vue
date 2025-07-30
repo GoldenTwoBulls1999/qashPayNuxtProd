@@ -25,7 +25,7 @@
         :is-error="isError('email')"
         :error="errors?.email"
       />
-      <AppButton @click="onSubmit" class="max-md:w-full mt-10"
+      <AppButton @click="onSubmit" class="max-md:w-full mt-10" color="black"
         >Continue application</AppButton
       >
     </form>

@@ -1,11 +1,11 @@
 <template>
-  <section class="w-full pb-app-default @container/main">
+  <section class="w-full pb-(--blocks-gap) @container/main">
     <div class="flex md:-mr-10 @min-[992px]/main:-mr-[calc((100vw-992px)/2)]">
       <div
         class="flex flex-col md:justify-center min-[1300px]:max-w-[calc(992px/2)]"
       >
         <div class="mt-24">
-          <div class="bg-secondary-300 max-w-fit px-4.5 py-3 rounded-sm mb-2">
+          <div class="bg-secondary-300 max-w-fit px-4.5 py-3 rounded-sm mb-8">
             <Typography weight="medium" size="inline-label">
               Simple online payments
             </Typography>
@@ -23,7 +23,7 @@
           <div class="w-full relative">
             <NuxtImg
               preload
-              src="/img/home_hero_phone.png"
+              src="/img/home_hero_phone_with_icon.png"
               alt="Qashpay payment on phone"
               class="absolute h-[80%] bottom-0 left-[17%]"
               format="webp"
@@ -38,13 +38,14 @@
         </div>
         <div class="mt-35 md:mt-16">
           <div class="flex flex-col md:flex-row gap-10">
-            <AppButton class="w-full md:w-fit" to="/quote-request">
+            <AppButton class="w-full md:w-fit" to="/quote-request" color="black">
               Get your instant quote
             </AppButton>
-            <AppButton
-              class="bg-secondary-500 border-secondary-500 hover:!bg-primary-500 hover:!border-primary-500 text-white w-full md:w-fit"
-            >
-              Preview
+            <AppButton color="pink">
+                Preview
+              <template #icon:end>
+                <Icon mode="svg" width="24" height="24" :name="`app-icon:play`"/>
+              </template>
             </AppButton>
           </div>
           <div
@@ -60,9 +61,9 @@
         <div class="w-full ml-auto max-w-[783px] relative">
           <NuxtImg
             preload
-            src="/img/home_hero_phone.png"
+            src="/img/home_hero_phone_with_icon.png"
             alt="Qashpay payment on phone"
-            class="absolute h-[80%] bottom-0 left-[17%]"
+            class="absolute h-[90%] bottom-[-40px] left-[15%]"
             format="webp"
           />
           <NuxtImg
@@ -75,7 +76,7 @@
       </div>
     </div>
     <div
-      class="relative overflow-hidden mt-18 @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] h-[50px]"
+      class="relative overflow-hidden mt-(--block-top-margin) @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] h-[50px]"
     >
       <NuxtImg
         preload

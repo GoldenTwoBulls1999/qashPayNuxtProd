@@ -1,7 +1,7 @@
 <template>
   <section
     ref="container"
-    class="trigger pt-84 pb-91 w-full max-md:pt-58 relative"
+    class="trigger pt-80 pb-80 w-full max-md:pt-58 relative"
   >
     <div ref="title">
       <Typography size="heading-3" weight="medium" class="text-center">

@@ -51,7 +51,7 @@
         </Typography>
         <Typography
           size="body-large"
-          class="max-md:px-10 max-md:text-mobile-body-large text-center mb-10 md:mb-40"
+          class="max-md:px-10 max-md:text-mobile-body-large text-center mb-10 md:mb-40 max-w-[648px] mx-auto"
         >
           Increase sales and reduce the cost of ownership by enabling better
           payment experiences and connecting with global partners.
@@ -79,7 +79,7 @@
         </Typography>
         <Typography
           size="body-large"
-          class="max-md:px-10 max-md:text-mobile-body-large text-center mb-10 md:mb-40"
+          class="max-md:px-10 max-md:text-mobile-body-large text-center mb-10 md:mb-40 max-w-[648px] mx-auto"
         >
           Increase sales and reduce the cost of ownership by enabling better
           payment experiences and connecting with global partners.

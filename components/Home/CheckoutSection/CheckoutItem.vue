@@ -1,6 +1,6 @@
 <template>
   <div
-    class="checkout-item bg-white flex flex-col gap-16 md:border-1 md:border-[#CACAD4] md:rounded-app-big md:flex-row md:pl-24 md:pt-16 md:pr-16 md:pb-27"
+    class="checkout-item bg-white flex flex-col gap-16 md:border-1 md:border-[#CACAD4] md:rounded-app-big md:flex-row md:pl-24 md:pt-16 md:pr-16 md:pb-16"
   >
     <div class="flex flex-col gap-12 md:mt-16">
       <div

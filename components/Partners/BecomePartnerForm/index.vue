@@ -26,7 +26,7 @@
           <AppCheckbox v-model="individualCheck" :value="true" name="is_checked">
             <Typography class="text-primary-400">I'm individual</Typography>
           </AppCheckbox>
-          <AppButton class="max-md:w-full" @click="onSubmit">
+          <AppButton class="max-md:w-full" @click="onSubmit" color="black">
             Become a Partner
           </AppButton>
         </div>

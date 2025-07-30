@@ -13,7 +13,7 @@
         <Typography size="heading-5" class="text-center mb-30">
           Partner with best in class agent tools
         </Typography>
-        <AppButton class="mb-36">Become partner</AppButton>
+        <AppButton class="mb-36" color="black">Become partner</AppButton>
       </div>
       <div class="flex flex-col mb-40">
         <Typography
@@ -74,7 +74,7 @@
         </Typography>
         <Typography
           size="body-large"
-          class="max-w-[648px] text-center mb-20 px-10"
+          class="max-w-[648px] text-center mb-20 px-10 max-w-[648px] mx-auto"
         >
           Agent Portal is a real-time dashboard that provides data sets required
           to monitor at the agent, acquirer, scheme and merchant levels.
@@ -95,7 +95,7 @@
         <Typography size="heading-4" class="text-center mb-10">
           Partner Onboarding App
         </Typography>
-        <Typography size="body-large" class="max-w-[648px] text-center mb-20">
+        <Typography size="body-large" class="max-w-[648px] text-center mb-20 max-w-[648px] mx-auto">
           Agent Portal is a real-time dashboard that provides data sets required
           to monitor at the agent, acquirer, scheme and merchant levels.
         </Typography>

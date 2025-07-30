@@ -64,16 +64,16 @@
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mt-10">
-        <BenefitItem with-shadow icon="users-icon" title="Flexible">
+        <BenefitItem icon="users-icon" title="Flexible">
           Convert interactions and conduct transaction risk checks
         </BenefitItem>
-        <BenefitItem with-shadow icon="money-document-icon" title="Convenient">
+        <BenefitItem icon="money-document-icon" title="Convenient">
           Reduce time tracking down unpaid invoices and payment status
         </BenefitItem>
-        <BenefitItem with-shadow icon="card-lock-icon" title="Secure">
+        <BenefitItem icon="card-lock-icon" title="Secure">
           Convert interactions and conduct transaction risk checks
         </BenefitItem>
-        <BenefitItem with-shadow icon="money-transfer-icon" title="Timely">
+        <BenefitItem icon="money-transfer-icon" title="Timely">
           Generate real-time payment links and QR codes quickly and easily
         </BenefitItem>
       </div>

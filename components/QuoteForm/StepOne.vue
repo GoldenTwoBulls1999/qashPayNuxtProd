@@ -54,7 +54,7 @@
       :error="errors?.country"
       with-search
     />
-    <AppButton class="mt-19" @click="onSubmit">Next</AppButton>
+    <AppButton class="mt-19" @click="onSubmit" color="black">Next</AppButton>
   </div>
 </template>
 

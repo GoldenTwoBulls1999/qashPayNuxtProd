@@ -10,10 +10,8 @@
       <ul class="flex flex-col gap-8">
         <li>
           <div class="w-full flex gap-12">
-            <AppButton variant="outline" size="small" class="w-full">
-              Log In
-            </AppButton>
-            <AppButton size="small" class="w-full">Sign Up</AppButton>
+            <AppButton variant="outline" size="small" class="w-full">Log In</AppButton>
+            <AppButton size="small" class="w-full" color="black">Sign Up</AppButton>
           </div>
         </li>
         <li
