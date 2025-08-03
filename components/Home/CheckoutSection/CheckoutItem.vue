@@ -23,7 +23,7 @@
         :alt="item.imageAlt"
         class="w-full absolute bottom-0 right-0"
         loading="lazy"
-        format="webp"
+        format="png"
       />
     </div>
   </div>

@@ -3,16 +3,35 @@
     class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center"
   >
     <div class="w-full max-h-fit flex flex-col">
-      <div class="w-full flex justify-center items-center h-[84px] mb-20">
-        <Icon mode="svg" width="84" height="84" name="app-icon:shield-icon" />
+      <div class="mb-30 min-[1300px]:max-w-[calc(992px)]">
+        <div class="flex flex-col-reverse md:flex-row items-center h-full">
+          <div class="flex-1 flex-col">
+            <Typography
+                size="heading-2"
+                class="max-md:text-center max-md:text-mobile-heading-2 mb-20"
+            >
+              Built for Real-time, Precise, and Actionable Paymants Intelligence
+            </Typography>
+            <Typography
+                size="heading-5"
+                class="max-md:text-center max-md:text-mobile-heading-6 text-primary-400 max-w-200 max-md:mb-15"
+            >
+              A cutting-edge platform built to empower decision-making and
+              transparency
+            </Typography>
+          </div>
+          <div class="flex-1 flex justify-center relative">
+            <div class="">
+              <NuxtImg
+                  preload
+                  :src="`/img/fraud_management_1_block.png`"
+                  alt="item.imageAlt"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <Typography size="heading-2" class="text-center mb-20">
-        Built for Real-time, Precise, and Actionable Paymants Intelligence
-      </Typography>
-      <Typography size="heading-5" class="text-center">
-        A cutting-edge platform built to empower decision-making and
-        transparency
-      </Typography>
+
       <div class="flex flex-col gap-40 mt-60">
         <div class="flex flex-col gap-12 md:flex-row md:gap-20 md:items-center">
           <div
@@ -23,10 +42,10 @@
               alt="Exmaple of the application's work"
               class="w-full"
               loading="lazy"
-              format="webp"
+              format="png"
             />
           </div>
-          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px]">
+          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-20">
             <Typography size="heading-4">
               Reduce the Total Cost of Fraud Management
             </Typography>
@@ -48,10 +67,10 @@
               alt="Exmaple of the application's work"
               class="w-full"
               loading="lazy"
-              format="webp"
+              format="png"
             />
           </div>
-          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px]">
+          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-20">
             <Typography size="heading-4">Precession</Typography>
             <Typography size="body-large" class="text-text-gray">
               A robust and resilient payments orchestration platform on one API
@@ -60,7 +79,7 @@
             </Typography>
           </div>
         </div>
-        <div class="flex flex-col gap-12 md:flex-row md:gap-50 md:items-center">
+        <div class="flex flex-col gap-12 md:flex-row md:gap-20 md:items-center">
           <div
             class="w-full relative rounded-app-big overflow-hidden md:flex-1 md:max-w-[476px]"
           >
@@ -69,10 +88,10 @@
               alt="Exmaple of the application's work"
               class="w-full"
               loading="lazy"
-              format="webp"
+              format="png"
             />
           </div>
-          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px]">
+          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-20">
             <Typography size="heading-4">Transparency</Typography>
             <Typography size="body-large" class="text-text-gray">
               A robust and resilient payments orchestration platform on one API
@@ -171,4 +190,5 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>

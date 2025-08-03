@@ -18,7 +18,7 @@
           :src="`/img/chargeback_slider_1.png`"
           alt="explanation of checkout process"
           class="w-full"
-          format="webp"
+          format="png"
         />
       </swiper-slide>
       <swiper-slide class="mb-10">
@@ -27,7 +27,7 @@
           :src="`/img/chargeback_slider_2.png`"
           alt="explanation of checkout process"
           class="w-full"
-          format="webp"
+          format="png"
         />
       </swiper-slide>
     </swiper-container>

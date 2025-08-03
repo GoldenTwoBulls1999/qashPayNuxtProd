@@ -1,6 +1,6 @@
 <template>
   <div
-    class="overflow-hidden mt-40 flex flex-col md:flex-row md:w-full max-md:-mx-10 md:rounded-app-big md:shadow-benefit max-md:bg-[url(/img/partners_background.png)] bg-cover border-[0.5px] border-gray-200">
+    class="mt-40 flex flex-col md:flex-row md:w-full max-md:-mx-10 md:rounded-app-big md:shadow-benefit max-md:bg-[url(/img/partners_background.png)] bg-cover border-[0.5px] border-gray-200">
     <div
       class="md:rounded-tl-app-big md:rounded-bl-app-big md:min-w-1/2 flex justify-center pt-35 bg-[url(/img/partners_background.png)] bg-cover">
       <Typography size="heading-2" weight="medium" class="max-md:text-center">
@@ -30,7 +30,10 @@
             Become a Partner
           </AppButton>
         </div>
-        <div class="mt-40">CAPTCHA</div>
+        <div class="flex flex-row">
+          <Typography>Please verify that you are human<span class="text-red-500"> *</span></Typography>
+          <NuxtTurnstile v-model="token" />
+        </div>
       </form>
     </div>
   </div>
@@ -107,7 +110,18 @@ const [individualCheck] = defineField('individualCheck', {
   validateOnChange: false,
 })
 
-const onSubmit = handleSubmit(async (values: any) => console.log('values', values))
+const onSubmit = handleSubmit(async (values: any) => {
+  console.log('values', values, 'token', token.value)
+
+  values['token'] = token.value
+
+  const res = await $fetch<{statusCode: number, body: string}>('/api/became_partner', {
+    method: 'POST',
+    body: values
+  })
+})
+
+const token = defineModel<string>('')
 </script>
 
 <style scoped></style>

@@ -26,13 +26,13 @@
               src="/img/home_hero_phone_with_icon.png"
               alt="Qashpay payment on phone"
               class="absolute h-[80%] bottom-0 left-[17%]"
-              format="webp"
+              format="png"
             />
             <NuxtImg
               preload
               src="/img/home_hero_desktop.png"
               alt="Qashpay payment on desktop"
-              format="webp"
+              format="png"
             />
           </div>
         </div>
@@ -64,31 +64,26 @@
             src="/img/home_hero_phone_with_icon.png"
             alt="Qashpay payment on phone"
             class="absolute h-[90%] bottom-[-40px] left-[15%]"
-            format="webp"
+            format="png"
           />
           <NuxtImg
             preload
             src="/img/home_hero_desktop.png"
             alt="Qashpay payment on desktop"
-            format="webp"
+            format="png"
           />
         </div>
       </div>
     </div>
     <div
-      class="relative overflow-hidden mt-(--block-top-margin) @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] h-[50px]"
+      class="relative mt-(--block-top-margin) @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] h-[50px]"
     >
-      <NuxtImg
-        preload
-        src="/img/home_providers.png"
-        alt="Money providers"
-        class="absolute top-1/2 left-1/2 -translate-1/2 w-[1000px] max-w-[1000px] md:w-[100vw] md:max-w-[1400px]"
-        format="webp"
-      />
+      <CardLogos />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import HeroFeatureItem from '~/components/Home/HeroSection/HeroFeatureItem.vue'
+import CardLogos from '~/components/Home/CardLogos.vue'
 </script>

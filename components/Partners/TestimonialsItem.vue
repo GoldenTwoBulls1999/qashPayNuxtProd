@@ -10,7 +10,7 @@
         <Typography size="body-large" weight="medium">
           {{ item.author }},
         </Typography>
-        <Typography size="body-large" class="text-primary-300">{{
+        <Typography size="body-large" class="leading-[1] mt-3">{{
           item.authorPosition
         }}</Typography>
       </div>
@@ -20,7 +20,7 @@
           class="max-w-70"
           loading="lazy"
           quality="100"
-          format="webp"
+          format="png"
         />
       </div>
     </div>

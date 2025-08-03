@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 
 export function useDropdownPositioning(
-  maxAllowedHeight: number = 695,
+  maxAllowedHeight: number = 400,
   offset: number = 10
 ) {
   const dropdownMaxHeight = ref(maxAllowedHeight)
@@ -15,7 +15,7 @@ export function useDropdownPositioning(
     const pageHeight = document.documentElement.scrollHeight
     const spaceToBottomOfPage = pageHeight - triggerBottomAbs
 
-    dropdownMaxHeight.value = Math.min(695, spaceToBottomOfPage - offset)
+    dropdownMaxHeight.value = Math.min(maxAllowedHeight, spaceToBottomOfPage - offset)
   }
 
   return {

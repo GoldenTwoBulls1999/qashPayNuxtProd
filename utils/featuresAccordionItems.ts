@@ -13,7 +13,7 @@ export const accordionItems = [
     image: 'home_features_3_2',
     imageAlt: '',
     content:
-      'Complete quote request in seconds to receive bespoke pricing. All quote requests are pre-vet against country and industry ensuring availability',
+      'Our best-in-class online onboarding portal is fast, intuitive, and easy to complete—accessible on desktop, iOS, and Android for a seamless experience across all devices',
   },
   {
     index: 2,
@@ -21,6 +21,6 @@ export const accordionItems = [
     image: 'home_features_3_3',
     imageAlt: '',
     content:
-      'Complete quote request in seconds to receive bespoke pricing. All quote requests are pre-vet against country and industry ensuring availability',
+      'Whether you\'re a start-up mobile app or a global enterprise, we offer four flexible checkout options tailored to meet your business needs',
   },
 ]

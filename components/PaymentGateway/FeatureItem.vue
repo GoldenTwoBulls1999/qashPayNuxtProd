@@ -6,7 +6,7 @@
         alt="item.imageAlt"
         class="h-full"
         loading="lazy"
-        format="webp"
+        format="png"
       />
     </div>
     <Typography

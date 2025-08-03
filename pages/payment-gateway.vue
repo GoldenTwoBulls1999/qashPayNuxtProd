@@ -11,7 +11,7 @@
               :src="`/img/payment_gateway_hero.png`"
               alt="item.imageAlt"
               class="w-full"
-              format="webp"
+              format="png"
             />
           </div>
           <div class="flex-1">
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="mb-30">
+      <div class="mb-50 relative z-10">
         <Typography
           size="heading-4"
           weight="medium"
@@ -56,17 +56,9 @@
           Increase sales and reduce the cost of ownership by enabling better
           payment experiences and connecting with global partners.
         </Typography>
-        <AppTabs :tabs="['Plugin Ready', 'Fraud Prevention', 'Pay by Link']">
-          <template #tab-0>
-            <PluginReadyTab />
-          </template>
-          <template #tab-1>
-            <FraudPreventionTab />
-          </template>
-          <template #tab-2>
-            <PayByLinkTab />
-          </template>
-        </AppTabs>
+
+        <Accordion :items="paymentGatewayAccordionItems" />
+
       </div>
       <div class="mb-30">
         <Typography
@@ -120,7 +112,7 @@
             :src="`/img/payment_gateway_shield.png`"
             class="w-full"
             loading="lazy"
-            format="webp"
+            format="png"
           />
         </div>
         <Typography
@@ -201,10 +193,10 @@
 </template>
 
 <script setup lang="ts">
-import PluginReadyTab from '~/components/PaymentGateway/PluginReadyTab.vue'
-import FraudPreventionTab from '~/components/PaymentGateway/FraudPreventionTab.vue'
-import PayByLinkTab from '~/components/PaymentGateway/PayByLinkTab.vue'
 import FeatureItem from '~/components/PaymentGateway/FeatureItem.vue'
 import { payment_gateway_features } from '~/utils/payment_gateway_features'
 import CheckoutItem from '~/components/Home/CheckoutSection/CheckoutItem.vue'
+import Accordion from '~/components/Accordion.vue'
+import { paymentGatewayAccordionItems } from '~/utils/paymentGatewayAccordionItems'
+
 </script>

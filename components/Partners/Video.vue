@@ -1,34 +1,49 @@
 <template>
   <div
-    class="group w-full max-w-[420px] h-[208px] mx-auto flex justify-center items-center shadow-[8px_8px_16px_rgba(240,212,253,0.4)] rounded-app-big bg-secondary-300 mb-38 overflow-hidden relative"
-    @click="playing = !playing"
+    class="group w-full mx-auto flex justify-center items-center rounded-app-big bg-secondary-300 mb-38 overflow-hidden relative"
   >
-    <video ref="video" />
+    <video ref="video" class="w-full mx-auto"/>
     <button
-      ref="playPauseButton"
-      type="button"
-      class="absolute cursor-pointer flex justify-center items-center"
-      :class="playing ? 'hidden group-hover:block' : 'block'"
+        type="button"
+        class="absolute bottom-4 right-4 w-[32px] h-[32px] bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition"
+        @click.stop="muted = !muted"
     >
-      <NuxtImg
-        preload
-        src="/img/partner_play_button.png"
-        class="w-full w-[55px] h-[55px]"
-        :class="playing ? 'hidden' : 'block'"
-        format="webp"
+      <Icon
+          v-if="muted"
+          mode="svg"
+          name="app-icon:mute"
+      />
+      <Icon
+          v-if="!muted"
+          mode="svg"
+          name="app-icon:unmute"
       />
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useMediaControls } from '@vueuse/core'
+import { useMediaControls, useElementVisibility } from '@vueuse/core'
+import { watch } from 'vue'
 
-const playPauseButton = ref<HTMLButtonElement>()
 const video = useTemplateRef<HTMLVideoElement>('video')
 
-const { playing } = useMediaControls(video, {
-  src: '/img/QashPay.mp4',
+const { playing, muted, volume } = useMediaControls(video, {
+  src: '/img/QashPay.webm',
+})
+
+onMounted(() => {
+  muted.value = true
+})
+
+const visible = useElementVisibility(video)
+
+watch(visible, (isVisible) => {
+  if (isVisible) {
+    playing.value = true
+  } else {
+    playing.value = false
+  }
 })
 </script>
 

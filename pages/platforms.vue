@@ -3,29 +3,33 @@
     class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center @container/main"
   >
     <div class="w-full max-h-fit flex flex-col">
-      <div class="w-full flex justify-center items-center mb-10">
-        <NuxtImg
-          preload
-          src="/img/platforms_hero.png"
-          alt="different platform's logos"
-          class="w-full max-w-[411px] h-auto"
-          format="webp"
-        />
-      </div>
-      <div class="relative @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] bg-gradient-to-b from-white to-[#F9F8FF]">
-        <Typography size="heading-2" class="text-center mb-16">
-          What are Shop Plugins?
-        </Typography>
-        <Typography
-          size="body-large"
-          class="text-center text-primary-400 max-w-[648px] mx-auto mb-40"
-        >
-          Shop plugins are software components that add specific features or
-          functionalities to e-commerce platforms. They enable merchants to
-          enhance their online stores without extensive technical development,
-          allowing merchants to integrate payment capabilities seamlessly into
-          their existing e-commerce shop systems.
-        </Typography>
+      <div class="mb-30 min-[1300px]:max-w-[calc(992px)]">
+        <div class="flex flex-col-reverse md:flex-row items-center h-full">
+          <div class="flex-1 flex-col">
+            <Typography size="heading-2" class="text-start mb-16">
+              What are Shop Plugins?
+            </Typography>
+            <Typography
+                size="body-large"
+                class="text-start text-primary-400 max-w-[648px] mx-auto mb-40"
+            >
+              Shop plugins are software components that add specific features or
+              functionalities to e-commerce platforms. They enable merchants to
+              enhance their online stores without extensive technical development,
+              allowing merchants to integrate payment capabilities seamlessly into
+              their existing e-commerce shop systems.
+            </Typography>
+          </div>
+          <div class="flex-1 flex justify-center relative">
+            <div class="">
+              <NuxtImg
+                  preload
+                  :src="`/img/platforms_1_block.png`"
+                  alt="item.imageAlt"
+              />
+            </div>
+          </div>
+        </div>
       </div>
       <div
         class="mb-40 px-10 relative @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)]"
@@ -92,7 +96,7 @@
             alt="shopify logo"
             class="max-h-[60px] w-auto object-contain max-w-[186px] h-[60px]"
             loading="lazy"
-            format="webp"
+            format="png"
           />
         </div>
         <div class="flex md:flex-1 flex-col gap-13 md:pl-20">

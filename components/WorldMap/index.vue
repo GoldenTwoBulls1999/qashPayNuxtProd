@@ -17,14 +17,14 @@ const formattedCountries = computed(() =>
 
 const selectedCountry = computed(() =>
   countries.find(
-    ({ alpha2 }) => alpha2.toLowerCase() === selected.value.toLowerCase()
+    ({ alpha2 }) => alpha2.toLowerCase() === selected.value?.toLowerCase()
   )
 )
 
 const paymentMethods = computed(
   () =>
     countries.find(
-      ({ alpha2 }) => alpha2.toLowerCase() === selected.value.toLowerCase()
+      ({ alpha2 }) => alpha2.toLowerCase() === selected.value?.toLowerCase()
     )?.paymentMethods || []
 )
 
@@ -50,7 +50,7 @@ const sortedPaymentMethods = (paymentMethods: string[]) => {
 
 <template>
   <div class="flex justify-start items-start gap-20">
-    <div class="w-full md:w-[305px]">
+    <div class="w-full md:w-[305px] relative">
       <AppSelect v-model="selected" label="" :options="formattedCountries">
         <template v-if="selected" #selected>
           <div class="flex items-center gap-8">
@@ -72,14 +72,14 @@ const sortedPaymentMethods = (paymentMethods: string[]) => {
           </div>
         </template>
       </AppSelect>
-      <div v-if="paymentMethods.length" class="mt-[38px] border border-gray-300 rounded-md">
+      <div v-if="paymentMethods.length" class="mt-[38px] border border-gray-300 bg-white rounded-md shadow-sm absolute w-full md:w-[305px]">
         <div>
           <div
             v-for="(method, index) in (isExpanded ? sortedPaymentMethods(paymentMethods) : sortedPaymentMethods(paymentMethods).slice(0, 5))"
             :key="index"
             :class="[
               'border-b-1 px-8 py-7',
-              index === 4 && !isExpanded ? 'border-gray-100' : 'border-gray-300'
+              'border-gray-300'
             ]"
           >
             <PaymentMethod :methodName="method" />
@@ -91,7 +91,6 @@ const sortedPaymentMethods = (paymentMethods: string[]) => {
             :underline="false"
             class="uppercase text-secondary-500 text-body-normal max-w-fit m-8"
             @click="isExpanded = !isExpanded"
-            color="black"
         >
           {{ isExpanded ? 'Hide' : 'Show all methods' }}
         </AppButton>

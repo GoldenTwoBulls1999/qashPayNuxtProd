@@ -93,7 +93,7 @@ const sizeClasses = computed(() => {
 
 const colorClasses = computed(() => {
   const classes = {
-    white: '',
+    white: 'hover:bg-gray-100 focus:border-gray-100',
     black: 'border-1 border-primary-500 bg-black hover:bg-gray-700 focus:bg-gray-500',
     pink: 'border-1 border-pink-500 bg-pink-500 hover:bg-pink-400 focus:bg-pink-300',
   }

@@ -6,7 +6,7 @@
         src="/img/payment_gateway_tab_1.png"
         alt="item.imageAlt"
         class="w-full"
-        format="webp"
+        format="png"
       />
     </div>
     <div class="flex-1 flex flex-col justify-center items-start max-md:p-10">

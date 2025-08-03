@@ -35,7 +35,7 @@
             alt="explanation of checkout process"
             class="w-full"
             loading="lazy"
-            format="webp"
+            format="png"
           />
         </div>
       </div>
@@ -86,7 +86,7 @@
             alt="explanation of checkout process"
             class="w-full"
             loading="lazy"
-            format="webp"
+            format="png"
           />
         </div>
       </div>
@@ -131,7 +131,7 @@
             alt="explanation of checkout process"
             class="max-h-[95%]"
             loading="lazy"
-            format="webp"
+            format="png"
           />
         </div>
         <div
@@ -148,7 +148,7 @@
             alt="explanation of checkout process"
             class="w-full"
             loading="lazy"
-            format="webp"
+            format="png"
           />
         </div>
       </div>

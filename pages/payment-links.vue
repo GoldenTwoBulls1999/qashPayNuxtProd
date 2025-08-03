@@ -3,26 +3,33 @@
     class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center @container/main"
   >
     <div class="w-full max-h-fit flex flex-col">
-      <div class="w-full flex justify-center items-center h-[84px] mb-20">
-        <Icon
-          mode="svg"
-          width="84"
-          height="84"
-          name="app-icon:money-send-icon"
-        />
+      <div class="mb-30 min-[1300px]:max-w-[calc(992px)]">
+        <div class="flex flex-col-reverse md:flex-row items-center h-full">
+          <div class="flex-1 flex-col">
+            <Typography size="heading-2" class="text-start mb-10">
+              Payment Links
+            </Typography>
+            <Typography size="heading-5" class="text-start mb-10">
+              Simple, fast and effective payments
+            </Typography>
+            <Typography class="text-start max-w-[575px] mx-auto">
+              The payment experience is faster and more convenient than ever. The
+              option to pay using a secure link sent via SMS text message, email,
+              WhatsApp or other channels was born out of convenience and
+              modernization, and continues to accelerate as eCommerce grows.
+            </Typography>
+          </div>
+          <div class="flex-1 flex justify-center relative">
+            <div class="">
+              <NuxtImg
+                  preload
+                  :src="`/img/payment_links_1_block.png`"
+                  alt="item.imageAlt"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <Typography size="heading-2" class="text-center mb-10">
-        Payment Links
-      </Typography>
-      <Typography size="heading-5" class="text-center mb-10">
-        Simple, fast and effective payments
-      </Typography>
-      <Typography class="text-center max-w-[575px] mx-auto">
-        The payment experience is faster and more convenient than ever. The
-        option to pay using a secure link sent via SMS text message, email,
-        WhatsApp or other channels was born out of convenience and
-        modernization, and continues to accelerate as eCommerce grows.
-      </Typography>
       <div
         class="mt-40 relative @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] bg-linear-to-b from-primary-100 to-white"
       >
@@ -35,7 +42,7 @@
               src="/img/payment_links_phone.png"
               alt="phone image with some text messages"
               class="absolute top-0 md:-top-30 left-1/2 max-md:-translate-x-1/2 md:left-0 w-full max-w-[326px] max-h-[620px] z-20"
-              format="webp"
+              format="png"
             />
           </div>
           <div class="w-full md:max-w-[648px] md:mt-39 md:px-20 py-13">

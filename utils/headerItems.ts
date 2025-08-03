@@ -33,7 +33,7 @@ export const headerItems: HeaderItem[] = [
       { label: 'Payment Links', link: '/payment-links' },
       { label: 'Fraud Management', link: '/froud-management' },
       { label: 'Chargeback Management', link: '/chargeback' },
-      { label: 'PCI and ASV Scanning', link: 'https://pci.qashpay.com/' },
+      { label: 'PCI and ASV Scanning', link: '/pci' },
     ],
   },
   {

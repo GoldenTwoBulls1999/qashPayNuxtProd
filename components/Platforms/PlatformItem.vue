@@ -17,7 +17,7 @@
       <NuxtImg :src="`/img/${image}.png`" :alt="imageTitle"
         class="max-h-[60px] w-auto object-contain max-w-[172px] h-[60px]" :class="{
           'max-h-[80px] h-[80px]': title === 'SFCC',
-        }" loading="lazy" format="webp" />
+        }" loading="lazy" format="png" />
     </div>
     <Typography class="text-center text-primary-200">{{ title }}</Typography>
   </div>

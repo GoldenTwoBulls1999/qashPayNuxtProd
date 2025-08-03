@@ -9,7 +9,7 @@
         width="146"
         class="mb-15 mr-12 min-w-[146px]"
         loading="lazy"
-        format="webp"
+        format="png"
       />
 
       <div class="flex flex-col max-md:row-start-2">

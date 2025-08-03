@@ -60,7 +60,7 @@
           :src="`/img/${item.image}.png`"
           :alt="item.imageAlt"
           class="w-full mb-4 mb-7"
-          format="webp"
+          format="png"
           preload
         />
         <Typography weight="medium" class="mb-4 leading-body-normal">

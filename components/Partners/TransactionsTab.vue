@@ -6,7 +6,7 @@
         src="/img/partner_tab_1.png"
         alt="item.imageAlt"
         class="w-full md:max-w-[610px] md:-ml-10"
-        format="webp"
+        format="png"
       />
     </div>
 

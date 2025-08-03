@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@vee-validate/nuxt',
     'nuxt-swiper',
+    '@nuxtjs/turnstile'
   ],
   plugins: ['~/plugins/gsap.client'],
   devtools: { enabled: true },
@@ -91,6 +92,16 @@ export default defineNuxtConfig({
         async: true,
         tagPosition: 'bodyClose',
       },
+    },
+  },
+  turnstile: {
+    siteKey: process.env["TURNSTILE_SITE_KEY"],
+  },
+  runtimeConfig: {
+    turnstile: {
+      // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
+      // environment variable.
+      secretKey: process.env["TURNSTILE_SECRET_KEY"],
     },
   },
 })

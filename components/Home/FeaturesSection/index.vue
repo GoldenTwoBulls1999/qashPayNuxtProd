@@ -16,7 +16,7 @@
             alt="Girl with phone"
             class="w-full rounded-[20px]"
             loading="lazy"
-            format="webp"
+            format="png"
           />
           <div
             class="bg-white absolute z-20 inset-x-0 bottom-0 mx-16 rounded-[20px] px-11 py-6 flex justify-between items-center -translate-y-[47px]"
@@ -45,7 +45,7 @@
       <div class="flex flex-col gap-12 md:flex-row md:gap-50 md:items-center">
         <div class="w-full relative md:max-w-[488px]">
           <img
-            src="/img/home_features_2.gif"
+            src="/img/home_features_2.png"
             alt="globe animation"
             class="w-full rounded-[20px]"
             loading="lazy"

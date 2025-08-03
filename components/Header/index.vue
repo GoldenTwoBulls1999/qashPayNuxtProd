@@ -9,7 +9,7 @@
           src="/img/logo.png"
           alt="Qashpay Logo"
           width="118"
-          format="webp"
+          format="png"
         />
       </NuxtLink>
 

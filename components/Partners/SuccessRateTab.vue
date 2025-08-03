@@ -6,7 +6,7 @@
         src="/img/partner_tab_2.png"
         alt="item.imageAlt"
         class="w-full md:max-w-[610px] md:-ml-10"
-        format="webp"
+        format="png"
       />
     </div>
     <div class="flex-1 flex flex-col px-10 md:mt-25 md:pr-10 md:pl-0">

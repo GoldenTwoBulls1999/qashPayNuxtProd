@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute mt-3 px-6 py-10 flex flex-col gap-8 w-full bg-white shadow-dropdown rounded-app-big z-50"
+    class="absolute mt-3 px-6 py-10 flex flex-col gap-8 w-full bg-white shadow-dropdown rounded-app-big z-50 max-h-50"
     :style="{ maxHeight: maxHeight + 'px' }"
   >
     <div v-if="withSearch || optionsTitle" class="flex flex-col gap-4 mx-6">
@@ -24,7 +24,7 @@
 
     <div
       v-if="filteredOptions.length !== 0"
-      class="scrollbar-hide flex-1 overflow-y-auto flex flex-col gap-2"
+      class="scrollbar-custom flex-1 overflow-y-auto flex flex-col gap-2"
     >
       <DropdownItem
         v-for="(option, index) in filteredOptions"
@@ -83,4 +83,17 @@ const handleSelect = (item: string) => {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+.scrollbar-custom {
+  scrollbar-width: thin;
+}
+/*
+.scrollbar-custom::-webkit-scrollbar {
+  background: #ffe5f2;
+  border-radius: 10px;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #ffc1e0;
+  border-radius: 10px;
+}
+*/
 </style>

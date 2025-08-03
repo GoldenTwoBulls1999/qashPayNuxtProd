@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex gap-18">
+  <div class="w-full flex gap-18 items-start">
     <div class="md:flex md:flex-col md:justify-between">
       <Typography
         size="heading-2"
@@ -28,11 +28,12 @@
           >
             <Typography
               size="body-normal"
-              class="font-feature leading-100 mt-1"
+              class="leading-100 mt-1 w-[19px]"
+              :class="{'text-text-gray': !isOpen(index)}"
             >
               {{ formatIndex(index + 1) }}
             </Typography>
-            <Typography size="heading-6" class="leading-100">
+            <Typography size="heading-6" class="leading-100" :class="{'text-text-gray': !isOpen(index)}">
               {{ item.title }}
             </Typography>
           </button>
@@ -46,7 +47,7 @@
             <div v-show="isOpen(index)">
               <Typography
                 size="body-normal"
-                class="text-text-gray pt-8 pb-12 md:pb-15"
+                class="text-text-gray pt-8 pb-12 md:pb-15 pl-20"
               >
                 {{ item.content }}
               </Typography>
@@ -55,11 +56,11 @@
                 :class="'background-' + items[activeIndex].index"
               >
                 <NuxtImg
-                  :src="`/img/${items[activeIndex].image}.png`"
-                  :alt="items[activeIndex].imageAlt"
+                  :src="`/img/${item.image}.png`"
+                  :alt="item.imageAlt"
                   class="w-full md:hidden pt-8 pb-18"
                   loading="lazy"
-                  format="webp"
+                  format="png"
                 />
               </div>
             </div>
@@ -75,31 +76,17 @@
       class="hidden w-full md:flex justify-end items-center min-w-1/2 min-[875px]:min-w-[488px] rounded-xl"
       :class="'background-' + items[activeIndex].index"
     >
-      <div :class="activeIndex !== 0 ? 'hidden' : ''">
+      <div
+           v-for="(item, index) in items"
+           :key="index"
+           :class="activeIndex !== index ? 'hidden' : ''"
+      >
         <NuxtImg
-          :src="`/img/${items[activeIndex].image}.png`"
-          :alt="items[activeIndex].imageAlt"
+          :src="`/img/${item.image}.png`"
+          :alt="item.imageAlt"
           class="w-full max-w-[488px] block rounded-[20px]"
           loading="lazy"
-          format="webp"
-        />
-      </div>
-      <div :class="activeIndex !== 1 ? 'hidden' : ''">
-        <NuxtImg
-          :src="`/img/${items[activeIndex].image}.png`"
-          :alt="items[activeIndex].imageAlt"
-          class="w-full max-w-[488px] block rounded-[20px]"
-          format="webp"
-          loading="lazy"
-        />
-      </div>
-      <div :class="activeIndex !== 2 ? 'hidden' : ''">
-        <NuxtImg
-          :src="`/img/${items[activeIndex].image}.png`"
-          :alt="items[activeIndex].imageAlt"
-          class="w-full max-w-[488px] block rounded-[20px]"
-          format="webp"
-          loading="lazy"
+          format="png"
         />
       </div>
     </div>
@@ -137,11 +124,17 @@ const beforeEnter = (el: Element) => {
 const enter = (el: Element) => {
   const accordionItem = el as HTMLElement
   accordionItem.style.height = el.scrollHeight + 'px'
+  setTimeout(() => {
+    accordionItem.style.height = 'auto'
+  }, 250)
 }
 
 const beforeLeave = (el: Element) => {
   const accordionItem = el as HTMLElement
   accordionItem.style.height = el.scrollHeight + 'px'
+  setTimeout(() => {
+    accordionItem.style.height = 'auto'
+  }, 250)
 }
 
 const leave = (el: Element) => {
