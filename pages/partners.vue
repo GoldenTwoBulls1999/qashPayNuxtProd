@@ -5,7 +5,7 @@
     <div class="w-full max-h-fit flex flex-col">
       <PartnersVideo />
       <div
-        class="flex flex-col items-center bg-radial bg-radial-[ellipse_50%_50%_at_50%_100%] from-gray-200/20 to-white mb-30"
+        class="flex flex-col items-center bg-radial bg-radial-[ellipse_50%_50%_at_50%_100%] from-gray-200/20 to-white my-30"
       >
         <Typography size="heading-2" class="text-center mb-10">
           Become a Partner with QashPay
@@ -13,13 +13,12 @@
         <Typography size="heading-5" class="text-center mb-30">
           Partner with best in class agent tools
         </Typography>
-        <AppButton class="mb-36" color="black">Become partner</AppButton>
+        <AppButton class="mb-36" color="black" to="#become-partner"
+          >Become partner</AppButton
+        >
       </div>
       <div class="flex flex-col mb-40">
-        <Typography
-          size="heading-4"
-          class="text-center pb-20"
-        >
+        <Typography size="heading-4" class="text-center pb-20">
           Types of Partners we work with
         </Typography>
         <div class="flex gap-20 flex-col md:flex-row">
@@ -29,17 +28,15 @@
               alt="Independent Sales Organisation (ISO)"
               class="size-41 bg-transparent p-0 mb-5"
             />
-            <Typography
-              weight="medium"
-              class="text-xl mb-[22px] h-[2.8em]"
-            >
+            <Typography weight="medium" class="text-xl mb-[22px] h-[2.8em]">
               Independent Sales Organisation (ISO)
             </Typography>
-            <Typography
-              weight="normal"
-              class="text-base"
-            >
-              Payment Gateways or other PSPs partner for access to our online tools to provide 1st level support. Best in class for onboarding with MIDs arriving within an hour, modern KYC and KYB electronic verification, transaction analytic data to manage merchants with chargeback ratios, success rates etc.
+            <Typography weight="normal" class="text-base">
+              Payment Gateways or other PSPs partner for access to our online
+              tools to provide 1st level support. Best in class for onboarding
+              with MIDs arriving within an hour, modern KYC and KYB electronic
+              verification, transaction analytic data to manage merchants with
+              chargeback ratios, success rates etc.
             </Typography>
           </div>
           <div class="flex-1 flex flex-col">
@@ -48,17 +45,14 @@
               alt="Referral Agent"
               class="size-41 bg-transparent p-0 mb-5"
             />
-            <Typography
-              weight="medium"
-              class="text-xl mb-[22px] h-[2.8em]"
-            >
+            <Typography weight="medium" class="text-xl mb-[22px] h-[2.8em]">
               Referral Agent
             </Typography>
-            <Typography
-              weight="normal"
-              class="text-base"
-            >
-              Earn lucrative commissions by referring your interested merchants. QashPay handles all onboarding and account management. Submit lead via the Agent Portal. See application statuses and real-time commissions online built for desktop and mobile device.
+            <Typography weight="normal" class="text-base">
+              Earn lucrative commissions by referring your interested merchants.
+              QashPay handles all onboarding and account management. Submit lead
+              via the Agent Portal. See application statuses and real-time
+              commissions online built for desktop and mobile device.
             </Typography>
           </div>
           <div class="flex-1 flex flex-col">
@@ -67,17 +61,16 @@
               alt="Integrated Software Vendors (ISV)"
               class="size-41 bg-transparent p-0 mb-5"
             />
-            <Typography
-              weight="medium"
-              class="text-xl mb-[22px] h-[2.8em]"
-            >
-              Integrated Software<br>Vendors (ISV)
+            <Typography weight="medium" class="text-xl mb-[22px] h-[2.8em]">
+              Integrated Software<br />Vendors (ISV)
             </Typography>
-            <Typography
-              weight="normal"
-              class="text-base"
-            >
-              Integrate payments into your software applications and offer your users a global payments solution. QashPay provides your users with seamless onboarding and account management while you earn revenue from the transaction. Submit potential merchants via API, Affiliate weblinks and an embedded enquiring form. Transparency on commissions.
+            <Typography weight="normal" class="text-base">
+              Integrate payments into your software applications and offer your
+              users a global payments solution. QashPay provides your users with
+              seamless onboarding and account management while you earn revenue
+              from the transaction. Submit potential merchants via API,
+              Affiliate weblinks and an embedded enquiring form. Transparency on
+              commissions.
             </Typography>
           </div>
         </div>
@@ -98,13 +91,15 @@
         </Typography>
 
         <Accordion :items="partnersAccordionItems" />
-
       </div>
       <div class="flex flex-col items-center mb-40">
         <Typography size="heading-4" class="text-center mb-10">
           Partner Onboarding App
         </Typography>
-        <Typography size="body-large" class="max-w-[648px] text-center mb-20 max-w-[648px] mx-auto">
+        <Typography
+          size="body-large"
+          class="max-w-[648px] text-center mb-20 max-w-[648px] mx-auto"
+        >
           Agent Portal is a real-time dashboard that provides data sets required
           to monitor at the agent, acquirer, scheme and merchant levels.
         </Typography>
@@ -118,7 +113,9 @@
               format="png"
             />
           </div>
-          <div class="flex flex-col min-[875px]:mt-25 min-[875px]:pr-10">
+          <div
+            class="flex flex-col min-[875px]:mt-25 min-w-[250px] min-[875px]:max-w-[300px] min-[875px]:pr-10"
+          >
             <Typography class="mb-11">
               Our onboarding process performs most of the heavy lifting required
               in a very time-consuming process.
@@ -141,6 +138,24 @@
                 </Typography>
               </li>
             </ul>
+            <div class="flex gap-8 mt-20">
+              <AppButton class="!px-0 !py-0 w-fit max-w-[115px]">
+                <NuxtImg
+                  preload
+                  src="/img/appstore.png"
+                  class="h-full"
+                  format="png"
+                />
+              </AppButton>
+              <AppButton class="!px-0 !py-0 w-fit max-w-[115px]">
+                <NuxtImg
+                  preload
+                  src="/img/googleplay.png"
+                  class="h-full"
+                  format="png"
+                />
+              </AppButton>
+            </div>
           </div>
         </div>
       </div>
@@ -154,6 +169,6 @@
 import Testimonials from '~/components/Partners/Testimonials.vue'
 import BecomePartnerForm from '~/components/Partners/BecomePartnerForm/index.vue'
 import PartnersVideo from '~/components/Partners/Video.vue'
-import Accordion from '~/components/Accordion.vue'
+import Accordion from '~/components/AppAccordion.vue'
 import { partnersAccordionItems } from '~/utils/partnersAccordionItems'
 </script>

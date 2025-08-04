@@ -13,5 +13,5 @@ export const becomePartnerFormSchema = z.object({
     .min(1, 'Please enter a valid phone number.')
     .regex(/^\d+$/, 'Phone number must contain only digits.')
     .transform((val) => Number(val)),
-  individualCheck: z.boolean().default(true),
+  individualCheck: z.boolean().default(false),
 })

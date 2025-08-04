@@ -1,6 +1,9 @@
 <template>
   <section class="w-full pb-100">
-    <div class="flex flex-col gap-10 md:items-center" style="margin-bottom: calc(var(--blocks-gap) / 2)">
+    <div
+      class="flex flex-col gap-10 md:items-center"
+      style="margin-bottom: calc(var(--blocks-gap) / 2)"
+    >
       <Typography size="heading-2">Win more customers</Typography>
       <Typography size="heading-5">
         By letting them pay their way &ndash; wherever they are
@@ -25,7 +28,7 @@
               formatBalance(400, 'EUR')
             }}</Typography>
             <div class="rounded-full px-6 py-2 bg-[#DFDEFF]">
-              <Typography size="body-normal">€EUR</Typography>
+              <Typography size="body-normal">€ EUR</Typography>
             </div>
           </div>
         </div>
@@ -60,7 +63,12 @@
             Make it easy for customers to pay in their own currency, for
             smoother checkouts and fewer drop-offs.
           </Typography>
-          <AppButton to="#" variant="text">Learn more</AppButton>
+          <AppButton
+            :to="{ path: '/merchant-account', hash: '#world_map' }"
+            variant="text"
+          >
+            Learn more
+          </AppButton>
         </div>
       </div>
       <FeaturesAccordion :items="accordionItems" />

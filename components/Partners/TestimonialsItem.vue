@@ -10,7 +10,7 @@
         <Typography size="body-large" weight="medium">
           {{ item.author }},
         </Typography>
-        <Typography size="body-large" class="leading-[1] mt-3">{{
+        <Typography size="body-large" class="leading-[1] mt-3 min-h-[30px]">{{
           item.authorPosition
         }}</Typography>
       </div>
@@ -39,6 +39,7 @@
       />
     </div>
     <AppButton
+      id="become-partner"
       variant="text"
       :underline="false"
       class="uppercase text-secondary-500 text-body-normal max-w-fit mt-20"

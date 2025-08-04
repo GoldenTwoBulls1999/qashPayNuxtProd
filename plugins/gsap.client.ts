@@ -1,4 +1,3 @@
-import { defineNuxtPlugin } from '#app'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 

@@ -1,15 +1,6 @@
 <template>
   <div class="w-full flex gap-18 items-start">
     <div class="md:flex md:flex-col md:justify-between">
-      <Typography
-        size="heading-2"
-        weight="medium"
-        class="mb-app-default md:mb-40"
-      >
-        <span class="font-light">Go live in</span>
-        <br />
-        3 simple steps
-      </Typography>
       <div>
         <div
           v-for="(item, index) in items"
@@ -29,32 +20,41 @@
             <Typography
               size="body-normal"
               class="leading-100 mt-1 w-[19px]"
-              :class="{'text-text-gray': !isOpen(index)}"
+              :class="{ 'text-text-gray': !isOpen(index) }"
             >
               {{ formatIndex(index + 1) }}
             </Typography>
-            <Typography size="heading-6" class="leading-100" :class="{'text-text-gray': !isOpen(index)}">
+            <Typography
+              size="heading-6"
+              class="leading-100"
+              :class="{ 'text-text-gray': !isOpen(index) }"
+            >
               {{ item.title }}
             </Typography>
           </button>
           <Transition
             name="accordion"
-            v-on:before-enter="beforeEnter"
-            v-on:enter="enter"
-            v-on:before-leave="beforeLeave"
-            v-on:leave="leave"
+            @before-enter="beforeEnter"
+            @enter="enter"
+            @before-leave="beforeLeave"
+            @leave="leave"
           >
             <div v-show="isOpen(index)">
-              <Typography
-                size="body-normal"
-                class="text-text-gray pt-8 pb-12 md:pb-15 pl-20"
-              >
-                {{ item.content }}
-              </Typography>
               <div
-                class="w-full rounded-xl"
-                :class="'background-' + items[activeIndex].index"
+                size="body-normal"
+                class="text-text-gray pt-8 pb-12 md:pb-15 pl-20 leading-[1.5]"
+                v-html="item.content"
+              />
+              <AppButton
+                v-show="item.to"
+                variant="text"
+                :underline="false"
+                class="!pt-8 !pb-12 md:!pb-15 !pl-20 text-left text-secondary-500 cursor-pointer"
+                :to="item.to?.link"
               >
+                {{ item.to?.title }}
+              </AppButton>
+              <div class="w-full rounded-xl">
                 <NuxtImg
                   preload
                   :src="`/img/${item.image}.png`"
@@ -67,25 +67,24 @@
           </Transition>
         </div>
       </div>
-      <AppButton to="/quote-request" class="max-md:w-full mt-29" color="black">
-        Get your instant quote
-      </AppButton>
     </div>
 
     <div
       class="hidden w-full md:flex justify-end items-center min-w-1/2 min-[875px]:min-w-[488px] rounded-xl"
-      :class="'background-' + items[activeIndex].index"
     >
       <div
-           v-for="(item, index) in items"
-           :key="index"
-           :class="activeIndex !== index ? 'hidden' : ''"
+        v-for="(item, index) in items"
+        :key="index"
+        :class="activeIndex !== index ? 'hidden' : ''"
       >
         <NuxtImg
           preload
           :src="`/img/${item.image}.png`"
           :alt="item.imageAlt"
-          class="w-full max-w-[488px] block rounded-[20px]"
+          class="w-full max-w-[488px] block"
+          :class="{
+            'drop-shadow-[0px_4px_14px_rgba(10,10,10,0.14)]': item.withShadow,
+          }"
           format="png"
         />
       </div>
@@ -102,6 +101,11 @@ interface AccordionItem {
   image: string
   imageAlt: string
   index: number
+  withShadow?: boolean
+  to?: {
+    title: string
+    link: string
+  }
 }
 
 defineProps<{
@@ -144,10 +148,6 @@ const leave = (el: Element) => {
 </script>
 
 <style scoped>
-.font-feature {
-  font-feature-settings: 'zero' on;
-}
-
 .accordion-enter-active,
 .accordion-leave-active {
   transition: all 0.25s ease-out;
@@ -161,17 +161,5 @@ const leave = (el: Element) => {
 .accordion-leave-to {
   opacity: 0;
   transform: translateY(-30px);
-}
-
-.background-0 {
-  background-color: var(--color-simple-step-1);
-}
-
-.background-1 {
-  background-color: var(--color-simple-step-2);
-}
-
-.background-2 {
-  background-color: var(--color-simple-step-3);
 }
 </style>

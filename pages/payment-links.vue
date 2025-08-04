@@ -13,18 +13,18 @@
               Simple, fast and effective payments
             </Typography>
             <Typography class="text-start max-w-[575px] mx-auto">
-              The payment experience is faster and more convenient than ever. The
-              option to pay using a secure link sent via SMS text message, email,
-              WhatsApp or other channels was born out of convenience and
+              The payment experience is faster and more convenient than ever.
+              The option to pay using a secure link sent via SMS text message,
+              email, WhatsApp or other channels was born out of convenience and
               modernization, and continues to accelerate as eCommerce grows.
             </Typography>
           </div>
           <div class="flex-1 flex justify-center relative">
             <div class="">
               <NuxtImg
-                  preload
-                  :src="`/img/payment_links_1_block.png`"
-                  alt="item.imageAlt"
+                preload
+                :src="`/img/payment_links_1_block.png`"
+                alt="item.imageAlt"
               />
             </div>
           </div>
@@ -162,10 +162,11 @@
       </Typography>
       <Typography class="text-center max-w-[658px] mx-auto mb-20">
         Merchants and customers can rest assured that QashPay is secure and is
-        considered a PCI DSS-compliant method of taking payments.
+        considered a <span class="text-nowrap">PCI DSS-compliant</span> method
+        of taking payments.
       </Typography>
       <div class="flex items-center justify-center">
-        <AppButton to="#">Learn more</AppButton>
+        <AppButton to="#" color="black">Learn more</AppButton>
       </div>
     </div>
   </section>

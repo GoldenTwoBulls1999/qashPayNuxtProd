@@ -5,6 +5,7 @@
   >
     <div v-if="withSearch || categoryTitle" class="flex flex-col gap-4 mx-6">
       <AppInput
+        name="searchInput"
         v-if="withSearch"
         v-model="searchInput"
         :placeholder="searchPlaceholder"

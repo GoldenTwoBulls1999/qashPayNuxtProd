@@ -1,23 +1,15 @@
 <template>
   <div
-    class="group w-full mx-auto flex justify-center items-center rounded-app-big bg-secondary-300 mb-38 overflow-hidden relative"
+    class="group w-full mx-auto flex justify-center items-center rounded-app-big overflow-hidden relative"
   >
-    <video ref="video" class="w-full mx-auto"/>
+    <video ref="video" class="w-full mx-auto" />
     <button
-        type="button"
-        class="absolute bottom-4 right-4 w-[32px] h-[32px] bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition"
-        @click.stop="muted = !muted"
+      type="button"
+      class="absolute bottom-4 right-4 w-[32px] h-[32px] bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition"
+      @click.stop="muted = !muted"
     >
-      <Icon
-          v-if="muted"
-          mode="svg"
-          name="app-icon:mute"
-      />
-      <Icon
-          v-if="!muted"
-          mode="svg"
-          name="app-icon:unmute"
-      />
+      <Icon v-if="muted" mode="svg" name="app-icon:mute" />
+      <Icon v-if="!muted" mode="svg" name="app-icon:unmute" />
     </button>
   </div>
 </template>

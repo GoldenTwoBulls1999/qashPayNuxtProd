@@ -4,9 +4,7 @@
     class="trigger pt-80 pb-80 w-full max-md:pt-58 relative"
   >
     <div ref="title">
-      <Typography size="heading-3" weight="medium" class="text-center">
-        <span class="font-light">Choose your</span> checkout method
-      </Typography>
+      <slot />
     </div>
     <div class="w-full flex flex-col gap-40 mt-32">
       <CheckoutItem

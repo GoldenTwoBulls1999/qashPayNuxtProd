@@ -37,14 +37,14 @@ onMounted(async () => {
 
 const sortedPaymentMethods = (paymentMethods: string[]) => {
   return paymentMethods.sort((a, b) => {
-    const indexA = paymentMethodsOrder.indexOf(a);
-    const indexB = paymentMethodsOrder.indexOf(b);
+    const indexA = paymentMethodsOrder.indexOf(a)
+    const indexB = paymentMethodsOrder.indexOf(b)
 
-    const posA = indexA === -1 ? Number.MAX_VALUE : indexA;
-    const posB = indexB === -1 ? Number.MAX_VALUE : indexB;
+    const posA = indexA === -1 ? Number.MAX_VALUE : indexA
+    const posB = indexB === -1 ? Number.MAX_VALUE : indexB
 
-    return posA - posB;
-  });
+    return posA - posB
+  })
 }
 </script>
 
@@ -54,9 +54,7 @@ const sortedPaymentMethods = (paymentMethods: string[]) => {
       <AppSelect v-model="selected" label="" :options="formattedCountries">
         <template v-if="selected" #selected>
           <div class="flex items-center gap-8">
-            <div
-              class="w-16 h-10.5 rounded overflow-hidden"
-            >
+            <div class="w-16 h-10.5 rounded overflow-hidden">
               <span
                 class="w-full! bg-cover! h-full"
                 :class="`fi fi-${selected}`"
@@ -72,25 +70,35 @@ const sortedPaymentMethods = (paymentMethods: string[]) => {
           </div>
         </template>
       </AppSelect>
-      <div v-if="paymentMethods.length" class="mt-[38px] border border-gray-300 bg-white rounded-md shadow-sm absolute w-full md:w-[305px]">
-        <div>
+      <div
+        v-if="paymentMethods.length"
+        class="mt-[38px] border border-gray-300 bg-white rounded-md shadow-sm absolute w-full md:w-[305px]"
+      >
+        <div class="relative">
           <div
-            v-for="(method, index) in (isExpanded ? sortedPaymentMethods(paymentMethods) : sortedPaymentMethods(paymentMethods).slice(0, 5))"
+            v-for="(method, index) in isExpanded ?
+              sortedPaymentMethods(paymentMethods)
+            : sortedPaymentMethods(paymentMethods).slice(0, 6)"
             :key="index"
-            :class="[
-              'border-b-1 px-8 py-7',
-              'border-gray-300'
-            ]"
+            class="border-b-1 px-8 py-7 border-gray-300"
+            :class="{
+              'max-h-8 overflow-hidden': !isExpanded && index === 5,
+            }"
           >
-            <PaymentMethod :methodName="method" />
+            <PaymentMethod :method-name="method" />
           </div>
+          <div
+            v-if="!isExpanded"
+            class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none"
+          />
         </div>
         <AppButton
-            v-if="paymentMethods.length > 5"
-            variant="text"
-            :underline="false"
-            class="uppercase text-secondary-500 text-body-normal max-w-fit m-8"
-            @click="isExpanded = !isExpanded"
+          v-if="paymentMethods.length > 5"
+          variant="text"
+          :underline="false"
+          class="uppercase text-secondary-500 text-body-normal p-8! w-full justify-start"
+          :class="isExpanded ? 'pt-8!' : 'pt-2!'"
+          @click="isExpanded = !isExpanded"
         >
           {{ isExpanded ? 'Hide' : 'Show all methods' }}
         </AppButton>

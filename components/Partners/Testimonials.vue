@@ -2,7 +2,15 @@
   <div
     class="relative mt-18 max-[992px]:-mx-10 min-[992px]:-mx-[calc((100vw-992px)/2)]"
   >
-    <Typography size="heading-4" class="text-center"><span class="relative">Testimonials <span class="absolute bg-gray-300 text-white size-11 text-xs text-center rounded-full leading-11 top-[-0.4em] right-[-1.8em]">{{ testimonials.length }}</span></span></Typography>
+    <Typography size="heading-4" class="text-center"
+      ><span class="relative"
+        >Testimonials
+        <span
+          class="absolute bg-gray-300 text-white size-11 text-xs text-center rounded-full leading-11 top-[-0.4em] right-[-1.8em]"
+          >{{ testimonials.length }}</span
+        ></span
+      ></Typography
+    >
     <div
       ref="swiperContainer"
       class="flex justify-center max-w-full mt-20 px-10"

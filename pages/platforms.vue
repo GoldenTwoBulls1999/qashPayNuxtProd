@@ -1,36 +1,57 @@
 <template>
   <section
-    class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center @container/main"
+    class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] @container/main"
   >
-    <div class="w-full max-h-fit flex flex-col">
-      <div class="mb-30 min-[1300px]:max-w-[calc(992px)]">
-        <div class="flex flex-col-reverse md:flex-row items-center h-full">
+    <div
+      class="flex gap-19 -mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] px-10 @min-[992px]/main:pl-[calc((100vw-992px)/2)] bg-radial bg-radial-[ellipse_70%_102%_at_50%_100%] from-[#F9F8FF] to-white my-30"
+    >
+      <div
+        class="flex flex-col md:justify-center w-full min-[1300px]:max-w-1/2"
+      >
+        <div class="mt-24">
           <div class="flex-1 flex-col">
             <Typography size="heading-2" class="text-start mb-16">
               What are Shop Plugins?
             </Typography>
             <Typography
-                size="body-large"
-                class="text-start text-primary-400 max-w-[648px] mx-auto mb-40"
+              size="body-large"
+              class="text-start text-primary-400 max-w-[648px] mr-auto mb-40"
             >
               Shop plugins are software components that add specific features or
               functionalities to e-commerce platforms. They enable merchants to
-              enhance their online stores without extensive technical development,
-              allowing merchants to integrate payment capabilities seamlessly into
-              their existing e-commerce shop systems.
+              enhance their online stores without extensive technical
+              development, allowing merchants to integrate payment capabilities
+              seamlessly into their existing e-commerce shop systems.
             </Typography>
           </div>
-          <div class="flex-1 flex justify-center relative">
-            <div class="">
-              <NuxtImg
-                  preload
-                  :src="`/img/platforms_1_block.png`"
-                  alt="item.imageAlt"
-              />
-            </div>
+        </div>
+        <div class="mt-12 -mr-10 block md:hidden">
+          <div
+            class="w-full relative flex justify-center @min-[992px]/main:block"
+          >
+            <NuxtImg
+              preload
+              src="/img/platforms_1_block.png"
+              alt="Qashpay payment on desktop"
+              class="max-h-[392px]"
+              format="png"
+            />
           </div>
         </div>
       </div>
+      <div class="mt-12 hidden md:block w-full 2xl:max-w-1/2">
+        <div class="w-full">
+          <NuxtImg
+            preload
+            src="/img/platforms_1_block.png"
+            alt="Qashpay payment on desktop"
+            class="max-h-[392px]"
+            format="png"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="w-full max-h-fit flex flex-col">
       <div
         class="mb-40 px-10 relative @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)]"
       >

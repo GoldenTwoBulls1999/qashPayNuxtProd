@@ -11,9 +11,9 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@vee-validate/nuxt',
     'nuxt-swiper',
-    '@nuxtjs/turnstile'
+    '@nuxtjs/turnstile',
   ],
-  plugins: ['~/plugins/gsap.client'],
+  plugins: ['~/plugins/gsap.client', '~/plugins/overlayscrollbars.client'],
   devtools: { enabled: true },
   css: [
     '~/assets/css/main.css',
@@ -22,6 +22,11 @@ export default defineNuxtConfig({
     'flag-icons/css/flag-icons.min.css',
   ],
   compatibilityDate: '2025-05-15',
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
+    },
+  },
   app: {
     head: {
       link: [
@@ -95,13 +100,13 @@ export default defineNuxtConfig({
     },
   },
   turnstile: {
-    siteKey: process.env["TURNSTILE_SITE_KEY"],
+    siteKey: process.env['TURNSTILE_SITE_KEY'],
   },
   runtimeConfig: {
     turnstile: {
       // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
       // environment variable.
-      secretKey: process.env["TURNSTILE_SECRET_KEY"],
+      secretKey: process.env['TURNSTILE_SECRET_KEY'],
     },
   },
 })

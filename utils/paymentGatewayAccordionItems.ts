@@ -4,6 +4,7 @@ export const paymentGatewayAccordionItems = [
     title: 'Plugin Ready',
     image: 'payment_gateway_tab_1',
     imageAlt: '',
+    to: { title: 'Learn more about Plugins', link: '/platforms' },
     content:
       '<div class="max-md:text-mobile-body-normal">\n' +
       '        Connect to top eCommerce platforms and access advanced payment and\n' +
@@ -25,20 +26,17 @@ export const paymentGatewayAccordionItems = [
       '            Improve the checkout experience\n' +
       '          </span>\n' +
       '        </li>\n' +
-      '      </ul>\n' +
-      '      <button\n' +
-      '        variant="text"\n' +
-      '        :underline="false"\n' +
-      '        class="mt-20 text-left text-secondary-500 !font-medium cursor-pointer"\n' +
-      '      >\n' +
-      '        Learn more about Plugins\n' +
-      '      </button>',
+      '      </ul>',
   },
   {
     index: 1,
     title: 'Fraud Prevention',
     image: 'payment_gateway_tab_2',
     imageAlt: '',
+    to: {
+      title: 'Learn more about Fraud Prevention',
+      link: '/fraud-management',
+    },
     content:
       '<div class="max-md:text-mobile-body-normal">\n' +
       '        Protect your customers and reduce false positives with fast, automated\n' +
@@ -64,20 +62,14 @@ export const paymentGatewayAccordionItems = [
       '      <div class="max-md:text-mobile-body-normal">\n' +
       '        QashPay helps you stay ahead of evolving threats with intelligent,\n' +
       '        adaptive protection.\n' +
-      '      </div>\n' +
-      '      <button\n' +
-      '        variant="text"\n' +
-      '        :underline="false"\n' +
-      '        class="mt-20 text-left text-secondary-500 !font-medium cursor-pointer"\n' +
-      '      >\n' +
-      '        Learn more about Fraud Prevention\n' +
-      '      </button>',
+      '      </div>',
   },
   {
     index: 2,
     title: 'Pay by Link',
     image: 'payment_gateway_tab_3',
     imageAlt: '',
+    to: { title: 'Learn more about Pay by Link', link: '/payment-links' },
     content:
       '<div class="max-md:text-mobile-body-normal">\n' +
       '        Send one-click payment links or QR codes that lead customers directly to\n' +
@@ -100,13 +92,6 @@ export const paymentGatewayAccordionItems = [
       '            Reach more customers with ease\n' +
       '          </span>\n' +
       '        </li>\n' +
-      '      </ul>\n' +
-      '      <button\n' +
-      '        variant="text"\n' +
-      '        :underline="false"\n' +
-      '        class="mt-20 text-left text-secondary-500 !font-medium cursor-pointer"\n' +
-      '      >\n' +
-      '        Learn more about Pay by Link\n' +
-      '      </button>',
+      '      </ul>',
   },
 ]

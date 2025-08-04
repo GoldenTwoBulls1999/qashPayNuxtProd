@@ -4,6 +4,7 @@ export const partnersAccordionItems = [
     title: 'Transactions',
     image: 'partner_tab_1',
     imageAlt: '',
+    withShadow: true,
     content:
       '<div class="mb-11">\n' +
       '        View your commission to date and projected monthly revenue. Profit\n' +
@@ -30,6 +31,7 @@ export const partnersAccordionItems = [
     title: 'Success Rate',
     image: 'partner_tab_2',
     imageAlt: '',
+    withShadow: true,
     content:
       '<div class="mb-11">\n' +
       '        Take a proactive approach with your merchants.\n' +
@@ -65,9 +67,10 @@ export const partnersAccordionItems = [
     title: 'Chargebacks',
     image: 'partner_tab_3',
     imageAlt: '',
+    withShadow: true,
     content:
       '<div class="mb-11">\n' +
-      '        With Visa\'s launch of the VAMP program, managing your chargeback ratios\n' +
+      "        With Visa's launch of the VAMP program, managing your chargeback ratios\n" +
       '        is more crucial than ever for merchants.\n' +
       '      </div>\n' +
       '      <div class="mb-11">\n' +

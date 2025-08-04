@@ -28,10 +28,10 @@ export const headerItems: HeaderItem[] = [
     text: 'Find all of our Quaife products and how we can help your business accept more payments.',
     accentColorClass: 'bg-[#ffedf3]',
     items: [
-      { label: 'Merchant Account', link: '/payment-gateway' },
+      { label: 'Merchant Account', link: '/merchant-account' },
       { label: 'Platforms', link: '/platforms' },
       { label: 'Payment Links', link: '/payment-links' },
-      { label: 'Fraud Management', link: '/froud-management' },
+      { label: 'Fraud Management', link: '/fraud-management' },
       { label: 'Chargeback Management', link: '/chargeback' },
       { label: 'PCI and ASV Scanning', link: '/pci' },
     ],
@@ -44,7 +44,7 @@ export const headerItems: HeaderItem[] = [
     accentColorClass: 'bg-[#ededff]',
     items: [
       { label: 'API Documentation', link: '#' },
-      { label: 'Knoledgebase', link: '#' },
+      { label: 'Help Center', link: '#' },
       { label: 'Checkout  Guide', link: '/checkout-guide' },
       { label: 'Chargeback API', link: '#' },
     ],

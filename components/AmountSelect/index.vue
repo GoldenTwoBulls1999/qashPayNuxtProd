@@ -12,6 +12,7 @@
     </label>
     <div :id="amountSelectId">
       <AppInput
+        name="amount"
         v-model="amountModel"
         numeric
         :placeholder="placeholder"

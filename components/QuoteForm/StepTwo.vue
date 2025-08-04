@@ -21,6 +21,7 @@
         :error="errors?.monthlyTransactionVolumeAmount"
       />
       <AppInput
+        name="transactions"
         numeric
         placeholder="0"
         label="Monthly card transactions"
@@ -29,6 +30,7 @@
         :error="errors?.monthlyCardTransactions"
       />
       <AppInput
+        name="chargebacks"
         numeric
         placeholder="0"
         label="Monthly chargebacks"

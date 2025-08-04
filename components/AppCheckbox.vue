@@ -10,7 +10,7 @@
       :checked="checkboxModel === value"
     />
     <div
-      class="flex justify-center items-center transition-all duration-300 min-w-10 min-h-10 rounded-sm border-1 border-primary-400 bg-white bg-no-repeat bg-center hover:border-secondary-500"
+      class="flex justify-center items-center transition-all duration-300 min-w-10 min-h-10 rounded-sm border-1 border-primary-400 bg-white bg-no-repeat bg-center"
     >
       <Icon
         v-if="checkboxModel === value"

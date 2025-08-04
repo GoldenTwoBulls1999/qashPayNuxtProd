@@ -1,8 +1,10 @@
 <template>
   <div
-    class="mt-40 flex flex-col md:flex-row md:w-full max-md:-mx-10 md:rounded-app-big md:shadow-benefit max-md:bg-[url(/img/partners_background.png)] bg-cover border-[0.5px] border-gray-200">
+    class="mt-40 flex flex-col md:flex-row md:w-full max-md:-mx-10 md:rounded-app-big md:shadow-benefit max-md:bg-[url(/img/partners_background.png)] bg-cover border-[0.5px] border-gray-200"
+  >
     <div
-      class="md:rounded-tl-app-big md:rounded-bl-app-big md:min-w-1/2 flex justify-center pt-35 bg-[url(/img/partners_background.png)] bg-cover">
+      class="md:rounded-tl-app-big md:rounded-bl-app-big md:min-w-1/2 flex justify-center pt-35 bg-[url(/img/partners_background.png)] bg-cover"
+    >
       <Typography size="heading-2" weight="medium" class="max-md:text-center">
         Become a
         <br />
@@ -12,27 +14,61 @@
 
     <div class="md:min-w-1/2 md:bg-[#FEFEFE] px-20 pt-16 pb-22">
       <form class="flex flex-col gap-10 items-start">
-        <AppInput v-model="name" label="Name" class="max-md:border-primary-400" :is-error="isError('name')"
-          :error="errors?.name" />
-        <AppInput v-model="email" placeholder="example@email.com" label="Email" class="max-md:border-primary-400"
-          :is-error="isError('email')" :error="errors?.email" />
+        <AppInput
+          name="name"
+          v-model="name"
+          label="Name"
+          class="max-md:border-primary-400"
+          :is-error="isError('name')"
+          :error="errors?.name"
+        />
+        <AppInput
+          name="email"
+          v-model="email"
+          placeholder="example@email.com"
+          label="Email"
+          class="max-md:border-primary-400"
+          :is-error="isError('email')"
+          :error="errors?.email"
+        />
         <div class="w-full flex items-center gap-10">
-          <AppSelect v-model="areaCode" label="Area Code" class="min-w-65" :options="formattedAreaCodes"
-            :is-error="isError('areaCode')" :error="errors?.areaCode" />
-          <AppInput v-model="phoneNumber" label="Phone number" class="max-md:border-primary-400"
-            :is-error="isError('phoneNumber')" :error="errors?.phoneNumber" />
+          <AppSelect
+            v-model="areaCode"
+            label="Area Code"
+            class="min-w-65"
+            :options="formattedAreaCodes"
+            :is-error="isError('areaCode')"
+            :error="errors?.areaCode"
+          />
+          <AppInput
+            name="phoneNumber"
+            v-model="phoneNumber"
+            label="Phone number"
+            class="max-md:border-primary-400"
+            :is-error="isError('phoneNumber')"
+            :error="errors?.phoneNumber"
+          />
         </div>
-        <div class="w-full flex flex-col md:flex-row md:items-center justify-between">
-          <AppCheckbox v-model="individualCheck" :value="true" name="is_checked">
+        <div
+          class="w-full flex flex-col md:flex-row md:items-center justify-between mt-10 mb-22"
+        >
+          <AppCheckbox
+            v-model="individualCheck"
+            :value="true"
+            name="is_checked"
+          >
             <Typography class="text-primary-400">I'm individual</Typography>
           </AppCheckbox>
           <AppButton class="max-md:w-full" @click="onSubmit" color="black">
             Become a Partner
           </AppButton>
         </div>
-        <div class="flex flex-row">
-          <Typography>Please verify that you are human<span class="text-red-500"> *</span></Typography>
-          <NuxtTurnstile v-model="token" />
+        <div class="captcha flex flex-col w-full">
+          <Typography>
+            Please verify that you are human
+            <span class="text-red-500"> * </span>
+          </Typography>
+          <NuxtTurnstile v-model="token" :options="{ theme: 'light' }" />
         </div>
       </form>
     </div>
@@ -47,10 +83,18 @@ import { countries } from '~/utils/countries'
 import { becomePartnerFormSchema } from '~/components/Partners/BecomePartnerForm/schemas'
 import type { BecomePartnerFormFieldName } from '~/components/Partners/BecomePartnerForm/types'
 import AppCheckbox from '~/components/AppCheckbox.vue'
+import type { Lookup } from 'geoip-country'
 
 const state = useQuoteRequestState()
 
-const { handleSubmit, values, errors, submitCount, defineField } = useForm({
+const {
+  setFieldValue,
+  handleSubmit,
+  values,
+  errors,
+  submitCount,
+  defineField,
+} = useForm({
   validationSchema: toTypedSchema(becomePartnerFormSchema),
   initialValues: state.value,
 })
@@ -73,6 +117,17 @@ watch(
   },
   { deep: true }
 )
+
+onMounted(async () => {
+  const country = await $fetch('/api/country', {
+    method: 'GET',
+  })
+  const userCountry = (country.geo as Lookup)?.country.toLowerCase()
+  const userCountryCode = countries.find(
+    (country) => country.alpha2.toLowerCase() === userCountry.toLowerCase()
+  )?.dialCode
+  setFieldValue('areaCode', userCountryCode || '1')
+})
 
 const formattedAreaCodes = computed(() => {
   const dialCodes = countries
@@ -115,10 +170,13 @@ const onSubmit = handleSubmit(async (values: any) => {
 
   values['token'] = token.value
 
-  const res = await $fetch<{statusCode: number, body: string}>('/api/became_partner', {
-    method: 'POST',
-    body: values
-  })
+  const res = await $fetch<{ statusCode: number; body: string }>(
+    '/api/became_partner',
+    {
+      method: 'POST',
+      body: values,
+    }
+  )
 })
 
 const token = defineModel<string>('')

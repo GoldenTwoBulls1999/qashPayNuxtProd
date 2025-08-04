@@ -4,7 +4,11 @@
   <VideoSection />
   <ContactsSection />
   <BenefitsSection />
-  <CheckoutSection />
+  <CheckoutSection>
+    <Typography size="heading-3" weight="medium" class="text-center">
+      <span class="font-light">Choose your</span> checkout method
+    </Typography>
+  </CheckoutSection>
   <CtaSection />
 </template>
 

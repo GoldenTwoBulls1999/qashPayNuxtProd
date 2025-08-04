@@ -17,10 +17,12 @@
       </div>
       <input
         type="text"
-        class="w-full border-1 border-gray-400 bg-white rounded-lg text-body-large leading-[21px] text-gray-500 py-[14.5px] placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-secondary-500"
+        class="w-full border-1 border-gray-400 bg-white rounded-lg text-body-large leading-[21px] text-gray-500 py-[14.5px] placeholder:text-primary-200 focus:outline-none focus:ring-1 focus:ring-secondary-500"
         v-model="inputModel"
         v-bind="inputAttrs"
         :id="inputId"
+        :name="name"
+        :autocomplete="name"
         :placeholder="placeholder"
         :inputmode="numeric ? 'decimal' : 'text'"
         :pattern="numeric ? '^(0|[1-9]\d*)(\.\d*)?$' : undefined"
@@ -53,6 +55,7 @@ import { computed, useId, useSlots } from 'vue'
 import { useRoute } from 'vue-router'
 
 interface InputProps {
+  name: string
   label?: string
   isError?: boolean
   error?: string

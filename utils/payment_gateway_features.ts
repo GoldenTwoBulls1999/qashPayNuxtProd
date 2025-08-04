@@ -4,7 +4,7 @@ export const payment_gateway_features = [
     description:
       'Provide your customers with a link, that they can click and pay instantly',
     image: 'feature_1',
-    withLink: true,
+    link: '/payment-links',
   },
   {
     title: 'Transaction Analytics',
@@ -23,13 +23,13 @@ export const payment_gateway_features = [
     description:
       'Process refunds or void any pre-authorised transactions with a Reversal within the Open Payment Platform or via API.',
     image: 'feature_4',
-    withLink: true,
+    link: '#',
   },
   {
     title: 'Data Webhooks',
     description:
       'Webhook configuration with user options on different data sets from success transactions to risk checks.',
     image: 'feature_5',
-    withLink: true,
+    link: '#',
   },
 ]

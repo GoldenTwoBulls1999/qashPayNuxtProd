@@ -5,6 +5,7 @@
     </Typography>
     <form class="flex flex-col gap-10 items-start">
       <AppInput
+        name="firstName"
         label="First name"
         v-model="firstName"
         class="max-md:border-primary-400"
@@ -12,6 +13,7 @@
         :error="errors?.firstName"
       />
       <AppInput
+        name="lastName"
         label="Last name"
         v-model="lastName"
         class="max-md:border-primary-400"
@@ -19,6 +21,7 @@
         :error="errors?.lastName"
       />
       <AppInput
+        name="email"
         label="Email address"
         v-model="email"
         class="max-md:border-primary-400"

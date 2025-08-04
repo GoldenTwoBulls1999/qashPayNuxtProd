@@ -4,6 +4,7 @@
   </Typography>
   <div class="flex flex-col gap-10 mb-24">
     <AppInput
+      name="firstName"
       v-model="firstName"
       label="First name"
       v-bind="firstNameAttrs"
@@ -11,6 +12,7 @@
       :error="errors?.firstName"
     />
     <AppInput
+      name="lastName"
       v-model="lastName"
       label="Last name"
       v-bind="lastNameAttrs"
@@ -18,6 +20,7 @@
       :error="errors?.lastName"
     />
     <AppInput
+      name="email"
       v-model="email"
       label="Email address"
       v-bind="emailAttrs"
@@ -30,6 +33,7 @@
   </Typography>
   <div class="flex flex-col gap-10">
     <AppInput
+      name="companyName"
       v-model="companyName"
       label="Company name"
       v-bind="companyNameAttrs"

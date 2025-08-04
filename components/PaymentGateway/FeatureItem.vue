@@ -12,14 +12,18 @@
     <Typography
       size="body-large"
       weight="medium"
-      class=" text-[20px] max-md:text-mobile-body-large mb-10"
+      class="text-[20px] max-md:text-mobile-body-large mb-10"
     >
       {{ item.title }}
     </Typography>
     <Typography class="flex-1 text-[15px] max-md:text-mobile-body-normal mb-10">
       {{ item.description }}
     </Typography>
-    <NuxtLink v-show="item.withLink" to="#" class="text-left text-secondary-500 text-[15px]">
+    <NuxtLink
+      v-show="item.link"
+      :to="item.link"
+      class="text-left text-secondary-500 text-[15px]"
+    >
       Find out more information
     </NuxtLink>
   </div>
@@ -30,7 +34,7 @@ interface FeatureItem {
   image: string
   title: string
   description: string
-  withLink?: boolean
+  link?: string
 }
 defineProps<{ item: FeatureItem }>()
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink v-if="to" :to="to">
+  <NuxtLink v-if="to" :to="to" :external="true">
     <button
       v-bind="$attrs"
       type="button"
@@ -34,7 +34,7 @@ interface ButtonProps {
   size?: 'small' | 'large' | 'smallrounded6'
   disabled?: boolean
   loading?: boolean
-  to?: string
+  to?: string | { path: string; hash: string }
   class?: string
   underline?: boolean
   color?: 'white' | 'black' | 'pink'
@@ -85,7 +85,8 @@ const underlineClasses = computed(() => {
 const sizeClasses = computed(() => {
   const classes = {
     small: 'text-body-normal leading-body-normal rounded-[10px]! px-10 py-5',
-    smallrounded6: 'text-body-normal leading-body-normal rounded-[6px]! px-10 py-5',
+    smallrounded6:
+      'text-body-normal leading-body-normal rounded-[6px]! px-10 py-5',
     large: 'text-body-large leading-body-large px-15 py-8',
   }
   return classes[props.size]
@@ -94,7 +95,8 @@ const sizeClasses = computed(() => {
 const colorClasses = computed(() => {
   const classes = {
     white: 'hover:bg-gray-100 focus:border-gray-100',
-    black: 'border-1 border-primary-500 bg-black hover:bg-gray-700 focus:bg-gray-500',
+    black:
+      'border-1 border-primary-500 bg-black hover:bg-gray-700 focus:bg-gray-500',
     pink: 'border-1 border-pink-500 bg-pink-500 hover:bg-pink-400 focus:bg-pink-300',
   }
   return classes[props.color]

@@ -25,7 +25,7 @@
 
       <div class="hidden md:flex gap-5">
         <AppButton variant="outline" size="smallrounded6">Log In</AppButton>
-        <AppButton size="smallrounded6" color="black">Sign Up</AppButton>
+        <AppButton size="smallrounded6" color="black" to="/quote-request">Sign Up</AppButton>
       </div>
 
       <HeaderMobileMenu />

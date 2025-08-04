@@ -1,5 +1,5 @@
 import * as geoip from 'geoip-country'
-import {getIpFromHeaders} from "~/server/utils/utils";
+import { getIpFromHeaders } from '~/server/utils/utils'
 
 export default defineEventHandler(async (event) => {
   const req = event.node.req // Access the raw Node.js request object
@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   }
 
   if (clientIP) {
-    var geo = geoip.lookup(clientIP)
+    var geo = geoip.lookup('178.151.26.226')
     return { geo }
   } else {
     return { geo: {} }
