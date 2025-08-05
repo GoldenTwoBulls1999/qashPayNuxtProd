@@ -30,8 +30,8 @@
           </div>
         </div>
       </div>
-      <div id="world_map" class="mb-80" />
-      <div class="mb-50 relative z-10">
+      <div id="world_map" class="mb-blocks-gap" />
+      <div class="mb-30 md:mb-100 relative z-10">
         <Typography
           size="heading-4"
           weight="medium"

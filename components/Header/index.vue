@@ -24,8 +24,16 @@
       </ul>
 
       <div class="hidden md:flex gap-5">
-        <AppButton variant="outline" size="smallrounded6">Log In</AppButton>
-        <AppButton size="smallrounded6" color="black" to="/quote-request">Sign Up</AppButton>
+        <template v-for="item in loginItems">
+          <LoginDropdown
+            :item="item"
+            :drop-down-open="loginDropDownOpen"
+            :toggle-dropdown="toggleLoginDropdown"
+          />
+        </template>
+        <AppButton size="smallrounded6" color="black" to="/quote-request"
+          >Sign Up</AppButton
+        >
       </div>
 
       <HeaderMobileMenu />
@@ -36,11 +44,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { headerItems } from '~/utils/headerItems'
+import { loginItems } from '~/utils/loginItems'
 import HeaderMobileMenu from '~/components/Header/HeaderMobileMenu.vue'
+import LoginDropdown from '~/components/Header/LoginDropdown.vue'
 
 const dropDownOpen = ref(false)
 
 const toggleDropdown = () => {
+  dropDownOpen.value = !dropDownOpen.value
+}
+
+const loginDropDownOpen = ref(false)
+
+const toggleLoginDropdown = () => {
   dropDownOpen.value = !dropDownOpen.value
 }
 </script>

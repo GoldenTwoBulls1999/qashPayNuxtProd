@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full pt-100">
+  <section class="w-full pb-blocks-gap">
     <Typography size="heading-3" weight="medium" class="text-center">
       <span class="font-light">Why top businesses</span> choose Qashpay
     </Typography>

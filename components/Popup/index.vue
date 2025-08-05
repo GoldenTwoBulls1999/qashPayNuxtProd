@@ -8,6 +8,7 @@
       >
         <div
           class="absolute bg-white rounded-app-big w-[calc(100%-16px)] max-w-2xl max-h-fit top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+          @click.stop
         >
           <PartnersVideo />
         </div>

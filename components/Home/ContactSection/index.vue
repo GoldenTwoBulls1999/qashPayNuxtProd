@@ -1,6 +1,6 @@
 <template>
   <section
-    class="bg-secondary-400 -mx-10 md:-mx-[calc((100vw-100%)/2)] md:bg-primary-500 md:flex md:justify-center md:items-center px-10 pt-18 pb-app-default md:py-70"
+    class="bg-secondary-400 -mx-10 md:-mx-[calc((100vw-100%)/2)] md:bg-primary-500 md:flex md:justify-center md:items-center px-10 pt-18 pb-app-default md:py-70 mb-blocks-gap"
   >
     <div
       class="flex flex-col md:flex-row md:w-full md:max-w-[1274px] md:max-h-[637px] md:rounded-app-big overflow-hidden"

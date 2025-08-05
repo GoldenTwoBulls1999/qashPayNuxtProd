@@ -1,9 +1,6 @@
 <template>
-  <section class="w-full pb-100">
-    <div
-      class="flex flex-col gap-10 md:items-center"
-      style="margin-bottom: calc(var(--blocks-gap) / 2)"
-    >
+  <section class="w-full pb-blocks-gap">
+    <div class="flex flex-col gap-10 md:items-center">
       <Typography size="heading-2">Win more customers</Typography>
       <Typography size="heading-5">
         By letting them pay their way &ndash; wherever they are

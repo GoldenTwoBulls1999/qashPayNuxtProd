@@ -41,7 +41,7 @@ export default defineEventHandler(async (event) => {
 
         console.log("data", data)
 
-        const response = await axios.post(`${process.env.BACKEND_BASE_URL}/AddToAcceptQuotes`, data, {headers: {'x-api-key': process.env.BACKEND_API_KEY}})
+        const response = await axios.post(`${process.env.BACKEND_BASE_URL}/SubmitNewAgent`, data, {headers: {'x-api-key': process.env.BACKEND_API_KEY}})
 
         console.log(response.status)
         console.log(response.data)

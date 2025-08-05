@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative mt-18 max-[992px]:-mx-10 min-[992px]:-mx-[calc((100vw-992px)/2)]"
+    class="relative max-[992px]:-mx-10 min-[992px]:-mx-[calc((100vw-992px)/2)] mb-blocks-gap"
   >
     <Typography size="heading-4" class="text-center"
       ><span class="relative"

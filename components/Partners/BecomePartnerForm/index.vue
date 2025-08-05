@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-40 flex flex-col md:flex-row md:w-full max-md:-mx-10 md:rounded-app-big md:shadow-benefit max-md:bg-[url(/img/partners_background.png)] bg-cover border-[0.5px] border-gray-200"
+    class="mt-40 overflow-hidden flex flex-col md:flex-row md:w-full max-md:-mx-10 md:rounded-app-big md:shadow-benefit max-md:bg-[url(/img/partners_background.png)] bg-cover border-[0.5px] border-gray-200"
   >
     <div
       class="md:rounded-tl-app-big md:rounded-bl-app-big md:min-w-1/2 flex justify-center pt-35 bg-[url(/img/partners_background.png)] bg-cover"
@@ -177,6 +177,8 @@ const onSubmit = handleSubmit(async (values: any) => {
       body: values,
     }
   )
+
+  await navigateTo('/become-partner-success')
 })
 
 const token = defineModel<string>('')

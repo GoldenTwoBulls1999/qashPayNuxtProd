@@ -43,8 +43,8 @@ export const headerItems: HeaderItem[] = [
     text: 'Find all of our Quaife products and how we can help your business accept more payments.',
     accentColorClass: 'bg-[#ededff]',
     items: [
-      { label: 'API Documentation', link: '#' },
-      { label: 'Help Center', link: '#' },
+      { label: 'API Documentation', link: 'https://quaife.docs.oppwa.com/' },
+      { label: 'Help Center', link: 'https://support.qashpay.com/hc' },
       { label: 'Checkout  Guide', link: '/checkout-guide' },
       { label: 'Chargeback API', link: '#' },
     ],

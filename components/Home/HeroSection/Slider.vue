@@ -23,7 +23,7 @@
         <swiper-slide
           v-for="(logo, index) in logos"
           :key="index"
-          class="my-10 w-auto"
+          class="my-5 w-auto"
         >
           <NuxtImg
             preload

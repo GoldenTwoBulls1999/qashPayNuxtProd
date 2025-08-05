@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center"
-  >
+  <section class="w-full pt-45 pb-blocks-gap">
     <div class="w-full max-h-fit flex flex-col">
       <PartnersVideo />
       <div
@@ -17,21 +15,30 @@
           >Become partner</AppButton
         >
       </div>
-      <div class="flex flex-col mb-40">
+      <div class="flex flex-col mb-blocks-gap">
         <Typography size="heading-4" class="text-center pb-20">
           Types of Partners we work with
         </Typography>
         <div class="flex gap-20 flex-col md:flex-row">
-          <div class="flex-1 flex flex-col">
-            <img
-              :src="`/img/partners_iso.svg`"
-              alt="Independent Sales Organisation (ISO)"
-              class="size-41 bg-transparent p-0 mb-5"
-            />
-            <Typography weight="medium" class="text-xl mb-[22px] h-[2.8em]">
-              Independent Sales Organisation (ISO)
-            </Typography>
-            <Typography weight="normal" class="text-base">
+          <div class="flex-1 flex flex-col border-b-1 border-primary-200">
+            <div
+              class="w-full mb-20 bg-[#F5F9FF] min-h-[150px] max-h-[150px] rounded-app-small flex justify-center items-center"
+            >
+              <img
+                :src="`/img/partners_iso.svg`"
+                alt="Independent Sales Organisation (ISO)"
+              />
+            </div>
+            <div class="min-h-[40px] mb-9">
+              <Typography
+                size="body-large"
+                weight="medium"
+                class="!leading-[20px]"
+              >
+                Independent Sales Organisation (ISO)
+              </Typography>
+            </div>
+            <Typography weight="normal" class="!leading-[20px] mb-20">
               Payment Gateways or other PSPs partner for access to our online
               tools to provide 1st level support. Best in class for onboarding
               with MIDs arriving within an hour, modern KYC and KYB electronic
@@ -39,32 +46,50 @@
               chargeback ratios, success rates etc.
             </Typography>
           </div>
-          <div class="flex-1 flex flex-col">
-            <img
-              :src="`/img/partners_agent.svg`"
-              alt="Referral Agent"
-              class="size-41 bg-transparent p-0 mb-5"
-            />
-            <Typography weight="medium" class="text-xl mb-[22px] h-[2.8em]">
-              Referral Agent
-            </Typography>
-            <Typography weight="normal" class="text-base">
+          <div class="flex-1 flex flex-col border-b-1 border-primary-200">
+            <div
+              class="w-full mb-20 bg-[#F5F9FF] min-h-[150px] max-h-[150px] rounded-app-small flex justify-center items-center"
+            >
+              <img
+                :src="`/img/partners_agent.svg`"
+                alt="Independent Sales Organisation (ISO)"
+              />
+            </div>
+            <div class="min-h-[40px] mb-9">
+              <Typography
+                size="body-large"
+                weight="medium"
+                class="!leading-[20px]"
+              >
+                Referral Agent
+              </Typography>
+            </div>
+            <Typography weight="normal" class="!leading-[20px] mb-20">
               Earn lucrative commissions by referring your interested merchants.
               QashPay handles all onboarding and account management. Submit lead
               via the Agent Portal. See application statuses and real-time
               commissions online built for desktop and mobile device.
             </Typography>
           </div>
-          <div class="flex-1 flex flex-col">
-            <img
-              :src="`/img/partners_isv.svg`"
-              alt="Integrated Software Vendors (ISV)"
-              class="size-41 bg-transparent p-0 mb-5"
-            />
-            <Typography weight="medium" class="text-xl mb-[22px] h-[2.8em]">
-              Integrated Software<br />Vendors (ISV)
-            </Typography>
-            <Typography weight="normal" class="text-base">
+          <div class="flex-1 flex flex-col border-b-1 border-primary-200">
+            <div
+              class="w-full mb-20 bg-[#F5F9FF] min-h-[150px] max-h-[150px] rounded-app-small flex justify-center items-center"
+            >
+              <img
+                :src="`/img/partners_isv.svg`"
+                alt="Independent Sales Organisation (ISO)"
+              />
+            </div>
+            <div class="min-h-[40px] mb-9">
+              <Typography
+                size="body-large"
+                weight="medium"
+                class="!leading-[20px]"
+              >
+                Integrated Software<br />Vendors (ISV)
+              </Typography>
+            </div>
+            <Typography weight="normal" class="!leading-[20px] mb-20">
               Integrate payments into your software applications and offer your
               users a global payments solution. QashPay provides your users with
               seamless onboarding and account management while you earn revenue
@@ -77,7 +102,7 @@
       </div>
 
       <div
-        class="relative mt-18 max-md:-mx-10 flex flex-col items-center mb-40"
+        class="relative max-md:-mx-10 flex flex-col items-center mb-blocks-gap"
       >
         <Typography size="heading-4" class="text-center mb-10 px-10">
           Agent Portal
@@ -92,7 +117,7 @@
 
         <Accordion :items="partnersAccordionItems" />
       </div>
-      <div class="flex flex-col items-center mb-40">
+      <div class="flex flex-col items-center mb-blocks-gap">
         <Typography size="heading-4" class="text-center mb-10">
           Partner Onboarding App
         </Typography>

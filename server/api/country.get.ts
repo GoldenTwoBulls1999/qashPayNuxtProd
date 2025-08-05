@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   }
 
   if (clientIP) {
-    var geo = geoip.lookup('178.151.26.226')
+    var geo = geoip.lookup(clientIP)
     return { geo }
   } else {
     return { geo: {} }

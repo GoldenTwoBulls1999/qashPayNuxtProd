@@ -7,7 +7,7 @@
     </Typography>
     <ul class="flex gap-6">
       <li>
-        <NuxtLink to="#">
+        <NuxtLink to="https://www.linkedin.com/company/108289234">
           <Icon
             mode="svg"
             width="16"

@@ -11,7 +11,7 @@
         >
           <button
             :aria-expanded="isOpen(index)"
-            class="cursor-pointer flex items-center gap-10"
+            class="cursor-pointer flex items-center gap-10 max-md:pl-20"
             :class="{
               'pb-12': !isOpen(index) && index !== items.length - 1,
               'pt-12': index !== 0,

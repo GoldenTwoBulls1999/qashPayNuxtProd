@@ -1,9 +1,9 @@
 <template>
-  <section
-    class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] @container/main"
-  >
+  <section class="w-full pt-first-top-gap pb-blocks-gap @container/main">
     <div class="w-full max-h-fit flex flex-col">
-      <div class="flex flex-col-reverse md:flex-row gap-80 justify-between">
+      <div
+        class="pb-blocks-gap flex flex-col-reverse md:flex-row gap-80 justify-between"
+      >
         <div class="flex-1 flex flex-col">
           <Typography
             size="heading-2"
@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col gap-40 mt-60">
+      <div class="flex flex-col gap-40">
         <div class="flex flex-col gap-12 md:flex-row md:gap-20 md:items-center">
           <div
             class="w-full rounded-app-big overflow-hidden relative md:flex-1 md:max-w-[476px]"

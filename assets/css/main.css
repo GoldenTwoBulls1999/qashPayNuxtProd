@@ -75,9 +75,11 @@
   --spacing-app-default: 74px;
   --spacing-app-mobile: 63px;
   --radius-app-big: 20px;
+  --radius-app-small: 8px;
   --tracking-app-default: 0.05em;
   --block-top-margin: 100px;
-  --blocks-gap: 160px;
+  --spacing-blocks-gap: 160px;
+  --spacing-first-top-gap: 135px;
 }
 
 

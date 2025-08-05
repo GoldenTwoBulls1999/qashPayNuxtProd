@@ -10,7 +10,7 @@
         <Typography size="body-large" weight="medium">
           {{ item.author }},
         </Typography>
-        <Typography size="body-large" class="leading-[1] mt-3 min-h-[30px]">{{
+        <Typography size="body-large" class="leading-[1] mt-3 min-h-[38px]">{{
           item.authorPosition
         }}</Typography>
       </div>
@@ -42,7 +42,7 @@
       id="become-partner"
       variant="text"
       :underline="false"
-      class="uppercase text-secondary-500 text-body-normal max-w-fit mt-20"
+      class="uppercase text-secondary-500 text-body-normal max-w-fit mt-15"
       @click="isExpanded = !isExpanded"
     >
       {{ isExpanded ? 'Hide' : 'Show full review' }}

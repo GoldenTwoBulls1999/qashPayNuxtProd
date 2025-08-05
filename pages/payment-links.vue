@@ -1,35 +1,39 @@
 <template>
-  <section
-    class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center @container/main"
-  >
+  <section class="w-full pt-first-top-gap pb-60 @container/main">
     <div class="w-full max-h-fit flex flex-col">
-      <div class="mb-30 min-[1300px]:max-w-[calc(992px)]">
-        <div class="flex flex-col-reverse md:flex-row items-center h-full">
-          <div class="flex-1 flex-col">
-            <Typography size="heading-2" class="text-start mb-10">
-              Payment Links
-            </Typography>
-            <Typography size="heading-5" class="text-start mb-10">
-              Simple, fast and effective payments
-            </Typography>
-            <Typography class="text-start max-w-[575px] mx-auto">
-              The payment experience is faster and more convenient than ever.
-              The option to pay using a secure link sent via SMS text message,
-              email, WhatsApp or other channels was born out of convenience and
-              modernization, and continues to accelerate as eCommerce grows.
-            </Typography>
-          </div>
-          <div class="flex-1 flex justify-center relative">
-            <div class="">
-              <NuxtImg
-                preload
-                :src="`/img/payment_links_1_block.png`"
-                alt="item.imageAlt"
-              />
-            </div>
-          </div>
+      <div class="flex flex-col-reverse md:flex-row md:gap-80 justify-between">
+        <div class="flex-1 flex flex-col">
+          <Typography
+            size="heading-2"
+            class="max-md:text-center max-md:text-mobile-heading-2 mb-10"
+          >
+            Payment Links
+          </Typography>
+          <Typography
+            size="heading-5"
+            class="max-md:text-center max-md:text-mobile-heading-1 mb-10"
+          >
+            Simple, fast and effective payments
+          </Typography>
+          <Typography
+            class="max-md:text-center max-md:text-mobile-heading-6 md:max-w-200 mb-25"
+          >
+            The payment experience is faster and more convenient than ever. The
+            option to pay using a secure link sent via SMS text message, email,
+            WhatsApp or other channels was born out of convenience and
+            modernization, and continues to accelerate as eCommerce grows.
+          </Typography>
+        </div>
+        <div class="flex-1 flex flex-col justify-between relative">
+          <NuxtImg
+            preload
+            :src="`/img/payment_links_1_block.png`"
+            class="w-full md:scale-150 md:-translate-x-15 md:-translate-y-20"
+            alt="item.imageAlt"
+          />
         </div>
       </div>
+
       <div
         class="mt-40 relative @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] bg-linear-to-b from-primary-100 to-white"
       >

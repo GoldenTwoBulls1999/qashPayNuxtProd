@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full pb-(--blocks-gap) @container/main">
+  <section class="w-full pb-blocks-gap @container/main">
     <div class="flex md:-mr-10 @min-[992px]/main:-mr-[calc((100vw-992px)/2)]">
       <div
         class="flex flex-col md:justify-center min-[1300px]:max-w-[calc(992px/2)]"
@@ -88,7 +88,7 @@
       </div>
     </div>
     <div
-      class="relative mt-(--block-top-margin) @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] h-[50px]"
+      class="relative mt-(--block-top-margin) @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] h-fit"
     >
       <Slider />
     </div>

@@ -73,6 +73,10 @@ const sortedPaymentMethods = (paymentMethods: string[]) => {
       <div
         v-if="paymentMethods.length"
         class="mt-[38px] border border-gray-300 bg-white rounded-md shadow-sm absolute w-full md:w-[305px]"
+        :class="{
+          'border-0 !shadow-none':
+            sortedPaymentMethods(paymentMethods).length < 6,
+        }"
       >
         <div class="relative">
           <div
@@ -82,14 +86,16 @@ const sortedPaymentMethods = (paymentMethods: string[]) => {
             :key="index"
             class="border-b-1 px-8 py-7 border-gray-300"
             :class="{
-              'max-h-8 overflow-hidden': !isExpanded && index === 5,
+              'max-h-8 overflow-hidden !border-b-0': !isExpanded && index === 5,
             }"
           >
             <PaymentMethod :method-name="method" />
           </div>
           <div
-            v-if="!isExpanded"
-            class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none"
+            v-if="
+              !isExpanded && sortedPaymentMethods(paymentMethods).length > 5
+            "
+            class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white from-2% to-transparent to-98% z-10 pointer-events-none"
           />
         </div>
         <AppButton
@@ -97,7 +103,7 @@ const sortedPaymentMethods = (paymentMethods: string[]) => {
           variant="text"
           :underline="false"
           class="uppercase text-secondary-500 text-body-normal p-8! w-full justify-start"
-          :class="isExpanded ? 'pt-8!' : 'pt-2!'"
+          :class="isExpanded ? 'pt-8!' : 'pt-4!'"
           @click="isExpanded = !isExpanded"
         >
           {{ isExpanded ? 'Hide' : 'Show all methods' }}

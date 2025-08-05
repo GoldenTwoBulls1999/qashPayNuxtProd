@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] @container/main"
-  >
+  <section class="w-full pb-60 @container/main">
     <div
       class="flex gap-19 -mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] px-10 @min-[992px]/main:pl-[calc((100vw-992px)/2)] bg-radial bg-radial-[ellipse_70%_102%_at_50%_100%] from-[#F9F8FF] to-white my-30"
     >
@@ -159,57 +157,57 @@
         </Typography>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
           <PlatformItem
-            to="#"
+            to="https://quaife.docs.oppwa.com/tutorials/plugins#adobeCommerce"
             title="Adobe Commerce Cloud"
             image="platforms_plugin_adobe"
             image-title="Adobe Commerce logo"
           />
           <PlatformItem
-            to="#"
+            to="https://quaife.docs.oppwa.com/tutorials/plugins#bigCommerce"
             title="BigCommerce"
             image="platforms_plugin_bigcommerce"
             image-title="BigCommerce logo"
           />
           <PlatformItem
-            to="#"
+            to="https://quaife.docs.oppwa.com/tutorials/plugins#shopify"
             title="Shopify"
             image="platforms_plugin_shopify"
             image-title="Shopify logo"
           />
           <PlatformItem
-            to="#"
+            to="https://quaife.docs.oppwa.com/tutorials/plugins#wooCommerce"
             title="WooCommerce"
             image="platforms_plugin_woo"
             image-title="WooCommerce logo"
           />
           <PlatformItem
-            to="#"
+            to="https://quaife.docs.oppwa.com/tutorials/plugins#openCart"
             title="OpenCart"
             image="platforms_plugin_opencart"
             image-title="OpenCart logo"
           />
           <PlatformItem
-            to="#"
+            to="https://quaife.docs.oppwa.com/tutorials/plugins#commerceTools"
             title="CommerceTools"
             image="platforms_plugin_commercetools"
             image-title="CommerceTools logo"
             label="coming-soon"
           />
           <PlatformItem
-            to="#"
+            to="https://quaife.docs.oppwa.com/tutorials/plugins#prestaShop"
             title="PrestaShop"
             image="platforms_plugin_prestashop"
             image-title="PrestaShop logo"
           />
           <PlatformItem
-            to="#"
+            to="https://quaife.docs.oppwa.com/tutorials/plugins#sap"
             title="SAP"
             image="platforms_plugin_sap"
             image-title="SAP logo"
             label="on-demand"
           />
           <PlatformItem
-            to="#"
+            to="https://quaife.docs.oppwa.com/tutorials/plugins#salesforce"
             title="SFCC"
             image="platforms_plugin_salesforce"
             image-title="SFCC logo"
@@ -224,7 +222,7 @@
         experience. This solution not only enhances the operational efficiency
         of any size merchant but also provides a competitive edge in the market.
       </Typography>
-      <AppButton to="#">Learn more about Plugins</AppButton>
+      <AppButton to="#" color="black">Learn more about Plugins</AppButton>
     </div>
   </section>
 </template>

@@ -1,8 +1,5 @@
 <template>
-  <section
-    ref="container"
-    class="trigger pt-80 pb-80 w-full max-md:pt-58 relative"
-  >
+  <section ref="container" class="trigger pb-blocks-gap w-full relative">
     <div ref="title">
       <slot />
     </div>
