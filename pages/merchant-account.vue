@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="w-full pt-60 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center"
-  >
+  <section class="w-full pt-60">
     <div class="w-full max-h-fit flex flex-col">
       <div class="-mx-10 md:-mx-[calc((100vw-100%)/2)]">
         <div class="flex flex-col-reverse md:flex-row items-center">
@@ -184,7 +182,6 @@
 </template>
 
 <script setup lang="ts">
-import CheckoutSection from '~/components/Home/CheckoutSection'
 import FeatureItem from '~/components/PaymentGateway/FeatureItem.vue'
 import { payment_gateway_features } from '~/utils/payment_gateway_features'
 import { paymentGatewayAccordionItems } from '~/utils/paymentGatewayAccordionItems'
