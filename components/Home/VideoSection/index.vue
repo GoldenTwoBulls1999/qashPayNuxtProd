@@ -1,8 +1,9 @@
 <template>
   <section class="w-full pb-blocks-gap">
     <div class="flex flex-col gap-20 md:items-center mb-40">
-      <Typography size="heading-3" weight="medium">
-        Go Live with Website Payments in Hours — Not Days
+      <Typography size="heading-3" weight="normal">
+        Go Live with Website Payments in Hours
+        <span class="font-medium">— Not Days</span>
       </Typography>
       <Typography size="heading-5" class="max-w-[598px] text-center">
         Fast setup. Bespoke rates. No roadblocks. QashPay is the choice of
@@ -12,7 +13,7 @@
     <div
       class="w-full mx-auto flex justify-center items-center rounded-app-big bg-secondary-300 overflow-hidden relative"
     >
-      <PartnersVideo />
+      <PartnersVideo src="/img/QashPay_main.mp4" />
     </div>
   </section>
 </template>

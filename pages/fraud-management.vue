@@ -54,7 +54,7 @@
             <Typography size="body-large" class="text-text-gray">
               A robust and resilient payments orchestration platform on one API
               integration that offers comprehensive risk strategy management,
-              accurate insights, transparent trends and threats,
+              accurate insights, transparent trends and threats.
             </Typography>
           </div>
         </div>
@@ -75,9 +75,9 @@
           <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-20">
             <Typography size="heading-4">Precession</Typography>
             <Typography size="body-large" class="text-text-gray">
-              A robust and resilient payments orchestration platform on one API
-              integration that offers comprehensive risk strategy management,
-              accurate insights, transparent trends and threats,
+              Achieve real-time, revenue-optimized decisions with QashPay’s
+              incremental machine learning models that adapt instantly to evolving
+              threats and focus on identifying trusted transactions, not just blocking fraud.
             </Typography>
           </div>
         </div>
@@ -96,9 +96,9 @@
           <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-20">
             <Typography size="heading-4">Transparency</Typography>
             <Typography size="body-large" class="text-text-gray">
-              A robust and resilient payments orchestration platform on one API
-              integration that offers comprehensive risk strategy management,
-              accurate insights, transparent trends and threats,
+              Gain full visibility into risk strategy performance with accurate insights,
+              clear threat trends, and transparent reporting — all through a single,
+              powerful API integration that enables contextualized, multilayered fraud decisioning.
             </Typography>
           </div>
         </div>
@@ -114,7 +114,7 @@
           weight="medium"
           class="text-white text-center mb-30"
         >
-          2024 QashPay Global Performance Results vs Market Average&ast;
+          2025 QashPay Global Performance Results vs Market Average&ast;
         </Typography>
         <div class="flex flex-wrap items-center gap-40 mb-10">
           <div
@@ -134,7 +134,7 @@
                   weight="medium"
                   class="text-white rounded-lg bg-secondary-500 mb-6 p-5"
                 >
-                  1,9&percnt;
+                  1.9&percnt;
                 </Typography>
                 <Typography class="text-white">QashPay</Typography>
               </div>
@@ -144,7 +144,7 @@
                   weight="medium"
                   class="text-white mb-6 p-5"
                 >
-                  5,8&percnt;
+                  5.8&percnt;
                 </Typography>
                 <Typography class="text-white">Market Average</Typography>
               </div>
@@ -167,7 +167,7 @@
                   weight="medium"
                   class="text-white rounded-lg bg-secondary-500 mb-6 p-5"
                 >
-                  0,3&percnt;
+                  0.3&percnt;
                 </Typography>
                 <Typography class="text-white">QashPay</Typography>
               </div>
@@ -177,7 +177,7 @@
                   weight="medium"
                   class="text-white mb-6 p-5"
                 >
-                  2,3&percnt;
+                  2.3&percnt;
                 </Typography>
                 <Typography class="text-white">Market Average</Typography>
               </div>
@@ -185,7 +185,7 @@
           </div>
         </div>
         <Typography weight="light" class="text-primary-100">
-          &ast;2024 MRC Global Payments and Fraud Report
+          &ast;2025 MRC Global Payments and Fraud Report
         </Typography>
       </div>
     </div>

@@ -9,9 +9,17 @@
     >
       <ul class="flex flex-col gap-8">
         <li>
-          <div class="w-full flex gap-12">
-            <AppButton variant="outline" size="small" class="w-full">Log In</AppButton>
-            <AppButton size="small" class="w-full" color="black" to="/quote-request">Sign Up</AppButton>
+          <div class="w-full flex flex-col-reverse gap-12">
+            <template v-for="item in loginItems" :key="item.label">
+              <LoginDropdown :item="item" />
+            </template>
+            <AppButton
+              size="small"
+              class="w-full"
+              color="black"
+              to="/quote-request"
+              >Sign Up</AppButton
+            >
           </div>
         </li>
         <li
@@ -33,6 +41,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { headerItems } from '~/utils/headerItems'
+import LoginDropdown from '~/components/Header/LoginDropdown.vue'
+import { loginItems } from '~/utils/loginItems'
 
 const dropDownOpen = ref(false)
 

@@ -80,14 +80,14 @@
           Contact
         </Typography>
         <NuxtLink
-          to="mailto:contact@quaife.net"
+          to="mailto:contact@qashpay.com"
           class="hover:text-secondary-500 transition-all duration-200 max-w-fit"
         >
           <Typography
             size="inline-small"
             class="opacity-60 tracking-app-default"
           >
-            contact@quaife.net
+            contact@qashpay.com
           </Typography>
         </NuxtLink>
         <NuxtLink
@@ -173,14 +173,14 @@
             Contact
           </Typography>
           <NuxtLink
-            to="mailto:contact@quaife.net"
+            to="mailto:contact@qashpay.com"
             class="hover:text-secondary-500 transition-all duration-200 max-w-fit"
           >
             <Typography
               size="inline-small"
               class="opacity-60 tracking-app-default"
             >
-              contact@quaife.net
+              contact@qashpay.com
             </Typography>
           </NuxtLink>
           <NuxtLink
@@ -205,10 +205,9 @@
         size="inline-label"
         class="opacity-60 normal-case! leading-body-normal"
       >
-        &copy;2024 Quaife.net Limited. All Rights Reserved.
+        &copy;2025 Quaife.net Limited. All Rights Reserved.
         <br />
-        Quaife.net Limited, a company incorporated in the UK under Company
-        Number: 10318045
+        QashPay is a Trademark of <NuxtLink to="https://quaife.net/" target="_blank">Quaife.net</NuxtLink> Limited, a company incorporated in the UK under Company Number 10318045
       </Typography>
     </div>
   </footer>

@@ -3,7 +3,7 @@
     class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center @container/main"
   >
     <div class="w-full max-w-full max-h-fit flex flex-col">
-      <div class="flex flex-col md:flex-row items-center gap-20 mb-40">
+      <div class="flex flex-col md:flex-row items-center gap-20 mb-blocks-gap">
         <div class="flex-1 flex flex-col gap-20">
           <Typography size="heading-3" weight="medium">
             Prevent and Recover Chargebacks with QashPay
@@ -39,7 +39,7 @@
           />
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mb-40">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mb-blocks-gap">
         <BenefitItem
           icon-color="gray"
           icon="money-transfer-icon"
@@ -59,7 +59,7 @@
           icon="money-document-icon"
           title="Automatic volume pricing"
         >
-          Convert interactions and conduct transaction risk checks
+          Adaptive pricing with no long-term commitments
         </BenefitItem>
         <BenefitItem
           icon-color="gray"
@@ -90,7 +90,7 @@
           />
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mb-40">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mb-blocks-gap">
         <BenefitItem
           icon-color="gray"
           icon="money-transfer-icon"
@@ -129,7 +129,7 @@
           <NuxtImg
             :src="`/img/chargeback_email.png`"
             alt="explanation of checkout process"
-            class="max-h-[95%]"
+            class="w-[77%]"
             loading="lazy"
             format="png"
           />

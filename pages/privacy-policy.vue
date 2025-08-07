@@ -544,15 +544,15 @@
         purposes. You can exercise your right to prevent such processing by
         checking certain boxes on the forms we use to collect your data. You can
         also exercise the right at any time by emailing us at
-        <NuxtLink to="mailto:contact@quaife.net" class="text-secondary-500">
-          contact@quaife.net.
+        <NuxtLink to="mailto:contact@qashpay.com" class="text-secondary-500">
+          contact@qashpay.com.
         </NuxtLink>
       </Typography>
       <Typography class="mb-5">
         You can ask us or third parties to stop sending you marketing messages
         at any time by emailing us at
-        <NuxtLink to="mailto:contact@quaife.net" class="text-secondary-500">
-          contact@quaife.net.
+        <NuxtLink to="mailto:contact@qashpay.com" class="text-secondary-500">
+          contact@qashpay.com.
         </NuxtLink>
         Where you opt out of receiving these marketing messages, this will not
         apply to personal data provided to us as a result of subscribing for our
@@ -812,8 +812,8 @@
       <Typography class="mb-5">
         If you wish to exercise any of the rights set out above, please contact
         us by
-        <NuxtLink to="mailto:contact@quaife.net" class="text-secondary-500">
-          contact@quaife.net.
+        <NuxtLink to="mailto:contact@qashpay.com" class="text-secondary-500">
+          contact@qashpay.com.
         </NuxtLink>
       </Typography>
       <Typography class="mb-5">
@@ -839,8 +839,8 @@
         right to prevent such processing by checking certain boxes on the forms
         we use to collect your data. You can also exercise the right at any time
         by emailing us at
-        <NuxtLink to="mailto:contact@quaife.net" class="text-secondary-500">
-          contact@quaife.net.
+        <NuxtLink to="mailto:contact@qashpay.com" class="text-secondary-500">
+          contact@qashpay.com.
         </NuxtLink>
       </Typography>
       <Typography class="mb-10">
@@ -882,8 +882,8 @@
       </Typography>
       <Typography class="mb-5">
         Email address:
-        <NuxtLink to="mailto:contact@quaife.net" class="text-secondary-500">
-          contact@quaife.net.
+        <NuxtLink to="mailto:contact@qashpay.com" class="text-secondary-500">
+          contact@qashpay.com.
         </NuxtLink>
       </Typography>
       <Typography class="mb-5">

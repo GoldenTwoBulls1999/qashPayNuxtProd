@@ -6,6 +6,7 @@ interface HeaderSingleItem {
   imageAlt?: never
   text?: never
   accentColorClass?: never
+  newTab?: boolean
 }
 
 interface HeaderGroupItem {
@@ -25,7 +26,7 @@ export const headerItems: HeaderItem[] = [
     label: 'Services',
     image: 'header_solutions',
     imageAlt: 'Couple of people looking at phone',
-    text: 'Find all of our Quaife products and how we can help your business accept more payments.',
+    text: 'Find all of our QashPay products and how we can help your business accept more payments.',
     accentColorClass: 'bg-[#ffedf3]',
     items: [
       { label: 'Merchant Account', link: '/merchant-account' },
@@ -40,11 +41,11 @@ export const headerItems: HeaderItem[] = [
     label: 'Resources',
     image: 'header_resources',
     imageAlt: 'Peace of code',
-    text: 'Find all of our Quaife products and how we can help your business accept more payments.',
+    text: 'Find all of our QashPay products and how we can help your business accept more payments.',
     accentColorClass: 'bg-[#ededff]',
     items: [
-      { label: 'API Documentation', link: 'https://quaife.docs.oppwa.com/' },
-      { label: 'Help Center', link: 'https://support.qashpay.com/hc' },
+      { label: 'API Documentation', link: 'https://quaife.docs.oppwa.com/', newTab: true },
+      { label: 'Help Center', link: 'https://support.qashpay.com/hc', newTab: true },
       { label: 'Checkout  Guide', link: '/checkout-guide' },
       { label: 'Chargeback API', link: '#' },
     ],

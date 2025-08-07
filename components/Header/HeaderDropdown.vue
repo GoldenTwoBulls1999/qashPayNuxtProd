@@ -22,11 +22,10 @@
     </button>
     <div
       v-show="menuOpen && !!item.items"
-      class="md:absolute md:bg-white md:z-50 md:flex md:-left-15 md:border-1 md:border-gray-border md:mt-[25px] md:w-286 md:h-fit md:rounded-[10px] overflow-hidden"
+      class="md:absolute md:bg-white md:z-50 md:flex md:-left-15 md:border-1 md:border-gray-border md:mt-[25px] md:w-286 md:rounded-[10px] overflow-hidden"
     >
       <ul
         id="header-menu"
-        data-overlayscrollbars-initialize
         class="md:p-8 md:flex-1 max-h-full"
       >
         <li
@@ -40,6 +39,7 @@
             :to="menuItem.link"
             class="flex items-start gap-4"
             @click="onItemClick"
+            :target="menuItem.newTab ? '_blank' : null"
           >
             <Icon
               mode="svg"

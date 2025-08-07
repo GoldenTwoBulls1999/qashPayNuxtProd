@@ -22,10 +22,10 @@ export type LoginItem = LoginGroupItem | LoginSingleItem
 
 export const loginItems: LoginItem[] = [
   {
-    label: 'Resources',
+    label: 'QashPay',
     image: 'login_resources',
     imageAlt: 'Peace of form',
-    text: 'Find all of our Quaife products and how we can help your business accept more payments.',
+    text: '',
     accentColorClass: 'bg-[#F6F6F6]',
     items: [
       { label: 'Payment Gateway', link: 'https://quaife.ctpe.info' },

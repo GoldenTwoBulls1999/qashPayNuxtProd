@@ -1,5 +1,9 @@
 <template>
-  <NuxtLink v-if="to" :to="to" :external="true">
+  <NuxtLink
+      v-if="to"
+      :to="to"
+      :external="true"
+      :target="newTab ? '_blank' : null">
     <button
       v-bind="$attrs"
       type="button"
@@ -38,6 +42,7 @@ interface ButtonProps {
   class?: string
   underline?: boolean
   color?: 'white' | 'black' | 'pink'
+  newTab?: boolean
 }
 
 const props = withDefaults(defineProps<ButtonProps>(), {
@@ -50,6 +55,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   class: '',
   underline: true,
   color: 'white',
+  newTab: false,
 })
 
 const emit = defineEmits<{

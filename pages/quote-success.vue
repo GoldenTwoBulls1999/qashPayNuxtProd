@@ -12,8 +12,8 @@
         Look out for an email from us to start your onboarding.
         <br />
         If you have any questions please contact us at:
-        <NuxtLink href="mailto:contact@quaife.net" class="text-secondary-500">
-          contact@quaife.net
+        <NuxtLink href="mailto:contact@qashpay.com" class="text-secondary-500">
+          contact@qashpay.com
         </NuxtLink>
       </Typography>
     </div>

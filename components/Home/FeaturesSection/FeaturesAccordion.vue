@@ -67,9 +67,11 @@
           </Transition>
         </div>
       </div>
-      <AppButton to="/quote-request" class="max-md:w-full mt-29" color="black">
-        Get your instant quote
-      </AppButton>
+      <div class="mt-29">
+        <AppButton to="/quote-request" class="max-md:w-full" color="black">
+          Get your instant quote
+        </AppButton>
+      </div>
     </div>
 
     <div

@@ -76,7 +76,7 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mt-10">
         <BenefitItem icon="users-icon" title="Flexible">
-          Convert interactions and conduct transaction risk checks
+          Suitable for any size business in any industry
         </BenefitItem>
         <BenefitItem icon="money-document-icon" title="Convenient">
           Reduce time tracking down unpaid invoices and payment status
@@ -170,7 +170,7 @@
         of taking payments.
       </Typography>
       <div class="flex items-center justify-center">
-        <AppButton to="#" color="black">Learn more</AppButton>
+        <AppButton to="https://quaife.docs.oppwa.com/integrations/paybylink/api#" color="black" newTab>Learn more</AppButton>
       </div>
     </div>
   </section>

@@ -1,5 +1,9 @@
 <template>
-  <NuxtLink :to="to" external>
+  <NuxtLink
+      :to="to"
+      external
+      target="_blank"
+  >
     <div class="flex flex-col gap-5 cursor-pointer">
       <div
         class="relative border-1 border-primary-200 rounded-app-big h-85 max-h-85 flex items-center justify-center"

@@ -48,14 +48,6 @@
             </AppButton>
             <AppButton color="pink" @click="isVideoOpen = true">
               Preview
-              <template #icon:end>
-                <Icon
-                  mode="svg"
-                  width="24"
-                  height="24"
-                  :name="`app-icon:play`"
-                />
-              </template>
             </AppButton>
             <Popup :open="isVideoOpen" :handleClose="handleVideoClose" />
           </div>

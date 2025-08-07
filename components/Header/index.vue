@@ -24,12 +24,8 @@
       </ul>
 
       <div class="hidden md:flex gap-5">
-        <template v-for="item in loginItems">
-          <LoginDropdown
-            :item="item"
-            :drop-down-open="loginDropDownOpen"
-            :toggle-dropdown="toggleLoginDropdown"
-          />
+        <template v-for="item in loginItems" :key="item.label">
+          <LoginDropdown :item="item" />
         </template>
         <AppButton size="smallrounded6" color="black" to="/quote-request"
           >Sign Up</AppButton

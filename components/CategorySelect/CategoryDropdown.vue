@@ -81,8 +81,10 @@ const { filteredCategories, toggleCategory, isExpanded } = useCategorySelect(
 )
 
 const handleSelect = (item: string) => {
-  dropdownModel.value = item
+  emit('select', item)
 }
+
+const emit = defineEmits(['select'])
 </script>
 
 <style scoped>

@@ -68,10 +68,17 @@
       </div>
 
       <div class="mt-[42px] flex flex-col-reverse md:flex-row gap-6">
-        <AppButton variant="outline" @click="$emit('back')" class="min-w-75" color="black">
+        <AppButton
+          variant="outline"
+          color="white"
+          class="min-w-75 col"
+          @click="$emit('back')"
+        >
           Back
         </AppButton>
-        <AppButton @click="onSubmit" class="w-full" color="black">Get quote</AppButton>
+        <AppButton @click="onSubmit" class="w-full" color="black"
+          >Get quote</AppButton
+        >
       </div>
     </div>
   </div>

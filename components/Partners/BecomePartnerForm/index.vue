@@ -135,10 +135,12 @@ const formattedAreaCodes = computed(() => {
     .map((country) => country.dialCode)
   const uniqueDialCodes = [...new Set(dialCodes)]
 
-  return uniqueDialCodes.map((dialCode) => ({
-    value: dialCode,
-    label: `+${dialCode}`,
-  }))
+  return uniqueDialCodes
+      .sort((a, b) => Number(a.replaceAll(" ", "")) - Number(b.replaceAll(" ", "")))
+      .map((dialCode) => ({
+        value: dialCode,
+        label: `+${dialCode}`,
+      }))
 })
 
 const isError = (field: BecomePartnerFormFieldName) =>

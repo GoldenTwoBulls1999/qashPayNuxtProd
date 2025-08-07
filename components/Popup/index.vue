@@ -3,14 +3,14 @@
     <div v-if="open">
       <div
         v-show="withBackdrop"
-        class="fixed inset-0 h-full z-100 bg-gray-900/50"
+        class="fixed inset-0 h-full z-100 bg-gray-900/90"
         @click="handleClose"
       >
         <div
-          class="absolute bg-white rounded-app-big w-[calc(100%-16px)] max-w-2xl max-h-fit top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+          class="absolute bg-white rounded-app-big max-h-fit top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
           @click.stop
         >
-          <PartnersVideo />
+          <PartnersVideo src="/img/QashPay_main.mp4" />
         </div>
       </div>
     </div>

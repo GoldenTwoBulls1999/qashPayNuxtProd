@@ -3,7 +3,7 @@
     <swiper-container
       :loop="true"
       :slides-per-view="1"
-      class="max-w-full max-h-fit"
+      class="max-w-full max-h-fit drop-shadow-[0px_4px_14px_rgba(10,10,10,0.14)]"
       :autoplay="{
         delay: 4000,
         disableOnInteraction: false,
@@ -12,7 +12,7 @@
         clickable: true,
       }"
     >
-      <swiper-slide class="mb-10">
+      <swiper-slide class="mb-20">
         <NuxtImg
           preload
           :src="`/img/chargeback_slider_1.png`"
@@ -21,7 +21,7 @@
           format="png"
         />
       </swiper-slide>
-      <swiper-slide class="mb-10">
+      <swiper-slide class="mb-20">
         <NuxtImg
           preload
           :src="`/img/chargeback_slider_2.png`"
@@ -31,7 +31,6 @@
         />
       </swiper-slide>
     </swiper-container>
-    <div class="swiper-custom-pagination mt-6 flex justify-center"></div>
   </ClientOnly>
 </template>
 

@@ -21,7 +21,7 @@
         size="body-large"
         class="h-[21px] leading-[21px] text-gray-500"
       >
-        {{ selectModel }}
+        {{ selectedOption }}
       </Typography>
       <Icon
         mode="svg"
@@ -50,6 +50,7 @@
       :with-search="withSearch"
       :category-title="categoryTitle"
       :search-placeholder="searchPlaceholder"
+      @select="handleSelect"
     />
   </div>
 </template>
@@ -80,7 +81,7 @@ interface CategorySelectProps {
   categoryTitle?: string
 }
 
-withDefaults(defineProps<CategorySelectProps>(), {
+const props = withDefaults(defineProps<CategorySelectProps>(), {
   isError: false,
   error: '',
   withSearch: false,
@@ -93,17 +94,19 @@ const selectModel = defineModel<string>()
 const selectId = useId()
 
 const selectRef = ref<HTMLElement | null>(null)
+const selectedOption = ref('')
 const isOpen = ref(false)
 
 onClickOutside(selectRef, () => {
   isOpen.value = false
 })
 
-watch(selectModel, () => {
-  isOpen.value = false
-})
-
 const { dropdownMaxHeight, updatePosition } = useDropdownPositioning()
+
+const handleSelect = (value: string) => {
+  selectModel.value = value
+  isOpen.value = false
+}
 
 const toggleOpen = () => {
   isOpen.value = !isOpen.value
@@ -112,4 +115,13 @@ const toggleOpen = () => {
     updatePosition(selectRef.value)
   }
 }
+
+watch(selectModel, () => {
+  props.options.find((category) => {
+    for (const option of category.items) {
+      if (option.value === (selectModel.value as string))
+        selectedOption.value = option.label
+    }
+  })
+})
 </script>

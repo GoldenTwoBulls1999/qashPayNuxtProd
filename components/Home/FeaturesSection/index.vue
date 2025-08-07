@@ -1,6 +1,6 @@
 <template>
   <section class="w-full pb-blocks-gap">
-    <div class="flex flex-col gap-10 md:items-center">
+    <div class="flex flex-col gap-10 mb-40 md:items-center">
       <Typography size="heading-2">Win more customers</Typography>
       <Typography size="heading-5">
         By letting them pay their way &ndash; wherever they are
@@ -57,8 +57,7 @@
             Trusted local payment methods
           </Typography>
           <Typography size="body-large" class="text-text-gray md:max-w-[360px]">
-            Make it easy for customers to pay in their own currency, for
-            smoother checkouts and fewer drop-offs.
+            With 400+ payment methods worldwide, our gateway lets customers pay their way — wallets in Tokyo, cards in Berlin, or cash in São Paulo. Accept local payments and grow globally.
           </Typography>
           <AppButton
             :to="{ path: '/merchant-account', hash: '#world_map' }"

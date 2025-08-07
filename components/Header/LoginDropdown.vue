@@ -1,11 +1,18 @@
 <template>
-  <div ref="dropdownRef" class="relative">
-    <AppButton variant="outline" size="smallrounded6" @click="toggleMenu">
+  <div ref="dropdownContainerRef" class="relative">
+    <AppButton
+      variant="outline"
+      size="smallrounded6"
+      class="max-md:w-full"
+      @click="toggle"
+    >
       Log In
     </AppButton>
     <div
       v-show="menuOpen && !!item.items"
+      ref="dropdownRef"
       class="md:absolute md:bg-white md:z-50 md:flex md:-left-15 md:border-1 md:border-gray-border md:mt-[18px] md:w-286 md:h-fit md:rounded-[10px] overflow-hidden"
+      :style="computedStyle"
     >
       <ul
         id="header-menu"
@@ -22,6 +29,7 @@
           <NuxtLink
             :to="menuItem.link"
             class="flex items-start gap-4"
+            target="_blank"
             @click="onItemClick"
           >
             <Icon
@@ -71,9 +79,16 @@ interface HeaderDropdownProps {
 const props = defineProps<HeaderDropdownProps>()
 
 const menuOpen = ref(false)
+const dropdownContainerRef = ref<HTMLElement | null>(null)
 const dropdownRef = ref<HTMLElement | null>(null)
+const offset = ref(0)
 
-onClickOutside(dropdownRef, () => {
+const computedStyle = computed(() => ({
+  right: '0px',
+  transform: `translateX(-${offset.value}px)`,
+}))
+
+onClickOutside(dropdownContainerRef, () => {
   menuOpen.value = false
 })
 
@@ -84,9 +99,36 @@ watch(
   }
 )
 
-const toggleMenu = () => {
-  menuOpen.value = !menuOpen.value
+const updateOffset = () => {
+  if (!menuOpen.value || !dropdownRef.value) return
+
+  const rect = dropdownRef.value.getBoundingClientRect()
+  const overflow = rect.right > window.innerWidth
+
+  offset.value = overflow ? rect.right - window.innerWidth + 8 : 0
 }
+
+const toggle = async () => {
+  menuOpen.value = !menuOpen.value
+
+  if (menuOpen.value) {
+    offset.value = 0
+    await nextTick()
+    requestAnimationFrame(updateOffset)
+  }
+}
+
+const onResize = () => {
+  updateOffset()
+}
+
+onMounted(() => {
+  window.addEventListener('resize', onResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', onResize)
+})
 
 const onItemClick = () => {
   if (props.toggleDropdown) props.toggleDropdown()

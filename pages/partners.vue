@@ -1,7 +1,7 @@
 <template>
   <section class="w-full pt-45 pb-blocks-gap">
     <div class="w-full max-h-fit flex flex-col">
-      <PartnersVideo />
+      <PartnersVideo src="/img/QashPay_partner.webm" />
       <div
         class="flex flex-col items-center bg-radial bg-radial-[ellipse_50%_50%_at_50%_100%] from-gray-200/20 to-white my-30"
       >
@@ -12,7 +12,7 @@
           Partner with best in class agent tools
         </Typography>
         <AppButton class="mb-36" color="black" to="#become-partner"
-          >Become partner</AppButton
+          >Become a Partner</AppButton
         >
       </div>
       <div class="flex flex-col mb-blocks-gap">
@@ -38,7 +38,10 @@
                 Independent Sales Organisation (ISO)
               </Typography>
             </div>
-            <Typography weight="normal" class="!leading-[20px] mb-20">
+            <Typography
+              weight="normal"
+              class="!leading-[20px] mb-20 text-primary-400"
+            >
               Payment Gateways or other PSPs partner for access to our online
               tools to provide 1st level support. Best in class for onboarding
               with MIDs arriving within an hour, modern KYC and KYB electronic
@@ -64,7 +67,10 @@
                 Referral Agent
               </Typography>
             </div>
-            <Typography weight="normal" class="!leading-[20px] mb-20">
+            <Typography
+              weight="normal"
+              class="!leading-[20px] mb-20 text-primary-400"
+            >
               Earn lucrative commissions by referring your interested merchants.
               QashPay handles all onboarding and account management. Submit lead
               via the Agent Portal. See application statuses and real-time
@@ -89,7 +95,10 @@
                 Integrated Software<br />Vendors (ISV)
               </Typography>
             </div>
-            <Typography weight="normal" class="!leading-[20px] mb-20">
+            <Typography
+              weight="normal"
+              class="!leading-[20px] mb-20 text-primary-400"
+            >
               Integrate payments into your software applications and offer your
               users a global payments solution. QashPay provides your users with
               seamless onboarding and account management while you earn revenue
@@ -154,7 +163,7 @@
               </li>
               <li>
                 <Typography>
-                  Instant messaging with Onboarding Teal AQ
+                  Instant messaging with Onboarding Teal
                 </Typography>
               </li>
               <li>

@@ -1,35 +1,43 @@
 <template>
-  <section class="w-full pt-60">
-    <div class="w-full max-h-fit flex flex-col">
-      <div class="-mx-10 md:-mx-[calc((100vw-100%)/2)]">
-        <div class="flex flex-col-reverse md:flex-row items-center">
-          <div class="flex-1">
+  <section class="w-full pt-60 @container/main">
+    <div
+      class="flex flex-col-reverse gap-50 md:flex-row items-center justify-center relative @max-[992px]/main:-mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)]"
+    >
+      <div class="md:min-w-1/2 md:max-w-1/2 flex justify-end">
+        <div class="relative">
+          <div class="z-20">
             <NuxtImg
               preload
               :src="`/img/payment_gateway_hero.png`"
               alt="item.imageAlt"
-              class="w-full"
+              class="max-md:-translate-x-30 max-h-[610px] drop-shadow-[0px_6.12764px_49.0212px_rgba(0,0,0,0.15)]"
               format="png"
             />
           </div>
-          <div class="flex-1">
-            <Typography
-              size="heading-2"
-              class="max-md:text-center max-md:text-mobile-heading-2 mb-20"
-            >
-              Merchant Account
-            </Typography>
-            <Typography
-              size="heading-5"
-              class="max-md:text-center max-md:text-mobile-heading-6 text-primary-400 max-w-200 max-md:mb-15"
-            >
-              Accept Payment Globally designed for Online and Mobile
-            </Typography>
-          </div>
+          <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/3 h-[247px] inset-x-0 bg-[radial-gradient(52.86%_52.86%_at_50%_100%,rgba(200,198,240,0.4)_0%,rgba(255,255,255,0)_100%)]"
+          />
         </div>
       </div>
+
+      <div class="min-w-1/2 max-w-1/2">
+        <Typography
+          size="heading-2"
+          class="max-md:text-center max-md:text-mobile-heading-2 mb-20"
+        >
+          Merchant Account
+        </Typography>
+        <Typography
+          size="heading-5"
+          class="max-md:text-center max-md:text-mobile-heading-6 text-primary-400 max-w-200 max-md:mb-15"
+        >
+          Accept Payment Globally designed for Online and Mobile
+        </Typography>
+      </div>
+    </div>
+    <div class="w-full max-h-fit flex flex-col">
       <div id="world_map" class="mb-blocks-gap" />
-      <div class="mb-30 md:mb-100 relative z-10">
+      <div class="mb-30 md:mb-blocks-gap relative z-10">
         <Typography
           size="heading-4"
           weight="medium"
@@ -39,7 +47,7 @@
         </Typography>
         <WorldMap />
       </div>
-      <div class="mb-30 max-md:-mx-10">
+      <div class="mb-blocks-gap max-md:-mx-10">
         <Typography
           size="heading-4"
           weight="light"
@@ -58,7 +66,7 @@
 
         <AppAccordion :items="paymentGatewayAccordionItems" />
       </div>
-      <div class="mb-30">
+      <div class="mb-blocks-gap">
         <Typography
           size="heading-4"
           weight="light"
@@ -74,7 +82,7 @@
           Increase sales and reduce the cost of ownership by enabling better
           payment experiences and connecting with global partners.
         </Typography>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-y-16 mt-24">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-y-30 mt-24">
           <FeatureItem
             v-for="(item, index) in payment_gateway_features"
             :key="index"
@@ -89,9 +97,7 @@
       Checkout Options
     </Typography>
   </CheckoutSection>
-  <section
-    class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center"
-  >
+  <section class="w-full pt-app-default pb-blocks-gap flex justify-center">
     <div class="w-full max-h-fit flex flex-col">
       <div
         class="bg-[#F6F6F6] md:rounded-app-big max-md:-mx-10 flex flex-col items-center p-10"
@@ -141,7 +147,7 @@
               Payment Gateway that’s fully PCI DSS Level 1 certified and is a
               member of the PCI Initiative. Our data recovery sites and two
               active clients have a highly secure and resilient payment service
-              with 99.99$ availability.
+              with 99.99% availability.
             </Typography>
           </div>
           <div class="flex-1 bg-white rounded-2xl p-11">

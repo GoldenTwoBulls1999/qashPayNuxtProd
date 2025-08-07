@@ -27,7 +27,7 @@
         'hover:bg-secondary-300': selectedValue !== item.value,
         'bg-secondary-400': selectedValue === item.value,
       }"
-      @click="emit('select', item.label)"
+      @click="emit('select', item.value)"
     >
       <Typography>
         {{ item.label }}

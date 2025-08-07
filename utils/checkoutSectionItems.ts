@@ -8,7 +8,7 @@ export const checkoutSectionItems = [
   {
     image: 'home_checkout_2',
     imageAlt: 'Backend code',
-    title: 'Server-To-Server',
+    title: 'Server-to-Server',
     text: 'Our Server-to-Server API allows payment acceptance services to be integrated directly, offering fully flexible workflows for frontend and backend processing.',
   },
   {
@@ -21,6 +21,6 @@ export const checkoutSectionItems = [
     image: 'home_checkout_4',
     imageAlt: 'Payment with credit card',
     title: 'Mobile checkout',
-    text: 'Payment widget that sends sensitive payment data directly from the shopper’s browser to the Open Payment Platform.',
+    text: 'Our mobile checkout for faster, secure payments, improved conversions, seamless user experience, easy integration, and full brand customization.',
   },
 ]

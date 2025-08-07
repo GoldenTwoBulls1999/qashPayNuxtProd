@@ -23,6 +23,7 @@
       v-show="item.link"
       :to="item.link"
       class="text-left text-secondary-500 text-[15px]"
+      :target="item.newTab ? '_blank' : null"
     >
       Find out more information
     </NuxtLink>
@@ -35,6 +36,7 @@ interface FeatureItem {
   title: string
   description: string
   link?: string
+  newTab?: boolean
 }
 defineProps<{ item: FeatureItem }>()
 </script>

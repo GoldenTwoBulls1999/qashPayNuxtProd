@@ -474,7 +474,7 @@ export const countries = [
   {
     name: 'Cayman Islands',
     alpha2: 'KY',
-    dialCode: ' 345',
+    dialCode: '345',
     alpha3: 'CYM',
     capital: 'George Town',
     score: '',

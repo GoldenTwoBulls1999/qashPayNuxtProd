@@ -9,16 +9,13 @@
         anything happen to your business, the Acquiring Bank is also liable
       </BenefitItem>
       <BenefitItem icon="lock-icon-primary" title="Secure – PCI level 1">
-        We provide data-driven pricing, such as insurance underwriting. Should
-        anything happen to your business, the Acquiring Bank is also liable
+        QashPay is PCI DSS Level 1 certified, ensuring the highest standard of payment security. Your customers' data is fully protected with industry-leading encryption, compliance, and secure transaction processing.
       </BenefitItem>
       <BenefitItem icon="card-lock-icon" title="Best-in-class onboarding">
-        We provide data-driven pricing, such as insurance underwriting. Should
-        anything happen to your business, the Acquiring Bank is also liable
+        QashPay offers best-in-class onboarding with seamless integration, intuitive dashboards, rapid setup, dedicated support, and streamlined KYC—ensuring businesses go live quickly and efficiently with minimal friction.
       </BenefitItem>
       <BenefitItem icon="pie-chart-icon" title="Real human support">
-        We provide data-driven pricing, such as insurance underwriting. Should
-        anything happen to your business, the Acquiring Bank is also liable
+        QashPay’s support is provided by real human payment experts—not AI—who understand complex payment challenges, offer personalized guidance, and ensure you get timely, expert assistance whenever needed.
       </BenefitItem>
     </div>
   </section>

@@ -106,7 +106,9 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row md:items-center gap-16 mb-40">
+      <div
+        class="flex flex-col md:flex-row md:items-center gap-16 mb-blocks-gap"
+      >
         <div
           class="max-h-[451px] w-full md:w-[304px] aspect-1/2 h-full flex justify-center items-center border border-primary-100 rounded-app-big shadow-plugin"
         >
