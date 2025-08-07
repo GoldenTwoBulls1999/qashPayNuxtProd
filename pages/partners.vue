@@ -163,7 +163,7 @@
               </li>
               <li>
                 <Typography>
-                  Instant messaging with Onboarding Teal
+                  Instant messaging with Onboarding Team
                 </Typography>
               </li>
               <li>
