@@ -39,17 +39,6 @@
           />
         </NuxtLink>
       </li>
-      <li>
-        <NuxtLink to="#">
-          <Icon
-            mode="svg"
-            width="16"
-            height="16"
-            name="app-icon:instagram-icon"
-            class="fill-white hover:fill-secondary-500 transition-all duration-200"
-          />
-        </NuxtLink>
-      </li>
     </ul>
   </div>
 </template>

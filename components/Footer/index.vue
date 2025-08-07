@@ -39,6 +39,7 @@
           :key="index"
           :to="item.link"
           class="hover:text-secondary-500 transition-all duration-200 max-w-fit"
+          target="_blank"
         >
           <Typography
             size="inline-small"
