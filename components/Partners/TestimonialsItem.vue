@@ -1,35 +1,40 @@
 <template>
   <div
-    class="mb-10 p-16 pt-18 flex flex-col border-1 rounded-app-big border-primary-200 shadow-benefit"
+    class="mb-10 p-12 pt-13 md:p-16 md:pt-18 flex flex-col border-1 rounded-app-big border-primary-200 shadow-benefit @container/testimonial"
     :class="isExpanded ? 'max-h-fit' : 'max-h-[370px]'"
   >
     <div
-      class="flex flex-col min-[1100px]:flex-row gap-5 items-start justify-between mb-20"
+      class="flex max-[500px]:flex-col max-md:flex-wrap md:flex-col @min-[327px]/testimonial:!flex-row gap-y-5 items-start justify-between mb-20"
     >
-      <div>
-        <Typography size="body-large" weight="medium">
+      <div class="max-md:max-w-[calc(100%-115px)]">
+        <Typography
+          size="body-large"
+          weight="medium"
+          class="max-md:text-mobile-body-large"
+        >
           {{ item.author }},
         </Typography>
-        <Typography size="body-large" class="leading-[1] mt-3 min-h-[38px]">{{
-          item.authorPosition
-        }}</Typography>
+        <Typography
+          size="body-large"
+          class="leading-[1] mt-3 min-h-[38px] max-md:text-mobile-body-large"
+        >
+          {{ item.authorPosition }}
+        </Typography>
       </div>
-      <div>
-        <NuxtImg
-          :src="`/img/${item.logo}.png`"
-          class="max-w-70"
-          loading="lazy"
-          quality="100"
-          format="png"
-        />
-      </div>
+      <NuxtImg
+        :src="`/img/${item.logo}.png`"
+        class="max-md:max-w-[115px] max-w-70"
+        loading="lazy"
+        quality="100"
+        format="png"
+      />
     </div>
     <div class="flex-1 overflow-hidden relative">
       <Typography
         v-for="(text, index) in item.description"
         :key="index"
         size="body-large"
-        class="mb-10"
+        class="mb-10 max-md:text-mobile-body-normal"
       >
         {{ text }}
       </Typography>

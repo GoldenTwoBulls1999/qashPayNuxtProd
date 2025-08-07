@@ -41,6 +41,6 @@ export const stepTwoSchema = z.object({
       'Please enter a valid chargebacks.'
     )
     .default(null),
-  processRecurringPayments: z.boolean().default(false),
-  processCardPeriod: z.boolean().default(false),
+  processRecurringPayments: z.boolean().nullable().default(null).refine((value) => typeof value === 'boolean', { message: 'Please select true or false.' }),
+  processCardPeriod: z.boolean().nullable().default(null).refine((value) => typeof value === 'boolean', { message: 'Please select true or false.' }),
 })

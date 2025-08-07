@@ -2,7 +2,7 @@
   <div ref="dropdownRef" class="relative">
     <button
       class="flex items-center gap-3 cursor-pointer hover:text-secondary-500 transition-all duration-200 relative"
-      @click="toggleMenu"
+      @click="toggleMenu(item.label)"
     >
       <Typography v-if="!!item.items" weight="medium">
         {{ item.label }}
@@ -21,13 +21,13 @@
       </NuxtLink>
     </button>
     <div
-      v-show="menuOpen && !!item.items"
+      v-show="
+        (prevOpenMenu === item.label && !!item.items) ||
+        (menuOpen && !!item.items)
+      "
       class="md:absolute md:bg-white md:z-50 md:flex md:-left-15 md:border-1 md:border-gray-border md:mt-[25px] md:w-286 md:rounded-[10px] overflow-hidden"
     >
-      <ul
-        id="header-menu"
-        class="md:p-8 md:flex-1 max-h-full"
-      >
+      <ul id="header-menu" class="md:p-8 md:flex-1 max-h-full">
         <li
           v-for="menuItem in item.items"
           :key="menuItem.label"
@@ -90,8 +90,11 @@ const props = defineProps<HeaderDropdownProps>()
 const menuOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
 
+const prevOpenMenu = useState('prevOpen', () => '')
+
 onClickOutside(dropdownRef, () => {
   menuOpen.value = false
+  prevOpenMenu.value = ''
 })
 
 watch(
@@ -101,12 +104,14 @@ watch(
   }
 )
 
-const toggleMenu = () => {
+const toggleMenu = (label: string) => {
   menuOpen.value = !menuOpen.value
+  prevOpenMenu.value = label
 }
 
 const onItemClick = () => {
   if (props.toggleDropdown) props.toggleDropdown()
   menuOpen.value = false
+  prevOpenMenu.value = ''
 }
 </script>

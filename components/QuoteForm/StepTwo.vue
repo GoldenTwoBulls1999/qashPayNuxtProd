@@ -39,7 +39,10 @@
         :error="errors?.monthlyChargebacks"
       />
       <div class="flex flex-col gap-7 mt-6">
-        <Typography class="md:text-primary-400">
+        <Typography
+          class="md:text-primary-400"
+          :class="{'!text-red-500': isError('processRecurringPayments')}"
+        >
           Do you process recurring payments (e.g. subscriptions)?
         </Typography>
         <div class="flex flex-col justify-center gap-8">
@@ -58,7 +61,10 @@
         </div>
       </div>
       <div class="flex flex-col gap-7 mt-6">
-        <Typography class="md:text-primary-400">
+        <Typography
+          class="md:text-primary-400"
+          :class="{'!text-red-500': isError('processCardPeriod')}"
+        >
           Have you been processing cards for longer than six (6) months?
         </Typography>
         <div class="flex flex-col justify-center gap-8">

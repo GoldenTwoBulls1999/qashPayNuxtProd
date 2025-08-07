@@ -1,8 +1,10 @@
 <template>
-  <section class="w-full pt-first-top-gap pb-blocks-gap @container/main">
+  <section
+    class="w-full pt-25 md:pt-first-top-gap pb-blocks-gap @container/main"
+  >
     <div class="w-full max-h-fit flex flex-col">
       <div
-        class="pb-blocks-gap flex flex-col-reverse md:flex-row gap-80 justify-between"
+        class="pb-blocks-gap flex flex-col-reverse md:flex-row gap-60 md:gap-80 justify-between"
       >
         <div class="flex-1 flex flex-col">
           <Typography
@@ -29,7 +31,7 @@
             alt="item.imageAlt"
           />
           <div
-            class="absolute inset-x-0 bottom-0 h-[75%] bg-radial bg-radial-[ellipse_52.86%_52.86%_at_50%_100%] from-[#c8c6f066] to-white"
+            class="absolute inset-x-0 -bottom-1/2 md:bottom-0 h-[75%] bg-radial bg-radial-[ellipse_52.86%_52.86%_at_50%_100%] from-[#c8c6f066] to-white"
           />
         </div>
       </div>
@@ -76,8 +78,9 @@
             <Typography size="heading-4">Precession</Typography>
             <Typography size="body-large" class="text-text-gray">
               Achieve real-time, revenue-optimized decisions with QashPay’s
-              incremental machine learning models that adapt instantly to evolving
-              threats and focus on identifying trusted transactions, not just blocking fraud.
+              incremental machine learning models that adapt instantly to
+              evolving threats and focus on identifying trusted transactions,
+              not just blocking fraud.
             </Typography>
           </div>
         </div>
@@ -96,9 +99,10 @@
           <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-20">
             <Typography size="heading-4">Transparency</Typography>
             <Typography size="body-large" class="text-text-gray">
-              Gain full visibility into risk strategy performance with accurate insights,
-              clear threat trends, and transparent reporting — all through a single,
-              powerful API integration that enables contextualized, multilayered fraud decisioning.
+              Gain full visibility into risk strategy performance with accurate
+              insights, clear threat trends, and transparent reporting — all
+              through a single, powerful API integration that enables
+              contextualized, multilayered fraud decisioning.
             </Typography>
           </div>
         </div>

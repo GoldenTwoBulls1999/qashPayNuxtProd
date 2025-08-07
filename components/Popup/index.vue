@@ -7,10 +7,11 @@
         @click="handleClose"
       >
         <div
-          class="absolute bg-white rounded-app-big max-h-fit top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+          class="absolute bg-white rounded-app-big aspect-video w-full max-h-fit top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+          style="max-width: min(95vw, 992px)"
           @click.stop
         >
-          <PartnersVideo src="/img/QashPay_main.mp4" />
+          <PartnersVideo src="/img/QashPay_main.mp4" :auto="true" />
         </div>
       </div>
     </div>

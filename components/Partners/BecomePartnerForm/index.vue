@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-40 overflow-hidden flex flex-col md:flex-row md:w-full max-md:-mx-10 md:rounded-app-big md:shadow-benefit max-md:bg-[url(/img/partners_background.png)] bg-cover border-[0.5px] border-gray-200"
+    class="overflow-hidden flex flex-col md:flex-row md:w-full max-md:-mx-10 md:rounded-app-big md:shadow-benefit max-md:bg-[url(/img/partners_background.png)] bg-cover border-[0.5px] border-gray-200"
   >
     <div
       class="md:rounded-tl-app-big md:rounded-bl-app-big md:min-w-1/2 flex justify-center pt-35 bg-[url(/img/partners_background.png)] bg-cover"
@@ -50,7 +50,7 @@
           />
         </div>
         <div
-          class="w-full flex flex-col md:flex-row md:items-center justify-between mt-10 mb-22"
+          class="w-full flex flex-col md:flex-row md:flex-wrap md:items-center justify-between gap-4 mt-10 mb-22"
         >
           <AppCheckbox
             v-model="individualCheck"
@@ -136,11 +136,13 @@ const formattedAreaCodes = computed(() => {
   const uniqueDialCodes = [...new Set(dialCodes)]
 
   return uniqueDialCodes
-      .sort((a, b) => Number(a.replaceAll(" ", "")) - Number(b.replaceAll(" ", "")))
-      .map((dialCode) => ({
-        value: dialCode,
-        label: `+${dialCode}`,
-      }))
+    .sort(
+      (a, b) => Number(a.replaceAll(' ', '')) - Number(b.replaceAll(' ', ''))
+    )
+    .map((dialCode) => ({
+      value: dialCode,
+      label: `+${dialCode}`,
+    }))
 })
 
 const isError = (field: BecomePartnerFormFieldName) =>

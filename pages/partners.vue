@@ -173,7 +173,7 @@
               </li>
             </ul>
             <div class="flex gap-8 mt-20">
-              <AppButton class="!px-0 !py-0 w-fit max-w-[115px]">
+              <AppButton class="!px-0 !py-0 w-fit md:max-w-[115px]">
                 <NuxtImg
                   preload
                   src="/img/appstore.png"
@@ -181,7 +181,7 @@
                   format="png"
                 />
               </AppButton>
-              <AppButton class="!px-0 !py-0 w-fit max-w-[115px]">
+              <AppButton class="!px-0 !py-0 w-fit md:max-w-[115px]">
                 <NuxtImg
                   preload
                   src="/img/googleplay.png"
