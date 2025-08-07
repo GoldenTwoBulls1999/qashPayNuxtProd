@@ -7,7 +7,7 @@
     </Typography>
     <ul class="flex gap-6">
       <li>
-        <NuxtLink to="https://www.linkedin.com/company/108289234">
+        <NuxtLink to="https://www.linkedin.com/company/108289234" target="_blank">
           <Icon
             mode="svg"
             width="16"
@@ -18,7 +18,7 @@
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink to="#">
+        <NuxtLink to="https://x.com/QashPayOfficial" target="_blank">
           <Icon
             mode="svg"
             width="16"
@@ -29,7 +29,7 @@
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink to="#">
+        <NuxtLink to="https://www.facebook.com/profile.php?id=61579170841477" target="_blank">
           <Icon
             mode="svg"
             width="16"
