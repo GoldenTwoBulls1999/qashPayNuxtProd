@@ -67,9 +67,6 @@ const submitForm = async () => {
   console.log('requestBody', requestBody)
   console.log(JSON.stringify(requestBody))
 
-  // requestBody.country = requestBody.country.toLocaleUpperCase()
-  requestBody.industry = 'retail-software';
-
   const res = await $fetch<{statusCode: number, body: string}>('/api/submit_form', {
     method: 'POST',
     body: requestBody
