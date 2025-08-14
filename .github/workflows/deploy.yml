@@ -35,15 +35,13 @@ jobs:
             cp -r node_modules/geoip-country/data/ .output/server/node_modules/geoip-country/data/
           EOF
 
-      - name: Delete PM2 processes if any
+      - name: PM2 stop all
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "sh -c '
-            if [ \$(pm2 list | grep -c \"│ App name\") -gt 0 ]; then
-              pm2 delete all
-            else
-              echo \"No PM2 processes to delete.\"
-            fi
-          '"
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "pm2 stop all || echo 'ok'"
+
+      - name: PM2 delete all
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "pm2 delete all || echo 'ok'"
 
       - name: Deploy new build using rsync
         run: |
