@@ -66,7 +66,7 @@ jobs:
           module.exports = {
             apps: [{
               name: 'qashpay',
-              script: '/opt/qashPay/.output/server/index.mjs',
+              script: '${{ secrets.APP_FOLDER }}/.output/server/index.mjs',
               instances: 'max',
               exec_mode: 'cluster',
               env: {
