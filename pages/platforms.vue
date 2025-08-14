@@ -1,14 +1,14 @@
 <template>
   <section class="w-full pb-60 @container/main">
     <div
-      class="flex gap-19 -mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] px-10 @min-[992px]/main:pl-[calc((100vw-992px)/2)] bg-radial bg-radial-[ellipse_70%_102%_at_50%_100%] from-[#F9F8FF] to-white my-30"
+      class="flex gap-19 -mx-10 @min-[992px]/main:-mx-[calc((100vw-992px)/2)] px-10 @min-[992px]/main:pl-[calc((100vw-992px)/2)] bg-radial bg-radial-[ellipse_70%_102%_at_50%_100%] from-[#F9F8FF] to-white mt-0 mb-30 md:my-30"
     >
       <div
-        class="flex flex-col md:justify-center w-full min-[1300px]:max-w-1/2"
+        class="flex flex-col-reverse md:flex-col md:justify-center w-full min-[1300px]:max-w-1/2"
       >
         <div class="mt-24">
           <div class="flex-1 flex-col">
-            <Typography size="heading-2" class="text-start mb-16">
+            <Typography size="heading-2" class="text-center md:text-start mb-16">
               What are Shop Plugins?
             </Typography>
             <Typography
@@ -157,7 +157,7 @@
         <Typography size="heading-3" weight="medium">
           Plugin Platforms
         </Typography>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-20">
           <PlatformItem
             to="https://quaife.docs.oppwa.com/tutorials/plugins#adobeCommerce"
             title="Adobe Commerce Cloud"

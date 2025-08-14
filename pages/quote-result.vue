@@ -3,19 +3,20 @@
     class="w-full pt-19 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center"
   >
     <div class="w-full max-h-fit flex flex-col items-center">
-      <Typography size="heading-4" class="mb-10">
+      <Typography size="heading-4" class="mb-10 text-center">
         Your account has been
         {{ riscScore === 'declined' ? 'declined' : 'pre-approved' }}
       </Typography>
       <RiscScore v-model="riscScore" />
       <div
-        class="w-full md:max-w-[476px] flex flex-col items-center justify-between"
+        class="w-full flex flex-col items-center justify-between h-full"
+        :class="{ 'bg-[radial-gradient(52.86%_52.86%_at_50%_0%,rgba(220,214,217,0.4)_0%,rgba(255,255,255,0)_100%)]': riscScore !== 'declined' }"
       >
         <div
-          v-show="riscScore !== 'declined'"
-          class="w-full flex flex-col gap-16"
+          v-if="riscScore !== 'declined'"
+          class="w-full flex flex-col gap-16 md:max-w-[476px]"
         >
-          <Typography size="heading-2" weight="light" class="md:text-heading-2">
+          <Typography size="heading-4" class="md:text-heading-4 mt-[42px] text-center">
             Here’s your custom quote
           </Typography>
           <div
@@ -100,9 +101,18 @@
             </div>
           </div>
         </div>
+        <div v-else class="w-full md:max-w-[624px] min-h-[150px] border-1 border-border-gray rounded-2xl px-20 pt-15 pb-20">
+          <Typography size="body-large" weight="medium" class="mb-10">Reason for declined</Typography>
+          <Typography size="body-large" weight="normal">{{ responseState.message_text }}</Typography>
+          <Typography size="body-large" weight="normal">If you have any questions please contact us at:
+            <NuxtLink href="mailto:contact@qashpay.com" class="text-secondary-500">
+            contact@qashpay.com
+            </NuxtLink>
+          </Typography>
+        </div>
         <div
           v-show="riscScore !== 'declined'"
-          class="bg-primary-100 flex rounded-app-big p-11 gap-6"
+          class="bg-primary-100 flex rounded-app-big p-11 gap-6 md:max-w-[476px]"
         >
           <Icon
             mode="svg"
@@ -175,7 +185,7 @@ const handleDecline = async () => {
 
   console.log('resInvoke:', resInvoke)
 
-  await navigateTo('/')
+  await navigateTo('/quote-declined')
 }
 
 const handleAccept = async () => {

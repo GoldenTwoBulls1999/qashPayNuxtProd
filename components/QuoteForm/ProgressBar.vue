@@ -7,7 +7,7 @@
       />
     </div>
     <p class="text-[13px]/[13px] text-primary-300">
-      {{ (currentStep / (totalSteps - 1)) * 100 }}%
+      {{ Math.trunc((currentStep / (totalSteps - 1)) * 100) }}%
     </p>
   </div>
 </template>

@@ -11,7 +11,7 @@
         >
           <button
             :aria-expanded="isOpen(index)"
-            class="cursor-pointer flex items-center gap-10 max-md:pl-20"
+            class="cursor-pointer flex items-center gap-10 max-md:pl-10"
             :class="{
               'pb-12': !isOpen(index) && index !== items.length - 1,
               'pt-12': index !== 0,
@@ -42,7 +42,7 @@
             <div v-show="isOpen(index)">
               <div
                 size="body-normal"
-                class="text-text-gray pt-8 pb-12 md:pb-15 pl-20 leading-[1.5]"
+                class="text-text-gray pt-8 pb-12 md:pb-15 pl-10 md:pl-20 leading-[1.5]"
                 v-html="item.content"
               />
               <AppButton
@@ -59,7 +59,7 @@
                   preload
                   :src="`/img/${item.image}.png`"
                   :alt="item.imageAlt"
-                  class="w-full md:hidden pt-8 pb-18"
+                  class="w-full md:hidden pt-8 pb-18 px-10 md:px-0"
                   format="png"
                 />
               </div>

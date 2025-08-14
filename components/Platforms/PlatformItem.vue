@@ -23,7 +23,7 @@
         <NuxtImg
           :src="`/img/${image}.png`"
           :alt="imageTitle"
-          class="max-h-[60px] w-auto object-contain max-w-[172px] h-[60px]"
+          class="max-h-[60px] w-auto object-contain max-w-[85%] md:max-w-[172px] h-[60px]"
           :class="{
             'max-h-[80px] h-[80px]': title === 'SFCC',
           }"

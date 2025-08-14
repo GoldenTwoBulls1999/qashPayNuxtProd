@@ -45,7 +45,7 @@
       <div class="flex flex-col gap-12 md:flex-row md:gap-50 md:items-center">
         <div class="w-full relative md:max-w-[488px]">
           <img
-            src="/img/home_features_2.png"
+            src="/img/features-section-globe.gif"
             alt="globe animation"
             class="w-full rounded-[20px]"
             loading="lazy"

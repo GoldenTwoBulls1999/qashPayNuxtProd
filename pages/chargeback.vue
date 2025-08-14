@@ -1,14 +1,16 @@
 <template>
   <section
-    class="w-full pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center @container/main"
+    class="w-full pt-20 md:pt-60 pb-69 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center @container/main"
   >
     <div class="w-full max-w-full max-h-fit flex flex-col">
-      <div class="flex flex-col md:flex-row items-center gap-20 mb-blocks-gap">
+      <div class="flex flex-col-reverse md:flex-col md:flex-row items-center gap-20 mb-blocks-gap">
         <div class="flex-1 flex flex-col gap-20">
-          <Typography size="heading-3" weight="medium">
+          <Typography size="heading-3" weight="medium" class="text-center md:text-start">
             Prevent and Recover Chargebacks with QashPay
           </Typography>
-          <Typography class="text-primary-400">
+          <Typography
+            size="body-large"
+            class="text-primary-400">
             QashPay helps businesses — from startups to enterprises —
             automatically prevent chargebacks using Ethoca Alerts and Verifi
             RDR, while recovering lost revenue through automated representment.

@@ -137,7 +137,7 @@ const [country] = defineField('country', {
 })
 
 const onSubmit = handleSubmit((values) => {
-  // console.log({values});
+  window.scrollTo(0, 0)
   emit('next')
 })
 </script>

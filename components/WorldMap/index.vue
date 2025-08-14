@@ -72,7 +72,7 @@ const sortedPaymentMethods = (paymentMethods: string[]) => {
       </AppSelect>
       <div
         v-if="paymentMethods.length"
-        class="mt-[38px] border border-gray-300 bg-white rounded-md shadow-sm absolute w-full md:w-[305px]"
+        class="mt-[38px] border border-gray-300 bg-white rounded-md shadow-sm relative md:absolute w-full md:w-[305px]"
         :class="{
           'border-0 !shadow-none':
             sortedPaymentMethods(paymentMethods).length < 6,

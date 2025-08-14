@@ -1,7 +1,7 @@
 <template>
   <section class="w-full pb-blocks-gap">
     <div class="flex flex-col gap-20 md:items-center mb-40">
-      <Typography size="heading-3" weight="normal">
+      <Typography size="heading-3" weight="normal" class="text-center">
         Go Live with Website Payments in Hours
         <span class="font-medium">— Not Days</span>
       </Typography>
@@ -10,10 +10,8 @@
         leading businesses who demand performance.
       </Typography>
     </div>
-    <div
-      class="w-full mx-auto flex justify-center items-center rounded-app-big bg-secondary-300 overflow-hidden relative"
-    >
-      <PartnersVideo src="/img/QashPay_main.mp4" />
+    <div>
+      <PartnersVideo src="/img/QashPay_main.mp4" poster="/img/index_video_poster.png" />
     </div>
   </section>
 </template>

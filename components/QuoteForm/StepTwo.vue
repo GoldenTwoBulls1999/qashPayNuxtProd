@@ -1,9 +1,10 @@
 <template>
-  <div v-if="loading" class="max-md:pt-7">
-    <Typography size="heading-2" weight="light" class="md:hidden mb-12">
+  <div v-if="quoteRequestLoadingState.isLoading" class="max-md:pt-7">
+    <Typography size="heading-4" weight="medium" class="mb-12 text-center">
       Great job!
     </Typography>
-    <Typography size="body-large" class="md:mt-4">
+    <ProgressBar :current-step="quoteRequestLoadingState.progress" :total-steps=100 class="mt-[41px] mb-[32px]" />
+    <Typography class="md:mt-4 text-center text-[24px]">
       We’re crunching the numbers...
     </Typography>
   </div>
@@ -96,10 +97,11 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { stepTwoSchema } from '~/components/QuoteForm/schemas'
 import { useQuoteRequestState } from '~/composables/useQuoteRequestState'
 import type { StepTwoFieldName } from '~/components/QuoteForm/types'
+import {useQuoteRequestLoadingState} from "~/composables/useQuoteRequestLoadingState";
+import ProgressBar from "~/components/QuoteForm/ProgressBar.vue";
 
 const state = useQuoteRequestState()
-
-defineProps<{ loading: boolean }>()
+const quoteRequestLoadingState = useQuoteRequestLoadingState()
 
 const emit = defineEmits<{
   (e: 'submit'): void
@@ -130,6 +132,32 @@ watch(
   { deep: true }
 )
 
+let intervalId: ReturnType<typeof setInterval> | null = null
+
+watch(
+    () => quoteRequestLoadingState.value.isLoading,
+    (newValue, oldValue) => {
+      if (!oldValue && newValue) {
+        intervalId = setInterval(() => {
+          const r = Math.random() / 3
+          const increment = Math.trunc((100 - quoteRequestLoadingState.value.progress) * r)
+          const newProgress = quoteRequestLoadingState.value.progress + increment
+
+          if (newProgress < 100) {
+            quoteRequestLoadingState.value.progress = newProgress
+          }
+        }, 500)
+      }
+    }
+)
+
+onUnmounted(() => {
+  if (intervalId !== null) {
+    clearInterval(intervalId)
+    intervalId = null
+  }
+});
+
 const isError = (field: StepTwoFieldName) =>
   submitCount.value > 0 && !!errors.value[field]
 
@@ -155,5 +183,8 @@ const [period] = defineField('processCardPeriod', {
   validateOnChange: false,
 })
 
-const onSubmit = handleSubmit(() => emit('submit'))
+const onSubmit = handleSubmit(() => {
+  window.scrollTo(0, 0)
+  emit('submit')
+})
 </script>

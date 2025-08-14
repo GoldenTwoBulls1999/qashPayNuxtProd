@@ -49,7 +49,7 @@
               format="png"
             />
           </div>
-          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-20">
+          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-0 md:px-20">
             <Typography size="heading-4">
               Reduce the Total Cost of Fraud Management
             </Typography>
@@ -74,7 +74,7 @@
               format="png"
             />
           </div>
-          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-20">
+          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-0 md:px-20">
             <Typography size="heading-4">Precession</Typography>
             <Typography size="body-large" class="text-text-gray">
               Achieve real-time, revenue-optimized decisions with QashPay’s
@@ -96,7 +96,7 @@
               format="png"
             />
           </div>
-          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-20">
+          <div class="flex flex-col gap-12 md:flex-1 md:max-w-[476px] px-0 md:px-20">
             <Typography size="heading-4">Transparency</Typography>
             <Typography size="body-large" class="text-text-gray">
               Gain full visibility into risk strategy performance with accurate

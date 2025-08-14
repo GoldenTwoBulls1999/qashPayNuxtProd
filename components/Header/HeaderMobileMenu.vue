@@ -18,7 +18,7 @@
               class="w-full"
               color="black"
               to="/quote-request"
-              >Sign Up</AppButton
+            >Sign Up</AppButton
             >
           </div>
         </li>
@@ -31,6 +31,8 @@
             :item="item"
             :drop-down-open="dropDownOpen"
             :toggle-dropdown="toggleDropdown"
+            :is-active="isItemActive(item)"
+            :should-expand="shouldExpandItem(item)"
           />
         </li>
       </ul>
@@ -39,12 +41,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { headerItems } from '~/utils/headerItems'
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { headerItems, type HeaderItem } from '~/utils/headerItems'
 import LoginDropdown from '~/components/Header/LoginDropdown.vue'
 import { loginItems } from '~/utils/loginItems'
 
+const route = useRoute()
 const dropDownOpen = ref(false)
+
+const currentPath = computed(() => route.path)
 
 const toggleDropdown = () => {
   dropDownOpen.value = !dropDownOpen.value
@@ -54,6 +60,26 @@ const toggleDropdown = () => {
   } else {
     document.body.style.overflowY = 'auto'
   }
+}
+
+const isItemActive = (item: HeaderItem): boolean => {
+  if ('link' in item && item.link) {
+    return currentPath.value === item.link
+  }
+
+  if ('items' in item && item.items) {
+    return item.items.some(subItem => currentPath.value === subItem.link)
+  }
+
+  return false
+}
+
+const shouldExpandItem = (item: HeaderItem): boolean => {
+  if ('items' in item && item.items) {
+    return item.items.some(subItem => currentPath.value === subItem.link)
+  }
+
+  return false
 }
 </script>
 

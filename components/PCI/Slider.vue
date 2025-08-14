@@ -15,7 +15,7 @@
     >
       <ClientOnly>
         <button
-          class="transform -translate-y-1/2 mr-20 size-20 md:size-32 bg-white rounded-full border-[#D9D9D9] border-1 shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors z-10 cursor-pointer"
+          class="transform -translate-y-1/2 mr-20 size-20 md:size-32 bg-white rounded-full border-[#D9D9D9] border-1 shadow-sm hidden md:flex items-center justify-center hover:bg-gray-50 transition-colors z-10 cursor-pointer"
           @click="swiper.prev()"
         >
           <Icon mode="svg" width="20" name="app-icon:arrow-left-icon" />
@@ -23,7 +23,7 @@
 
         <swiper-container
           ref="swiperRef"
-          class="grow-1 shrink-1 max-w-[calc(100%-208px)] drop-shadow-[0px_4px_14px_rgba(10,10,10,0.14)]"
+          class="grow-1 shrink-1 max-w-[100%] md:max-w-[calc(100%-208px)] drop-shadow-[0px_4px_14px_rgba(10,10,10,0.14)]"
           :loop="true"
           :slides-per-view="1"
           :pagination="{
@@ -55,7 +55,7 @@
         </swiper-container>
 
         <button
-          class="transform -translate-y-1/2 ml-20 size-20 md:size-32 bg-white rounded-full border-[#D9D9D9] border-1 shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors z-10 cursor-pointer"
+          class="transform -translate-y-1/2 ml-20 size-20 md:size-32 bg-white rounded-full border-[#D9D9D9] border-1 shadow-sm hidden md:flex items-center justify-center hover:bg-gray-50 transition-colors z-10 cursor-pointer"
           @click="swiper.next()"
         >
           <Icon mode="svg" width="20" name="app-icon:arrow-right-icon" />

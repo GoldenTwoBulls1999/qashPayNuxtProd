@@ -1,5 +1,6 @@
 type QuoteResponseState = {
   message: string
+  message_text: string
   successful: boolean
   quoteId: string
   firstName: string
@@ -18,6 +19,7 @@ type QuoteResponseState = {
 export const useQuoteResponseState = () => {
   return useState<QuoteResponseState>('quote-response-state', () => ({
     message: '',
+    message_text: '',
     successful: false,
     quoteId: '',
     firstName: '',

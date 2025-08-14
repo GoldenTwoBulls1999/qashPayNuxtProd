@@ -1,6 +1,6 @@
 <template>
   <div
-    class="group w-full max-h-fit mx-auto flex justify-center items-center rounded-app-big overflow-hidden relative"
+    class="group w-[100vw] md:w-full -left-10 md:left-0 mx-auto flex justify-center items-center md:rounded-app-big overflow-hidden relative"
   >
     <div class="bg-[#C1B7DA]/10 absolute inset-0 z-10" />
     <div class="player aspect-video">
@@ -8,13 +8,36 @@
         ref="videoRef"
         class="w-full max-w-full max-h-fit m-auto"
         preload="auto"
-        poster=""
+        :poster="poster || ''"
         playsinline
+        muted
+        autoplay
       />
     </div>
     <AppButton
+      class="md:hidden z-10 group absolute bottom-12 left-12 text-inline-label flex items-center !gap-6 bg-white hover:bg-[#C1B7DA]/40 focus:bg-white focus:!text-primary-400 !text-primary-300 shadow-[0px_4px_4px_rgba(0,0,0,0.05)] !rounded-full !w-16 !h-16 !max-w-16 !max-h-16 !p-0"
+      @click="togglePlay"
+    >
+      <template #icon:end>
+        <Icon
+          v-if="playing"
+          mode="svg"
+          width="10"
+          name="app-icon:pause-icon"
+          class="text-primary-200 group-focus:text-primary-400"
+        />
+        <Icon
+          v-else
+          mode="svg"
+          width="10"
+          name="app-icon:play-icon"
+          class="text-primary-200 group-focus:text-primary-400 left-[1px] relative"
+        />
+      </template>
+    </AppButton>
+    <AppButton
       size="smallrounded6"
-      class="z-10 group absolute bottom-12 left-12 text-inline-label flex items-center !gap-6 bg-white hover:bg-[#C1B7DA]/40 focus:bg-white focus:!text-primary-400 !text-primary-300 shadow-[0px_4px_4px_rgba(0,0,0,0.05)]"
+      class="hidden md:flex z-10 group absolute bottom-12 left-12 text-inline-label flex items-center !gap-6 bg-white hover:bg-[#C1B7DA]/40 focus:bg-white focus:!text-primary-400 !text-primary-300 shadow-[0px_4px_4px_rgba(0,0,0,0.05)]"
       @click="togglePlay"
     >
       {{ playing ? 'Pause the video' : 'Watch the video' }}
@@ -22,14 +45,16 @@
         <Icon
           v-if="playing"
           mode="svg"
+          width="10"
           name="app-icon:pause-icon"
           class="text-primary-200 group-focus:text-primary-400"
         />
         <Icon
           v-else
           mode="svg"
+          width="10"
           name="app-icon:play-icon"
-          class="text-primary-200 group-focus:text-primary-400"
+          class="text-primary-200 group-focus:text-primary-400 left-[1px] relative"
         />
       </template>
     </AppButton>
@@ -55,10 +80,11 @@ import {
 
 interface VideoProps {
   src: string
-  autoplay?: boolean
+  autoplay?: boolean,
+  poster?: string
 }
 
-const { src, autoplay } = defineProps<VideoProps>()
+const { src, autoplay, poster } = defineProps<VideoProps>()
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const userControlled = ref(false)
@@ -86,7 +112,7 @@ watch(visible, (isVisible) => {
 
 onMounted(() => {
   muted.value = true
-  playing.value = autoplay || isDesktop.value
+  playing.value = autoplay || visible.value
 })
 </script>
 

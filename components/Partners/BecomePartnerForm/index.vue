@@ -12,7 +12,7 @@
       </Typography>
     </div>
 
-    <div class="md:min-w-1/2 md:bg-[#FEFEFE] px-20 pt-16 pb-22">
+    <div class="md:min-w-1/2 md:bg-[#FEFEFE] px-10 md:px-20 pt-16 pb-22">
       <form class="flex flex-col gap-10 items-start">
         <AppInput
           name="name"

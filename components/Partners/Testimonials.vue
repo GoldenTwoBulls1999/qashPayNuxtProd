@@ -13,7 +13,7 @@
     >
     <div
       ref="swiperContainer"
-      class="flex justify-center max-w-full mt-20 px-10"
+      class="flex justify-center max-w-full mt-20 md:px-10"
     >
       <ClientOnly>
         <button
@@ -33,7 +33,8 @@
           }"
           :loop="true"
           :slides-per-view="isSmallScreen ? 1.15 : 2"
-          :space-between="40"
+          :space-between="isSmallScreen ? 20 : 40"
+          :centered-slides="true"
         >
           <swiper-slide
             v-for="(item, index) in testimonials"

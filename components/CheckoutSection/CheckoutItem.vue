@@ -4,7 +4,7 @@
   >
     <div class="flex flex-col gap-12 md:mt-16">
       <div
-        class="w-[54px] h-[54px] min-w-[54px] min-h-[54px] p-4 rounded-[10px] bg-[#eeeeee] flex items-center justify-center"
+        class="w-[54px] h-[54px] min-w-[54px] min-h-[54px] p-4 rounded-[10px] bg-[#eeeeee] items-center justify-center hidden md:flex"
       >
         <Icon name="app-icon:card-lock-icon" />
       </div>

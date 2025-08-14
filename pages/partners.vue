@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full pt-45 pb-blocks-gap">
+  <section class="w-full md:pt-45 pb-blocks-gap">
     <div class="w-full max-h-fit flex flex-col">
       <PartnersVideo src="/img/QashPay_partner.webm" />
       <div

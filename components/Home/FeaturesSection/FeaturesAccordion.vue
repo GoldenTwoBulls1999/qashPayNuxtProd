@@ -52,14 +52,14 @@
                 {{ item.content }}
               </Typography>
               <div
-                class="w-full rounded-xl"
-                :class="'background-' + items[activeIndex].index"
+                class="w-full rounded-xl overflow-hidden"
+                :class="'mb-8 background-' + items[activeIndex].index"
               >
                 <NuxtImg
                   preload
                   :src="`/img/${item.image}.png`"
                   :alt="item.imageAlt"
-                  class="w-full md:hidden pt-8 pb-18"
+                  class="w-full md:hidden pt-8 relative bottom-[-1px]"
                   format="png"
                 />
               </div>

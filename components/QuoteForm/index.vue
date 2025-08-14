@@ -5,7 +5,7 @@
         Great job!
       </Typography>
     </div>
-    <ProgressBar :current-step="currentStep" :total-steps="steps.length + 1"/>
+    <ProgressBar v-if="!quoteRequestLoadingState.isLoading" :current-step="currentStep" :total-steps="steps.length + 1"/>
     <StepOne v-if="currentStep === 0" @next="nextStep"/>
     <StepTwo
         v-else
@@ -23,9 +23,11 @@ import StepTwo from '~/components/QuoteForm/StepTwo.vue'
 import {useQuoteRequestState} from '~/composables/useQuoteRequestState'
 import {useQuoteResponseState} from '~/composables/useQuoteResponseState'
 import type {QuoteFormData} from "~/components/QuoteForm/types";
+import {useQuoteRequestLoadingState} from "~/composables/useQuoteRequestLoadingState";
 
 const state = useQuoteRequestState()
 const quoteState = useQuoteResponseState()
+const quoteRequestLoadingState = useQuoteRequestLoadingState()
 
 const steps = [StepOne, StepTwo]
 const currentStep = ref(0)
@@ -41,6 +43,7 @@ const prevStep = () => {
 
 type QuoteResponse = {
   message: string;
+  message_text: string;
   quote: {
     Unique_Quote_ID: string;
     "IC++ Fee": string;
@@ -67,6 +70,8 @@ const submitForm = async () => {
   console.log('requestBody', requestBody)
   console.log(JSON.stringify(requestBody))
 
+  quoteRequestLoadingState.value.isLoading = true
+
   const res = await $fetch<{statusCode: number, body: string}>('/api/submit_form', {
     method: 'POST',
     body: requestBody
@@ -91,6 +96,9 @@ const submitForm = async () => {
     quoteState.value.riskGroup = body.quote["Risk Group"]
   } else if (body.message === "Quote declined.") {
     quoteState.value.message = body.message
+    quoteState.value.message_text = body.message_text
+
+    await new Promise(resolve => setTimeout(resolve, 2000))
   }
 
   await navigateTo('/quote-result')

@@ -1,15 +1,14 @@
 <template>
   <div
-    class="w-full mb-38 pt-10 pb-[65px] bg-radial bg-radial-[ellipse_50%_50%_at_50%_100%] from-gradient-gray/40 to-white"
+    class="w-full"
   >
     <Typography
       v-if="riscScore"
-      size="heading-6"
-      class="text-center text-primary-300 mb-40"
+      class="text-center text-primary-300 mb-40 text-[24px]"
     >
       Risk score: <span class="capitalize">{{ riscScore }}</span>
     </Typography>
-    <div class="flex gap-5 max-w-[498px] mx-auto relative">
+    <div class="flex gap-5 max-w-[498px] mx-auto relative mb-35">
       <div class="flex-1 flex flex-col items-center gap-7">
         <div
           v-if="riscScore && (riscScore as RiscScore) === 'declined'"

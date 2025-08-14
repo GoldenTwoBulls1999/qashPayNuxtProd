@@ -1,14 +1,16 @@
 <template>
   <section
-    class="w-full pt-60 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center @container/main"
+    class="w-full pt-30 md:pt-60 md:pt-app-default min-h-[calc(100vh-var(--spacing-app-mobile))] md:min-h-[calc(100vh-var(--spacing-app-default))] flex justify-center @container/main"
   >
     <div class="w-full max-w-full max-h-fit flex flex-col">
-      <div class="flex flex-col md:flex-row items-center gap-20 mb-60">
-        <div class="flex-1 flex flex-col gap-20">
-          <Typography size="heading-3" weight="medium">
+      <div class="flex flex-col-reverse md:flex-col md:flex-row items-center gap-20 mb-60">
+        <div class="flex-1 flex flex-col max-md:items-center gap-20">
+          <Typography size="heading-3" weight="medium" class="text-center md:text-start">
             PCI Compliance Scanning
           </Typography>
-          <Typography class="text-primary-400">
+          <Typography
+              size="body-large"
+              class="text-primary-400">
             Whether you're a merchant or a reseller, Clone Systems simplifies
             <span class="font-medium">PCI DSS 4.0.1 compliance</span> — making
             it secure, straightforward, and business-enabling. Our end-to-end
@@ -32,7 +34,7 @@
         <Typography
           size="heading-4"
           weight="light"
-          class="max-md:px-10 max-md:text-mobile-heading-4 text-left mb-40 md:mb-40"
+          class="max-md:text-mobile-heading-4 text-left mb-40 md:mb-40"
         >
           Key benefits for Merchants of
           <span class="font-medium">PCI DSS 4.0.1</span>

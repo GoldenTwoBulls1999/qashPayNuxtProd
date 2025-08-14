@@ -2,6 +2,7 @@
   <div ref="dropdownRef" class="relative">
     <button
       class="flex items-center gap-3 cursor-pointer hover:text-secondary-500 transition-all duration-200 relative"
+      :class="{ 'active': isActive }"
       @click="toggleMenu(item.label)"
     >
       <Typography v-if="!!item.items" weight="medium">
@@ -16,7 +17,7 @@
         class="transition-all duration-200"
         :class="{ 'rotate-180': menuOpen }"
       />
-      <NuxtLink v-if="item.link" :to="item.link" @click="toggleDropdown">
+      <NuxtLink v-if="item.link" :to="item.link" @click="toggleDropdown" :class="{ 'active': isActive }">
         <Typography weight="medium">{{ item.label }}</Typography>
       </NuxtLink>
     </button>
@@ -38,6 +39,7 @@
           <NuxtLink
             :to="menuItem.link"
             class="flex items-start gap-4"
+            :class="{ 'active': isSubItemActive(menuItem) }"
             @click="onItemClick"
             :target="menuItem.newTab ? '_blank' : null"
           >
@@ -67,15 +69,16 @@
           {{ item.label }}
         </Typography>
         <Typography size="inline-small" class="text-gray-text">{{
-          item.text
-        }}</Typography>
+            item.text
+          }}</Typography>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import { onClickOutside } from '@vueuse/core'
 import type { HeaderItem } from '~/utils/headerItems'
 
@@ -83,14 +86,27 @@ interface HeaderDropdownProps {
   item: HeaderItem
   dropDownOpen?: boolean
   toggleDropdown?: () => void
+  isActive?: boolean
+  shouldExpand?: boolean
 }
 
-const props = defineProps<HeaderDropdownProps>()
+const props = withDefaults(defineProps<HeaderDropdownProps>(), {
+  isActive: false,
+  shouldExpand: false
+})
 
+const route = useRoute()
 const menuOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
 
 const prevOpenMenu = useState('prevOpen', () => '')
+
+onMounted(() => {
+  if (props.shouldExpand && 'items' in props.item) {
+    menuOpen.value = true
+    prevOpenMenu.value = props.item.label
+  }
+})
 
 onClickOutside(dropdownRef, () => {
   menuOpen.value = false
@@ -114,4 +130,20 @@ const onItemClick = () => {
   menuOpen.value = false
   prevOpenMenu.value = ''
 }
+
+const isSubItemActive = (subItem: { link: string }) => {
+  return route.path === subItem.link
+}
 </script>
+
+<style scoped>
+a.active {
+  color: #FF52A8;
+}
+
+@media (max-width: 768px) {
+  .active {
+    font-weight: 600;
+  }
+}
+</style>

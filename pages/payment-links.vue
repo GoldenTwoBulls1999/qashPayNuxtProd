@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full pt-first-top-gap pb-60 @container/main">
+  <section class="w-full pt-0 md:pt-first-top-gap pb-60 @container/main">
     <div class="w-full max-h-fit flex flex-col">
       <div class="flex flex-col-reverse md:flex-row md:gap-80 justify-between">
         <div class="flex-1 flex flex-col">
@@ -16,7 +16,8 @@
             Simple, fast and effective payments
           </Typography>
           <Typography
-            class="max-md:text-center max-md:text-mobile-heading-6 md:max-w-200 mb-25"
+            size="body-large"
+            class="md:max-w-200 mb-25 text-primary-400"
           >
             The payment experience is faster and more convenient than ever. The
             option to pay using a secure link sent via SMS text message, email,
