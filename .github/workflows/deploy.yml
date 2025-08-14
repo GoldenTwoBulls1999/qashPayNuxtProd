@@ -1,0 +1,89 @@
+name: Deploy to Server
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Build and restart on server
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "rm -rf /home/${{ secrets.SERVER_USER }}/qashpay"
+
+      - name: Copy code to server
+        run: |
+          rsync -avz --delete ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/${{ secrets.SERVER_USER }}/qashpay
+
+      - name: Build and restart on server
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+            cd /home/${{ secrets.SERVER_USER }}/qashpay
+            npm ci
+            env NODE_OPTIONS=--max-old-space-size=8192 npm run build
+            cp -r node_modules/geoip-country/data/ .output/server/node_modules/geoip-country/data/
+          EOF
+
+      - name: Delete PM2 processes if any
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "sh -c '
+            if [ \$(pm2 list | grep -c \"│ App name\") -gt 0 ]; then
+              pm2 delete all
+            else
+              echo \"No PM2 processes to delete.\"
+            fi
+          '"
+
+      - name: Deploy new build using rsync
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
+            rsync -a --delete /home/${{ secrets.SERVER_USER }}/qashpay/ ${{ secrets.APP_FOLDER }}/ &&
+            rm -rf /home/${{ secrets.SERVER_USER }}/qashpay
+          "
+
+      - name: List contents after deploy
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "ls -la ${{ secrets.APP_FOLDER }}"
+
+      - name: Remove old PM2 ecosystem file
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "sh -c 'rm -f /home/${{ secrets.SERVER_USER }}/ecosystem.config.js'"
+
+      - name: Create PM2 ecosystem file
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "cat > /home/${{ secrets.SERVER_USER }}/ecosystem.config.js << 'EOF'
+          module.exports = {
+            apps: [{
+              name: 'qashpay',
+              script: '/opt/qashPay/.output/server/index.mjs',
+              instances: 'max',
+              exec_mode: 'cluster',
+              env: {
+                PORT: 3000,
+                BACKEND_BASE_URL: '${{ secrets.BACKEND_BASE_URL }}',
+                BACKEND_API_KEY: '${{ secrets.BACKEND_API_KEY }}',
+                TURNSTILE_SITE_KEY: '${{ secrets.TURNSTILE_SITE_KEY }}',
+                TURNSTILE_SECRET_KEY: '${{ secrets.TURNSTILE_SECRET_KEY }}',
+              }
+            }]
+          };
+          EOF"
+
+      - name: Start PM2 with ecosystem file
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "pm2 start /home/${{ secrets.SERVER_USER }}/ecosystem.config.js"
+
+      - name: Save PM2 process list
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "pm2 save"
