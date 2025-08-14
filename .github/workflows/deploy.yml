@@ -49,7 +49,7 @@ jobs:
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
             rm -rf ${{ secrets.APP_FOLDER }}/* ${{ secrets.APP_FOLDER }}/.[!.]* ${{ secrets.APP_FOLDER }}/..?* &&
-            mkdir -p ${{ secrets.SERVER_USER }} &&
+            mkdir -p ${{ secrets.APP_FOLDER }} &&
             rsync -a --delete /home/${{ secrets.SERVER_USER }}/qashpay/ ${{ secrets.APP_FOLDER }}/ &&
             rm -rf /home/${{ secrets.SERVER_USER }}/qashpay
           "
