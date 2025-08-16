@@ -149,22 +149,48 @@ useHead({
   title: 'QashPay | Quote'
 })
 
-// onMounted(() => {
-//   const requestInvokeBody: InvokeZapierPayload = {
-//     Unique_Quote_ID: responseState.value.quoteId,
-//     Accepted: 'User Left Quote',
-//   }
-//
-//   const handler = () => {
-//     navigator.sendBeacon('/api/invoke_zapier', JSON.stringify(requestInvokeBody))
-//   }
-//
-//   window.addEventListener('unload', handler)
-//
-//   onBeforeUnmount(() => {
-//     window.removeEventListener('unload', handler)
-//   })
-// })
+let handledRouting = false;
+
+onMounted(() => {
+  const leaveInvokeBody: InvokeZapierPayload = {
+    Unique_Quote_ID: responseState.value.quoteId,
+    Accepted: 'User Left Quote',
+  }
+
+  const handler = () => {
+    if (responseState.value.quoteId) {
+      handledRouting = true;
+      navigator.sendBeacon('/api/invoke_zapier_beacon', JSON.stringify(leaveInvokeBody))
+    }
+  }
+
+  window.addEventListener('unload', handler)
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('unload', handler)
+  })
+})
+
+onBeforeRouteLeave((to, from, next) => {
+  const leaveInvokeBody: InvokeZapierPayload = {
+    Unique_Quote_ID: responseState.value.quoteId,
+    Accepted: 'User Left Quote',
+  }
+
+  if (!handledRouting && responseState.value.quoteId) {
+    $fetch<{ statusCode: number; body: string }>(
+        '/api/invoke_zapier',
+        {
+          method: 'POST',
+          body: leaveInvokeBody,
+        }
+    ).finally(() => {
+      next()
+    })
+  } else {
+    next()
+  }
+})
 
 type AddToAcceptQuotesPayload = {
   Company_Name: string
@@ -213,6 +239,7 @@ const handleDecline = async () => {
 
   console.log('resInvoke:', resInvoke)
 
+  handledRouting = true;
   await navigateTo('/quote-declined')
 }
 
@@ -246,6 +273,7 @@ const handleAccept = async () => {
     }
   )
 
+  handledRouting = true;
   await navigateTo('/quote-success')
 }
 </script>

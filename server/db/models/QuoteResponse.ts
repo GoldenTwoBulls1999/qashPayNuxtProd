@@ -3,7 +3,7 @@ import { sequelize } from '../sequelize'
 
 export class QuoteResponse extends Model {
     declare id: number
-    declare accepted: string
+    // declare accepted: string
 }
 
 QuoteResponse.init(
@@ -12,10 +12,10 @@ QuoteResponse.init(
             type: DataTypes.STRING,
             primaryKey: true,
         },
-        accepted: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        }
+        // accepted: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // }
     },
     {
         sequelize,

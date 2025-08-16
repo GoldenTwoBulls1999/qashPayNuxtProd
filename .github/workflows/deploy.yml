@@ -31,7 +31,7 @@ jobs:
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
             cd /home/${{ secrets.SERVER_USER }}/qashpay
             npm ci
-            env NODE_OPTIONS=--max-old-space-size=8192 npm run build
+            env NODE_OPTIONS=--max-old-space-size=8192 NUXT_TURNSTILE_SITE_KEY=${{ secrets.TURNSTILE_SITE_KEY }} NUXT_TURNSTILE_SECRET_KEY=${{ secrets.TURNSTILE_SECRET_KEY }} npm run build
             cp -r node_modules/geoip-country/data/ .output/server/node_modules/geoip-country/data/
           EOF
 
@@ -69,12 +69,13 @@ jobs:
               script: '${{ secrets.APP_FOLDER }}/.output/server/index.mjs',
               instances: 'max',
               exec_mode: 'cluster',
+              cwd: '${{ secrets.APP_FOLDER }}',
               env: {
                 PORT: 3000,
                 BACKEND_BASE_URL: '${{ secrets.BACKEND_BASE_URL }}',
                 BACKEND_API_KEY: '${{ secrets.BACKEND_API_KEY }}',
-                TURNSTILE_SITE_KEY: '${{ secrets.TURNSTILE_SITE_KEY }}',
-                TURNSTILE_SECRET_KEY: '${{ secrets.TURNSTILE_SECRET_KEY }}',
+                NUXT_TURNSTILE_SITE_KEY: '${{ secrets.TURNSTILE_SITE_KEY }}',
+                NUXT_TURNSTILE_SECRET_KEY: '${{ secrets.TURNSTILE_SECRET_KEY }}',
               }
             }]
           };

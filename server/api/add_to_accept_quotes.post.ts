@@ -7,7 +7,7 @@ type FormData = {
 };
 
 export default defineEventHandler(async (event) => {
-    const body: FormData= await readBody(event)
+    const body: FormData = await readBody(event)
 
     console.log("body:", body)
 
@@ -15,20 +15,21 @@ export default defineEventHandler(async (event) => {
         "queryStringParameters": {
             "Company_Name": body.Company_Name,
             "Country": body.Country,
-            "Accepted": body.Accepted,
+            "Quote_accepted": body.Accepted,
         }
     }
 
-    console.log("data", data)
+    console.log("AddToAcceptQuotes data", data)
 
     const response = await axios.post(`${process.env.BACKEND_BASE_URL}/AddToAcceptQuotes`, data, {headers: {'x-api-key': process.env.BACKEND_API_KEY}})
 
-    console.log(response.status)
-    console.log(response.data)
+    console.log("AddToAcceptQuotes:", response.status)
+    console.log("AddToAcceptQuotes:", response.data)
 
     if (response.status === 200) {
         return response.data
     } else {
         setResponseStatus(event, response.status, response.data);
+        return { error: response.data }
     }
 })

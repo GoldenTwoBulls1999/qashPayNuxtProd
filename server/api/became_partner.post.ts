@@ -14,14 +14,16 @@ export default defineEventHandler(async (event) => {
     const req = event.node.req
     const body: FormData = await readBody(event)
 
-    console.log("body:", body)
+    console.log("became partner body:", body)
 
-    let ip = getIpFromHeaders(req.headers)
+    const ip = getIpFromHeaders(req.headers)
 
-    let formData = new FormData();
-    formData.append("secret", process.env["TURNSTILE_SECRET_KEY"]!);
+    const formData = new FormData();
+    formData.append("secret", process.env["NUXT_TURNSTILE_SECRET_KEY"]!);
     formData.append("response", body.token);
-    formData.append("remoteip", ip!);
+    // formData.append("remoteip", ip!);
+
+    console.log("became partner formData:", formData)
 
     const result = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
         body: formData,
@@ -36,20 +38,24 @@ export default defineEventHandler(async (event) => {
                 "Name": body.name,
                 "Email": body.email,
                 "Number": body.areaCode + body.phoneNumber.toString(),
+                "Individual": body.individualCheck ? "Yes" : "No",
             }
         }
 
-        console.log("data", data)
+        console.log("became partner data", data)
 
-        const response = await axios.post(`${process.env.BACKEND_BASE_URL}/SubmitNewAgent`, data, {headers: {'x-api-key': process.env.BACKEND_API_KEY}})
+        const response = await axios.post(`${process.env.BACKEND_BASE_URL}/AddNewAgentOnboarding`, data, {headers: {'x-api-key': process.env.BACKEND_API_KEY}})
 
-        console.log(response.status)
-        console.log(response.data)
+        console.log("became partner:", response.status)
+        console.log("became partner:", response.data)
 
         if (response.status === 200) {
             return response.data
         } else {
-            setResponseStatus(event, response.status, response.data);
+            throw createError({
+                statusCode: 400,
+                statusMessage: response.data
+            });
         }
     } else {
         return {};

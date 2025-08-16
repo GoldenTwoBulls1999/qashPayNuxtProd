@@ -52,17 +52,32 @@ export default defineEventHandler(async (event) => {
         }
     }
 
-    const response = await axios.post<FormDataResponse>(`${process.env.BACKEND_BASE_URL}/Submit_Form`, data, { headers: { 'x-api-key': process.env.BACKEND_API_KEY } })
+    const response = await axios.post<{statusCode: number, body: string}>(`${process.env.BACKEND_BASE_URL}/Submit_Form`, data, { headers: { 'x-api-key': process.env.BACKEND_API_KEY } })
     console.log("Submit_Form Response data:", response.data)
-    console.log(response.status)
 
-    if (response.data.message === "Quote determination successful!") {
-        await QuoteResponse.create({id: response.data.quote.Unique_Quote_ID})
+    const formDataResponse: FormDataResponse = JSON.parse(response.data.body)
+    console.log(response.status)
+    console.log(formDataResponse)
+
+    if (formDataResponse.message === "Quote determination successful!") {
+        await QuoteResponse.create({id: formDataResponse.quote.Unique_Quote_ID})
+    } else if (formDataResponse.message === "Quote declined.") {
+        const data = {
+            "queryStringParameters": {
+                "Unique_Quote_ID": formDataResponse.quote.Unique_Quote_ID,
+                "Accepted": "System Decline",
+            }
+        }
+
+        await axios.post(`${process.env.BACKEND_BASE_URL}/Invoke_Zapier`, data, {headers: {'x-api-key': process.env.BACKEND_API_KEY}})
     }
 
     if (response.status === 200) {
         return response.data
     } else {
-        setResponseStatus(event, response.status, response.data.message);
+        throw createError({
+            statusCode: response.status,
+            statusMessage: formDataResponse.message
+        });
     }
 })
