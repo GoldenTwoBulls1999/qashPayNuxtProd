@@ -179,4 +179,7 @@
 
 <script setup lang="ts">
 import BenefitItem from '~/components/Home/BenefitsSection/BenefitItem.vue'
+useHead({
+  title: 'QashPay | Payment Links'
+})
 </script>

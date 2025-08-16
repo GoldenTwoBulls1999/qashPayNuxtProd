@@ -161,4 +161,8 @@
 <script setup lang="ts">
 import Slider from '~/components/Chargeback/Slider.vue'
 import BenefitItem from '~/components/Home/BenefitsSection/BenefitItem.vue'
+
+useHead({
+  title: 'QashPay | Chargeback'
+})
 </script>

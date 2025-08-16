@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {QuoteResponse} from "~/server/db/models/QuoteResponse";
 
 type FormData = {
     firstName: string;
@@ -14,6 +15,21 @@ type FormData = {
     processRecurringPayments: boolean;
     processCardPeriod: boolean;
 };
+
+type FormDataResponse = {
+    message: string
+    quote: {
+        Unique_Quote_ID: string
+        "IC++ Fee": string
+        "Transaction Fee": string
+        "Refund Fee": string
+        "3DS Fee": string
+        "Chargeback Fee": string
+        "Monthly Minimum": string
+        "Quote Currency": string
+        "Risk Group": string
+    }
+}
 
 export default defineEventHandler(async (event) => {
     const body: FormData = await readBody(event)
@@ -36,13 +52,17 @@ export default defineEventHandler(async (event) => {
         }
     }
 
-    const response = await axios.post(`${process.env.BACKEND_BASE_URL}/Submit_Form`, data, { headers: { 'x-api-key': process.env.BACKEND_API_KEY } })
-    console.log(response.data)
+    const response = await axios.post<FormDataResponse>(`${process.env.BACKEND_BASE_URL}/Submit_Form`, data, { headers: { 'x-api-key': process.env.BACKEND_API_KEY } })
+    console.log("Submit_Form Response data:", response.data)
     console.log(response.status)
+
+    if (response.data.message === "Quote determination successful!") {
+        await QuoteResponse.create({id: response.data.quote.Unique_Quote_ID})
+    }
 
     if (response.status === 200) {
         return response.data
     } else {
-        setResponseStatus(event, response.status, response.data);
+        setResponseStatus(event, response.status, response.data.message);
     }
 })

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {QuoteResponse} from "~/server/db/models/QuoteResponse";
 
 type FormData = {
     "Unique_Quote_ID": string
@@ -9,6 +10,12 @@ export default defineEventHandler(async (event) => {
     const body: FormData= await readBody(event)
 
     console.log("body:", body)
+
+    const quoteResponse = await QuoteResponse.findByPk(body.Unique_Quote_ID);
+    if (quoteResponse !== null) {
+        quoteResponse.accepted = body.Accepted;
+        await quoteResponse.save();
+    }
 
     const data = {
         "queryStringParameters": {

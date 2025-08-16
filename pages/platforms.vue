@@ -231,4 +231,8 @@
 
 <script setup lang="ts">
 import PlatformItem from '~/components/Platforms/PlatformItem.vue'
+
+useHead({
+  title: 'QashPay | Platforms'
+})
 </script>

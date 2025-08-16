@@ -20,4 +20,8 @@ import BenefitsSection from '~/components/Home/BenefitsSection'
 import CheckoutSection from '~/components/CheckoutSection'
 import CtaSection from '~/components/Home/CtaSection.vue'
 import VideoSection from '~/components/Home/VideoSection'
+
+useHead({
+  title: 'QashPay'
+})
 </script>

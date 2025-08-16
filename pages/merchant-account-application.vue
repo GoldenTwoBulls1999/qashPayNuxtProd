@@ -117,4 +117,8 @@
 import AppCheckbox from '~/components/AppCheckbox.vue'
 
 const checkboxModel = defineModel<boolean>()
+
+useHead({
+  title: 'QashPay | Merchant Account Application'
+})
 </script>

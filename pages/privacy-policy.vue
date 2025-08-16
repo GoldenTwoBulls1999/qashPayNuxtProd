@@ -904,7 +904,11 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: 'QashPay | Privacy Policy'
+})
+</script>
 
 <style scoped>
 .list-alpha {

@@ -239,6 +239,10 @@
 <script setup lang="ts">
 import Slider from '~/components/PCI/Slider.vue'
 
+useHead({
+  title: 'QashPay | PCI Compliance Scanning'
+})
+
 const currentSlide = ref(0)
 const slides = ref([
   {

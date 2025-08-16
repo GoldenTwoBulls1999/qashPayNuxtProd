@@ -191,6 +191,10 @@
 import FeatureItem from '~/components/PaymentGateway/FeatureItem.vue'
 import { payment_gateway_features } from '~/utils/payment_gateway_features'
 import { paymentGatewayAccordionItems } from '~/utils/paymentGatewayAccordionItems'
+
+useHead({
+  title: 'QashPay | Merchant Account'
+})
 </script>
 
 <style scoped>

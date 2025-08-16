@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-type Weight = 'light' | 'normal' | 'medium' | 'bold'
+type Weight = 'light' | 'normal' | 'medium' | 'semibold' | 'bold'
 type Size =
   | 'heading-1'
   | 'heading-2'
@@ -72,6 +72,7 @@ const weightClass = computed(() => {
     light: 'font-light',
     normal: 'font-normal',
     medium: 'font-medium',
+    semibold: 'font-semibold',
     bold: 'font-bold',
   }
   return classes[props.weight]

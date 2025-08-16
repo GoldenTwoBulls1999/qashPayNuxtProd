@@ -1,7 +1,7 @@
 <template>
   <section class="w-full md:pt-45 pb-blocks-gap">
     <div class="w-full max-h-fit flex flex-col">
-      <PartnersVideo src="/img/QashPay_partner.webm" />
+      <PartnersVideo src="/img/QashPay_partner.webm" :is-muted="true" />
       <div
         class="flex flex-col items-center bg-radial bg-radial-[ellipse_50%_50%_at_50%_100%] from-gray-200/20 to-white my-30"
       >
@@ -205,4 +205,8 @@ import BecomePartnerForm from '~/components/Partners/BecomePartnerForm/index.vue
 import PartnersVideo from '~/components/Partners/Video.vue'
 import Accordion from '~/components/AppAccordion.vue'
 import { partnersAccordionItems } from '~/utils/partnersAccordionItems'
+
+useHead({
+  title: 'QashPay | Partners'
+})
 </script>

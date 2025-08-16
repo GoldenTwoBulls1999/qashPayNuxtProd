@@ -2,7 +2,7 @@
   <div
     class="group w-[100vw] md:w-full -left-10 md:left-0 mx-auto flex justify-center items-center md:rounded-app-big overflow-hidden relative"
   >
-    <div class="bg-[#C1B7DA]/10 absolute inset-0 z-10" />
+    <div v-show="playing" class="bg-[#C1B7DA]/10 absolute inset-0 z-10" />
     <div class="player aspect-video">
       <video
         ref="videoRef"
@@ -10,7 +10,7 @@
         preload="auto"
         :poster="poster || ''"
         playsinline
-        muted
+        :muted="isMuted ?? true"
         autoplay
       />
     </div>
@@ -81,10 +81,11 @@ import {
 interface VideoProps {
   src: string
   autoplay?: boolean,
-  poster?: string
+  poster?: string,
+  isMuted?: boolean
 }
 
-const { src, autoplay, poster } = defineProps<VideoProps>()
+const { src, autoplay, poster, isMuted } = defineProps<VideoProps>()
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const userControlled = ref(false)
@@ -111,8 +112,13 @@ watch(visible, (isVisible) => {
 })
 
 onMounted(() => {
-  muted.value = true
+  muted.value = isMuted ?? true
   playing.value = autoplay || visible.value
+})
+
+onUnmounted(() => {
+  playing.value = false
+  muted.value = true
 })
 </script>
 

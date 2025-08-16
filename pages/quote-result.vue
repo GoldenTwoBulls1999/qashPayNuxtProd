@@ -53,7 +53,7 @@
                   <span class="text-secondary-500">
                     {{ responseState.icFee }}%
                   </span>
-                  &plus; {{ responseState.currency }}
+                  &plus; {{ responseState.currency }} {{ responseState.transactionFee }}
                 </Typography>
               </div>
               <div>
@@ -121,11 +121,18 @@
             name="app-icon:info-icon"
             class="min-w-[21px]"
           />
-          <Typography>
-            Once accepted, you will receive an email containing access to our
-            onboarding portal. This can be accessed via Desktop, IOS App or
-            Android. App.
-          </Typography>
+          <div class="flex flex-col">
+            <Typography weight="bold">Next Steps</Typography>
+            <Typography>
+              Once you accept the quote, you’ll receive an email with access to our onboarding portal, available on Desktop, iOS, and Android.
+            </Typography>
+            <Typography weight="bold" class="mt-5">
+              Important Notice
+            </Typography>
+            <Typography>
+              Please note that this quote is based on the information you’ve provided. If the supplied data is found to be inaccurate, it may result in additional processing fees or, in some cases, account termination.
+            </Typography>
+          </div>
         </div>
       </div>
     </div>
@@ -138,13 +145,34 @@ import { useQuoteRequestState } from '~/composables/useQuoteRequestState'
 import type { QuoteFormData } from '~/components/QuoteForm/types'
 import type { RiscScore } from '~/components/RiscScore/index.vue'
 
+useHead({
+  title: 'QashPay | Quote'
+})
+
+// onMounted(() => {
+//   const requestInvokeBody: InvokeZapierPayload = {
+//     Unique_Quote_ID: responseState.value.quoteId,
+//     Accepted: 'User Left Quote',
+//   }
+//
+//   const handler = () => {
+//     navigator.sendBeacon('/api/invoke_zapier', JSON.stringify(requestInvokeBody))
+//   }
+//
+//   window.addEventListener('unload', handler)
+//
+//   onBeforeUnmount(() => {
+//     window.removeEventListener('unload', handler)
+//   })
+// })
+
 type AddToAcceptQuotesPayload = {
   Company_Name: string
   Country: string
   Accepted: string
 }
 
-type InvokeZapierPayload = {
+export type InvokeZapierPayload = {
   Unique_Quote_ID: string
   Accepted: string
 }

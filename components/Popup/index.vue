@@ -11,7 +11,7 @@
           style="max-width: min(95vw, 992px)"
           @click.stop
         >
-          <PartnersVideo src="/img/QashPay_main.mp4" :autoplay="true" />
+          <PartnersVideo src="/img/QashPay_main.mp4" :autoplay="true" :is-muted="false" />
         </div>
       </div>
     </div>

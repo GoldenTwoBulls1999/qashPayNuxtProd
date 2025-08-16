@@ -46,6 +46,10 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'QashPay | Checkout Guide'
+})
+
 type HintItem = { title: string; text: string }
 
 const currentHint = ref<HintItem>({title: '', text: ''});
