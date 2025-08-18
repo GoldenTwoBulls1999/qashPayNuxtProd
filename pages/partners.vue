@@ -1,7 +1,7 @@
 <template>
   <section class="w-full md:pt-45 pb-blocks-gap">
     <div class="w-full max-h-fit flex flex-col">
-      <PartnersVideo src="/img/QashPay_partner.webm" :is-muted="true" />
+      <PartnersVideo src-webm="/img/QashPay_partner.webm" src-mp4="/img/QashPay_partner.mp4" :is-muted="true" />
       <div
         class="flex flex-col items-center bg-radial bg-radial-[ellipse_50%_50%_at_50%_100%] from-gray-200/20 to-white my-30"
       >

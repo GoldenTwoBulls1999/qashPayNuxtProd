@@ -11,7 +11,7 @@
       </Typography>
     </div>
     <div>
-      <PartnersVideo src="/img/QashPay_main.mp4" poster="/img/index_video_poster.png" :is-muted="true" />
+      <PartnersVideo src-mp4="/img/QashPay_main.mp4" src-webm="/img/QashPay_main.webm" poster="/img/index_video_poster.png" :is-muted="true" />
     </div>
   </section>
 </template>

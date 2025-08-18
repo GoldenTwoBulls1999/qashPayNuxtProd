@@ -7,11 +7,11 @@
         @click="handleClose"
       >
         <div
-          class="absolute bg-white rounded-app-big aspect-video w-full max-h-fit top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-          style="max-width: min(95vw, 992px)"
+          class="absolute rounded-app-big w-full max-h-fit top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 px-10"
+          style="max-width: 992px"
           @click.stop
         >
-          <PartnersVideo src="/img/QashPay_main.mp4" :autoplay="true" :is-muted="false" />
+          <Video :src-mp4="videoSrcMp4" :src-webm="videoSrcWebm" :autoplay="true" :is-muted="false" :native-player="true" />
         </div>
       </div>
     </div>
@@ -19,12 +19,14 @@
 </template>
 
 <script setup lang="ts">
-import PartnersVideo from '~/components/Partners/Video.vue'
+import Video from '~/components/Partners/Video.vue'
 
 interface PopupProps {
   open: boolean
   handleClose: () => void
-  withBackdrop?: boolean
+  withBackdrop?: boolean,
+  videoSrcMp4: string,
+  videoSrcWebm: string
 }
 
 withDefaults(defineProps<PopupProps>(), {

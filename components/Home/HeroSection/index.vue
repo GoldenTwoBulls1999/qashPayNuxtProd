@@ -46,10 +46,22 @@
             >
               Get your instant quote
             </AppButton>
-            <AppButton color="pink" @click="isVideoOpen = true">
+            <AppButton color="pink" @click="handleVideoOpen">
               Preview
             </AppButton>
-            <Popup :open="isVideoOpen" :handleClose="handleVideoClose" />
+            <Popup :open="isVideoOpen" :handle-close="handleVideoClose" video-src-mp4="/img/QashPay_main.mp4" video-src-webm="/img/QashPay_main.webm" />
+            <video
+              ref="videoRef"
+              src="/img/QashPay_main.mp4"
+              class="absolute w-1 h-1 z-[-1] top-[-1000px] left-[-1000px]"
+              preload="auto"
+              playsinline
+              muted
+              @webkitendfullscreen="onExitFullscreen"
+            >
+              <source src="/img/QashPay_main.mp4" type="video/mp4">
+              <source src="/img/QashPay_main.webm" type="video/webm">
+            </video>
           </div>
           <div
             class="flex justify-between mt-15 min-[350px]:justify-center min-[350px]:gap-x-9 max-[425px]:-mx-[calc((100vw-(100vw-40px))/2-5px)] md:mx-0 md:justify-start @container/features"
@@ -90,11 +102,56 @@
 <script setup lang="ts">
 import HeroFeatureItem from '~/components/Home/HeroSection/HeroFeatureItem.vue'
 import Slider from '~/components/Home/HeroSection/Slider.vue'
-import { useScrollLock } from '@vueuse/core'
+import { useMediaQuery, useScrollLock } from '@vueuse/core'
+import Video from '~/components/Partners/Video.vue'
+import { computed, ref, onMounted, watch } from 'vue'
 
 const isVideoOpen = ref(false)
+const videoRef = ref<HTMLVideoElement | null>(null)
+const isDesktop = useMediaQuery('(min-width: 1024px)')
+
+const isIOSSafari = computed(() => {
+  if (process.client) {
+    const userAgent = navigator.userAgent
+    const isIOS = /iPad|iPhone|iPod|Macintosh/.test(userAgent)
+    const isSafari = /Safari/.test(userAgent) && !/CriOS|FxiOS|EdgiOS/.test(userAgent)
+    return isIOS && isSafari
+  }
+  return false
+})
 
 const handleVideoClose = () => (isVideoOpen.value = false)
+
+const handleVideoOpen = () => {
+  if (isIOSSafari.value && !isDesktop.value) {
+    if (videoRef.value) {
+      // Полный сброс видео
+      videoRef.value.currentTime = 0
+      videoRef.value.load() // Перезагружаем видео
+
+      // Небольшая задержка для загрузки
+      setTimeout(() => {
+        if (videoRef.value) {
+          videoRef.value.muted = false
+          videoRef.value.play().then(() => {
+            videoRef.value?.webkitEnterFullscreen?.()
+          }).catch(console.error)
+        }
+      }, 100)
+    }
+  } else {
+    isVideoOpen.value = true
+  }
+}
+
+const onExitFullscreen = () => {
+  if (videoRef.value) {
+    videoRef.value.pause() // Ставим на паузу
+    videoRef.value.currentTime = 0 // Сбрасываем к началу
+    videoRef.value.muted = true // Выключаем звук
+    videoRef.value.load() // Перезагружаем для следующего использования
+  }
+}
 
 onMounted(() => {
   const scrollLock = useScrollLock(document.body)

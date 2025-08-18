@@ -15,16 +15,16 @@
     <div class="md:min-w-1/2 md:bg-[#FEFEFE] px-10 md:px-20 pt-16 pb-22">
       <form class="flex flex-col gap-10 items-start">
         <AppInput
-          name="name"
           v-model="name"
+          name="name"
           label="Name"
           class="max-md:border-primary-400"
           :is-error="isError('name')"
           :error="errors?.name"
         />
         <AppInput
-          name="email"
           v-model="email"
+          name="email"
           placeholder="example@email.com"
           label="Email"
           class="max-md:border-primary-400"
@@ -41,8 +41,8 @@
             :error="errors?.areaCode"
           />
           <AppInput
-            name="phoneNumber"
             v-model="phoneNumber"
+            name="phoneNumber"
             label="Phone number"
             class="max-md:border-primary-400"
             :is-error="isError('phoneNumber')"
@@ -59,7 +59,7 @@
           >
             <Typography class="text-primary-400">I'm individual</Typography>
           </AppCheckbox>
-          <AppButton class="max-md:w-full" @click="onSubmit" color="black">
+          <AppButton class="max-md:w-full" color="black" :disabled="!token || token === ''" @click="onSubmit">
             Become a Partner
           </AppButton>
         </div>
@@ -86,6 +86,7 @@ import AppCheckbox from '~/components/AppCheckbox.vue'
 import type { Lookup } from 'geoip-country'
 
 const state = useQuoteRequestState()
+const token = defineModel<string>('')
 
 const {
   setFieldValue,
@@ -184,8 +185,6 @@ const onSubmit = handleSubmit(async (values: any) => {
 
   await navigateTo('/become-partner-success')
 })
-
-const token = defineModel<string>('')
 </script>
 
 <style scoped></style>
